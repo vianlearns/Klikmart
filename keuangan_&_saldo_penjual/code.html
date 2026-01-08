@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Keuangan &amp; Saldo Penjual</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48525",
+                        "primary-dark": "#d66e18",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#1a1614",
+                        "card-light": "#ffffff",
+                        "card-dark": "#2a221c",
+                        "text-main": "#181411",
+                        "text-secondary": "#8a7460",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hide for clean horizontal scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white min-h-screen flex flex-col overflow-x-hidden antialiased transition-colors duration-200">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-card-light dark:bg-card-dark shadow-sm">
+<div class="flex items-center p-4 pb-3 justify-between">
+<div class="text-text-main dark:text-white flex size-10 shrink-0 items-center justify-center cursor-pointer rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Keuangan</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-text-main dark:text-white">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 w-full max-w-md mx-auto px-4 py-4 space-y-5 pb-24">
+<!-- Balance Card -->
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 shadow-soft border border-gray-100 dark:border-white/5 relative overflow-hidden group">
+<!-- Decorative circle pattern -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/5 rounded-full pointer-events-none group-hover:scale-110 transition-transform duration-700 ease-out"></div>
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+<p class="text-text-secondary dark:text-gray-400 text-sm font-medium">Saldo Penjual</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[18px] cursor-help">help</span>
+</div>
+<h1 class="text-text-main dark:text-white text-[32px] font-bold leading-tight tracking-tight mb-1">Rp 12.500.000</h1>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-orange-400 text-[16px]">pending</span>
+<p class="text-text-secondary dark:text-gray-400 text-sm">Rp 2.450.000 sedang diproses</p>
+</div>
+<button class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-primary hover:bg-primary-dark transition-colors text-white gap-2 text-base font-bold leading-normal shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">logout</span>
+<span>Tarik Dana</span>
+</button>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="grid grid-cols-3 gap-3">
+<button class="flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white dark:bg-card-dark hover:bg-gray-50 dark:hover:bg-white/5 border border-transparent hover:border-gray-100 dark:border-white/5 transition-all shadow-sm">
+<div class="size-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<span class="text-xs font-semibold text-text-main dark:text-gray-200">Rekening</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white dark:bg-card-dark hover:bg-gray-50 dark:hover:bg-white/5 border border-transparent hover:border-gray-100 dark:border-white/5 transition-all shadow-sm">
+<div class="size-10 rounded-full bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined">monitoring</span>
+</div>
+<span class="text-xs font-semibold text-text-main dark:text-gray-200">Analisis</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white dark:bg-card-dark hover:bg-gray-50 dark:hover:bg-white/5 border border-transparent hover:border-gray-100 dark:border-white/5 transition-all shadow-sm">
+<div class="size-10 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<span class="text-xs font-semibold text-text-main dark:text-gray-200">Laporan</span>
+</button>
+</div>
+<!-- Transaction History Section -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Riwayat Transaksi</h3>
+<button class="text-primary text-sm font-semibold hover:underline">Lihat Semua</button>
+</div>
+<!-- Filter Tabs -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar mb-4 pb-1">
+<button class="px-4 py-2 rounded-full bg-text-main dark:bg-white text-white dark:text-background-dark text-sm font-bold whitespace-nowrap shadow-sm">Semua</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 text-text-secondary dark:text-gray-400 text-sm font-semibold whitespace-nowrap hover:bg-gray-50 dark:hover:bg-white/5">Pemasukan</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 text-text-secondary dark:text-gray-400 text-sm font-semibold whitespace-nowrap hover:bg-gray-50 dark:hover:bg-white/5">Penarikan</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 text-text-secondary dark:text-gray-400 text-sm font-semibold whitespace-nowrap hover:bg-gray-50 dark:hover:bg-white/5">Diproses</button>
+</div>
+<!-- Transaction List -->
+<div class="flex flex-col gap-3">
+<!-- Date Header -->
+<p class="text-xs font-bold text-text-secondary dark:text-gray-500 uppercase tracking-wider mt-2 mb-1">Hari Ini</p>
+<!-- Item 1: Income -->
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl flex items-center justify-between shadow-sm border border-transparent dark:border-white/5 hover:border-primary/20 dark:hover:border-primary/20 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-[20px]">shopping_bag</span>
+</div>
+<div class="flex flex-col min-w-0">
+<p class="text-sm font-bold text-text-main dark:text-white truncate">Penjualan</p>
+<p class="text-xs text-text-secondary dark:text-gray-400 truncate">Order #2938491223</p>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<p class="text-sm font-bold text-green-600 dark:text-green-400">+ Rp 150.000</p>
+<p class="text-[10px] text-text-secondary dark:text-gray-500">14:30</p>
+</div>
+</div>
+<!-- Item 2: Withdrawal -->
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl flex items-center justify-between shadow-sm border border-transparent dark:border-white/5 hover:border-primary/20 dark:hover:border-primary/20 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_outward</span>
+</div>
+<div class="flex flex-col min-w-0">
+<p class="text-sm font-bold text-text-main dark:text-white truncate">Penarikan Dana</p>
+<p class="text-xs text-text-secondary dark:text-gray-400 truncate">ke BCA •••• 8829</p>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<p class="text-sm font-bold text-text-main dark:text-white">- Rp 5.000.000</p>
+<p class="text-[10px] text-text-secondary dark:text-gray-500">09:15</p>
+</div>
+</div>
+<!-- Date Header -->
+<p class="text-xs font-bold text-text-secondary dark:text-gray-500 uppercase tracking-wider mt-4 mb-1">Kemarin</p>
+<!-- Item 3: Admin Fee -->
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl flex items-center justify-between shadow-sm border border-transparent dark:border-white/5 hover:border-primary/20 dark:hover:border-primary/20 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-gray-50 dark:bg-white/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-gray-500 text-[20px]">receipt</span>
+</div>
+<div class="flex flex-col min-w-0">
+<p class="text-sm font-bold text-text-main dark:text-white truncate">Biaya Admin</p>
+<p class="text-xs text-text-secondary dark:text-gray-400 truncate">Layanan Platform</p>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<p class="text-sm font-bold text-text-main dark:text-white">- Rp 2.500</p>
+<p class="text-[10px] text-text-secondary dark:text-gray-500">10 Okt</p>
+</div>
+</div>
+<!-- Item 4: Income -->
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl flex items-center justify-between shadow-sm border border-transparent dark:border-white/5 hover:border-primary/20 dark:hover:border-primary/20 transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-[20px]">shopping_bag</span>
+</div>
+<div class="flex flex-col min-w-0">
+<p class="text-sm font-bold text-text-main dark:text-white truncate">Penjualan</p>
+<p class="text-xs text-text-secondary dark:text-gray-400 truncate">Order #2938491100</p>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<p class="text-sm font-bold text-green-600 dark:text-green-400">+ Rp 2.450.000</p>
+<p class="text-[10px] text-text-secondary dark:text-gray-500">10 Okt</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

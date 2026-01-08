@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>E-commerce Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48525",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221810",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-gray-100 overflow-x-hidden">
+<div class="relative min-h-screen w-full max-w-md mx-auto bg-white dark:bg-[#1a120b] shadow-2xl overflow-hidden flex flex-col">
+<!-- Header & Search -->
+<header class="sticky top-0 z-50 bg-white dark:bg-[#1a120b] px-4 pt-12 pb-3 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="flex-1 relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 border-none rounded-xl bg-background-light dark:bg-[#2c241d] text-sm placeholder-gray-400 dark:text-white focus:ring-1 focus:ring-primary" placeholder="Search for products, brands..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400" style="font-size: 20px;">mic</span>
+</div>
+</div>
+<button class="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-200">shopping_cart</span>
+<span class="absolute top-1 right-1 h-2.5 w-2.5 rounded-full bg-red-500 border-2 border-white dark:border-[#1a120b]"></span>
+</button>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-200">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pb-24 hide-scrollbar">
+<!-- Hero Carousel -->
+<div class="mt-4 px-4">
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-3 hide-scrollbar pb-2">
+<div class="snap-center shrink-0 w-[85%] sm:w-80 relative rounded-2xl overflow-hidden aspect-[2/1] bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Orange and pink gradient sale banner with shopping bags" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwWkFfpyM7Jx9rAFqP92V2qQ2uMeOqwaDLih-Xk9oiMI4OGgT_xBahun4sgi-rYbPul-ZEZYUNGKLfNEer5_JIdWwy_VC9oBqumQVGMrN8PxK2I5BT3kshGH9gKlBUpwdcWy62bBYFldw94URWKERReKkNC-jTVZi0rChoHWRkZKvjPHuZqgzE3pLQHoUeH0o82KqjDp0OhoCbpY_FWOXJ-FoZ2AUy44etIG6OnUv7zeqpzg5QQfomFIZy-HGrM4rAS-3zGDYnnDqE');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex flex-col justify-center p-6">
+<span class="text-primary font-bold text-xs uppercase tracking-wider mb-1">Super Sale</span>
+<h2 class="text-white text-2xl font-bold leading-tight mb-2">50% Off<br/>Fashion Items</h2>
+<button class="w-max bg-primary text-white text-xs font-semibold py-2 px-4 rounded-full">Shop Now</button>
+</div>
+</div>
+<div class="snap-center shrink-0 w-[85%] sm:w-80 relative rounded-2xl overflow-hidden aspect-[2/1] bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Minimalist white watch product photography on clean background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbpH1yLK6-iYpO_q2L7Qmm9PVPfYVHgkS3gFN0HMvSoNCYISLjYvmQDzXcHDBYDiqg5YiUwbxqFdbpJtXEV1wEaGm3DloF31rluHpF6Z3EAShlkuLyG7mFC9-DfrzN3dzD62UER8YVzzZYHkgSHD-iDvR5TVjCLsxaTmnXbuPyPnbi96AwOBb1JwSKgQH0f1h-Nwy-uRv-t40Ae7_1pLjJ5d_EBt_n2--dlo26mDMmz4rxe7Du-DIAv8W9mSXePCQg4SEI2r4OY5q4');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex flex-col justify-center p-6">
+<span class="text-white font-bold text-xs uppercase tracking-wider mb-1">New Arrivals</span>
+<h2 class="text-white text-2xl font-bold leading-tight mb-2">Gadgets<br/>&amp; Tech</h2>
+<button class="w-max bg-white/20 backdrop-blur-md border border-white/40 text-white text-xs font-semibold py-2 px-4 rounded-full">Explore</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Categories Grid -->
+<div class="mt-6 px-4">
+<div class="grid grid-cols-5 gap-y-4 gap-x-2">
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">apparel</span>
+</div>
+<span class="text-[10px] font-medium text-gray-600 dark:text-gray-300">Fashion</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-500">
+<span class="material-symbols-outlined">devices</span>
+</div>
+<span class="text-[10px] font-medium text-gray-600 dark:text-gray-300">Gadgets</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-2xl bg-pink-50 dark:bg-pink-900/20 flex items-center justify-center text-pink-500">
+<span class="material-symbols-outlined">face</span>
+</div>
+<span class="text-[10px] font-medium text-gray-600 dark:text-gray-300">Beauty</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-2xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-500">
+<span class="material-symbols-outlined">chair</span>
+</div>
+<span class="text-[10px] font-medium text-gray-600 dark:text-gray-300">Home</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-500">
+<span class="material-symbols-outlined">sports_soccer</span>
+</div>
+<span class="text-[10px] font-medium text-gray-600 dark:text-gray-300">Sports</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-2xl bg-yellow-50 dark:bg-yellow-900/20 flex items-center justify-center text-yellow-500">
+<span class="material-symbols-outlined">toys</span>
+</div>
+<span class="text-[10px] font-medium text-gray-600 dark:text-gray-300">Toys</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-2xl bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-red-500">
+<span class="material-symbols-outlined">lunch_dining</span>
+</div>
+<span class="text-[10px] font-medium text-gray-600 dark:text-gray-300">Food</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-500">
+<span class="material-symbols-outlined">flight</span>
+</div>
+<span class="text-[10px] font-medium text-gray-600 dark:text-gray-300">Travel</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-2xl bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined">local_offer</span>
+</div>
+<span class="text-[10px] font-medium text-gray-600 dark:text-gray-300">Deals</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<span class="text-[10px] font-medium text-gray-600 dark:text-gray-300">More</span>
+</div>
+</div>
+</div>
+<!-- Flash Sale Section -->
+<div class="mt-8 px-4">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">Flash Sale</h2>
+<div class="flex items-center gap-1 bg-black text-white px-2 py-1 rounded text-xs font-bold font-mono">
+<span>02</span>:<span>14</span>:<span>50</span>
+</div>
+</div>
+<a class="text-sm font-semibold text-primary flex items-center" href="#">
+                        See All <span class="material-symbols-outlined text-sm ml-0.5">chevron_right</span>
+</a>
+</div>
+<div class="flex overflow-x-auto gap-4 hide-scrollbar pb-4">
+<!-- Flash Sale Item 1 -->
+<div class="shrink-0 w-36 flex flex-col gap-2">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 border border-gray-100 dark:border-gray-800">
+<div class="absolute top-2 left-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm">
+                                -40%
+                            </div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Red Nike running shoe on white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwXE9zyRRB-N4Q3KVtw0ngys5J2Z9cb_5qLIhF3k0nwVt4ft5NMIEio-7ftHLb6h7t4SfFX5HseXCgEHmKVFDX3eWzV23aJfSu8jMUOfNWd_yuDUgY-YRWoUFoDDho1VkVPB9vq0eyskY73rNE8sqHhAgJ2Wl1QtTA8T5yKYZUDl50Inr5ySik4AW0xqjh9IbX2un-_oL--1uK1vgHO1VbNDbHEpyws2s1CZqDWPTMdmzUMLQrCVNV8_Ih440eEAUcXIEfpME0RKq7');"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline gap-2">
+<span class="text-primary font-bold text-sm">$89</span>
+<span class="text-gray-400 text-xs line-through">$149</span>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-1">
+<div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div>
+</div>
+<span class="text-[10px] text-gray-500 mt-0.5">80% Sold</span>
+</div>
+</div>
+<!-- Flash Sale Item 2 -->
+<div class="shrink-0 w-36 flex flex-col gap-2">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 border border-gray-100 dark:border-gray-800">
+<div class="absolute top-2 left-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm">
+                                -25%
+                            </div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Black over-ear wireless headphones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-mRrxkXY2phVXtYBZO3qjN5x4cjnHE27KJv3bsVfygpkM66MEggoW2FWZ-Y5wVZQNQqhCI7bPpYJ3qzHN6rV0gC223tJfUMhs49BY_pF97xmygvuxdftW8bsVlkkGt4cVfOWpYOwzoX3QY27Sx2-DHSQRfbOENYvKrAA1YZTNHs8XzMEndEuvWRFxwtLCCtrUgzlObNaPzGrvLMCPWX_gKXiWA1pIbVOUkzLGvEOfvb3d0JmuipRwawE7wKsy9vBLwBrjRgI3qYAb');"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline gap-2">
+<span class="text-primary font-bold text-sm">$199</span>
+<span class="text-gray-400 text-xs line-through">$249</span>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-1">
+<div class="bg-primary h-1.5 rounded-full" style="width: 45%"></div>
+</div>
+<span class="text-[10px] text-gray-500 mt-0.5">45% Sold</span>
+</div>
+</div>
+<!-- Flash Sale Item 3 -->
+<div class="shrink-0 w-36 flex flex-col gap-2">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 border border-gray-100 dark:border-gray-800">
+<div class="absolute top-2 left-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm">
+                                -15%
+                            </div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Cosmetic bottles on minimalist background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApq_OlWEpjlNvOTjNt9ZftDz4UOIJhEFzog95ZOBNaEXiFiN3B1akM-uoWn8PfARTQmTCRKiAS3yHL7sm7l29WPc-oxENH2g7MSPz_Hk4BUgrKpD0HhGd_Qd6P0otSY9vAhfNRW3CyKQ_w_qirXpB3pfJp0uPQZ7krKM-kkJu68hBCqePF3s05E2IbtQgvm8vkJtblUHthLgGvCTTI4Q1DdSmKtpT8lnt-BoTf4bhhEQwcC_CIeP_dPo1Zccpbxi3wqXaDDHfjT8xZ');"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline gap-2">
+<span class="text-primary font-bold text-sm">$45</span>
+<span class="text-gray-400 text-xs line-through">$55</span>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-1">
+<div class="bg-primary h-1.5 rounded-full" style="width: 90%"></div>
+</div>
+<span class="text-[10px] text-gray-500 mt-0.5">Almost Gone</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="h-2 bg-background-light dark:bg-[#15100c] w-full my-4"></div>
+<!-- Recommended Grid -->
+<div class="px-4">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 sticky top-0 bg-white dark:bg-[#1a120b] py-2 z-10">Recommended For You</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- Product Card 1 -->
+<div class="group bg-white dark:bg-[#2c241d] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden flex flex-col">
+<div class="relative aspect-[4/5] bg-gray-100 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" data-alt="Beige linen jacket hanging on rack" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjxGw6Db_0uoyhVk-vj8GDuNcLwInqiiwQM201ZuW2-Um6sblFkowgjK9Dr8zmhJQGiMjalmwYCR-0UjE5ztCXEN_QKTidgToJJgoDuEX-TfQAT0tV3_9Pp2OX7xWrxQPjLEwWTj6_nKzIQYlyu3vMlxF46IXclz3j_P4WvyjNSStx1arL4kFFyAf9isCtjKzpvnPZPRG2E9cqPEPpH_-vW8DhHgZkBUxzfaxfEL5_gyok_7bzAchJ3j_gOSgsVaNc6CeoxtTSa7xw');"></div>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-gray-500 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h3 class="text-sm font-medium text-gray-800 dark:text-gray-100 line-clamp-2 leading-snug mb-1">Premium Linen Summer Jacket for Men</h3>
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] fill-current">star</span>
+<span class="text-xs text-gray-500">4.8 (1.2k)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<div>
+<p class="text-xs text-gray-400 line-through">$120</p>
+<p class="text-lg font-bold text-primary">$85</p>
+</div>
+<button class="bg-primary text-white p-1.5 rounded-lg hover:bg-orange-600 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white dark:bg-[#2c241d] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden flex flex-col">
+<div class="relative aspect-[4/5] bg-gray-100 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" data-alt="Smart watch with black band on wrist" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfGPXqtPuGpRN4lUxbYmCcqN0nCCdKZiXy7iEaMbT_-rFBnAlPBgHmeiAv5MITXnLGl489r2BhauZ-aj66PuMbd9171mrhZdnnmKmKQVjaK-FOipMry_aUIXUYVPfB2ISG90jai22WUHzSqJWfvDMI3HbN4nFJ9hbFtF52EVknnXcjBn8M9S1bJVJaq79v954zxPfinfKuSz2uc7OWWNojnEZqIHiywjmzTHMOMnsBzRZD3UxEPSY6ZlYf1mHE30DPG9BflQ0mH37i');"></div>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-gray-500 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h3 class="text-sm font-medium text-gray-800 dark:text-gray-100 line-clamp-2 leading-snug mb-1">Smart Watch Series 7 Midnight Aluminum</h3>
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] fill-current">star</span>
+<span class="text-xs text-gray-500">4.9 (850)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<div>
+<p class="text-lg font-bold text-primary">$399</p>
+</div>
+<button class="bg-primary text-white p-1.5 rounded-lg hover:bg-orange-600 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white dark:bg-[#2c241d] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden flex flex-col">
+<div class="relative aspect-[4/5] bg-gray-100 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" data-alt="Polaroid instant camera on pink background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBeFZV9sDZMV8_sFPvGFTxX6a7CEMoHm_2u0El9EXFRC134pQRYnGlvZ7xsJXD2kR9FHJ1mkt0DBdCQjZ8Xj-W4gxc6ACFQrgDxbOIQIeKtWkfWqk3_2Pagz4_ZSdwo-wvLYY5emFcfr1vojMwEStUanHYF2qXGdIt5vmxWLfnAtCPu6E5LcFv81tWIWyejEgJiN20q5dbX_r-jMJxWUoULLmOlMiLl21t2utuzyVHdwS-1uIBwXng4PWvKh8wGw3atWQz1cwkPSjES');"></div>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-gray-500 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">location_on</span> Jakarta
+                            </div>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h3 class="text-sm font-medium text-gray-800 dark:text-gray-100 line-clamp-2 leading-snug mb-1">Instant Camera Pastel Edition</h3>
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] fill-current">star</span>
+<span class="text-xs text-gray-500">4.7 (2.1k)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<div>
+<p class="text-xs text-gray-400 line-through">$150</p>
+<p class="text-lg font-bold text-primary">$99</p>
+</div>
+<button class="bg-primary text-white p-1.5 rounded-lg hover:bg-orange-600 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white dark:bg-[#2c241d] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden flex flex-col">
+<div class="relative aspect-[4/5] bg-gray-100 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" data-alt="Plain white cotton t-shirt flat lay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQHYXULsPRLNU8QVbHt8-y6RY3qIhropaVQQjHuendMtpauUXY2U5WZWSUPp4SebBUOLR8RKoUCclSEAOwnZXOvAmqLUS9nP8trdQPdndA8IK8QaxClTzollqvDDfl-besA3ACMhikCqr6yP3H0y8pscreB5tHNLgBw2f9aja3e8SNIR1eeFldO53Vp0ZfVwNqxpuJRC5L870m7QHMEMR55zUqEKL7RRCGdjBuW6SzRdZXDxi9mnQua6Pe25JCKEaQW_hfNo9qjhDZ');"></div>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-gray-500 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h3 class="text-sm font-medium text-gray-800 dark:text-gray-100 line-clamp-2 leading-snug mb-1">Basic Cotton T-Shirt Pack of 3</h3>
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] fill-current">star</span>
+<span class="text-xs text-gray-500">4.5 (5.4k)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<div>
+<p class="text-lg font-bold text-primary">$25</p>
+</div>
+<button class="bg-primary text-white p-1.5 rounded-lg hover:bg-orange-600 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="py-8 flex justify-center">
+<button class="flex items-center gap-2 text-primary font-semibold text-sm hover:underline">
+                        Load More Products <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="absolute bottom-0 w-full bg-white dark:bg-[#1a120b] border-t border-gray-100 dark:border-gray-800 pb-safe pt-2 px-6">
+<div class="flex justify-between items-center pb-4">
+<button class="flex flex-col items-center gap-1 text-primary w-12">
+<span class="material-symbols-outlined filled" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors w-12">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-medium">Wishlist</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors w-12">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-medium">Orders</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors w-12">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-medium">Wallet</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors w-12">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</nav>
+</div>
+</body></html>

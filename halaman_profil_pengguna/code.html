@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Halaman Profil Pengguna</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48525",
+                        "primary-dark": "#d66e15",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#181411",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#221E1A",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181411] dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-[90px]">
+<!-- Header Section (Immersive Orange Gradient) -->
+<div class="relative w-full bg-gradient-to-br from-primary to-orange-400 pb-16 pt-6 px-5 rounded-b-[2rem] shadow-lg">
+<!-- Top Bar Actions -->
+<div class="flex items-center justify-end gap-5 mb-6 text-white">
+<button class="relative p-1">
+<span class="material-symbols-outlined text-[26px]">settings</span>
+</button>
+<button class="relative p-1">
+<span class="material-symbols-outlined text-[26px]">shopping_cart</span>
+<span class="absolute top-0 right-0 size-2.5 bg-red-500 rounded-full border-2 border-primary"></span>
+</button>
+<button class="relative p-1">
+<span class="material-symbols-outlined text-[26px]">chat</span>
+<span class="absolute top-0 right-0 flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500 border-2 border-primary"></span>
+</span>
+</button>
+</div>
+<!-- Profile Info -->
+<div class="flex items-center gap-4">
+<div class="relative shrink-0">
+<div class="size-20 rounded-full bg-white/20 p-1 backdrop-blur-sm">
+<img class="size-full rounded-full object-cover shadow-sm" data-alt="User profile avatar showing a smiling young man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5atNOjAdxSfK-nr_TMIsvJCB6aFOr5plhe0Gg_u2IFrN3baKgl7WPM-J4kq_eLD7s8rINFj1ZXdFxBOJXsHd3F9wUkxMjl_HFWSzdztiH6uj2Db0wTr5PBeRIG2m-QdJmWIWdw179-bQ_4h91ikDOY6kG8ycrQC80tFaYIqbDuTeCf4k9J7lbfK07HyurKS-Kw7bhJF210oj2eXUJsBoTTeZ6gOfn_8f8r2jvok4LGouIwQ8v6oznuFlpWj-etWll_4y3fUrcLp9m"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-white text-primary rounded-full p-1.5 size-7 flex items-center justify-center border-2 border-primary shadow-sm hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[14px] font-bold">edit</span>
+</button>
+</div>
+<div class="flex flex-col text-white w-full">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold leading-tight truncate max-w-[200px]">Rizky Pratama</h2>
+</div>
+<div class="flex items-center gap-1 mt-1.5 bg-black/10 backdrop-blur-md px-2.5 py-1 rounded-full w-fit hover:bg-black/20 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[16px] text-yellow-300 filled">workspace_premium</span>
+<span class="text-xs font-semibold tracking-wide text-yellow-50">Platinum Member</span>
+<span class="material-symbols-outlined text-[14px] text-white/70">chevron_right</span>
+</div>
+<div class="flex gap-4 mt-3 text-sm text-white/90 font-medium">
+<span class="flex items-center gap-1 hover:text-white cursor-pointer"><b>12</b> <span class="text-white/70 font-normal">Pengikut</span></span>
+<span class="text-white/40">|</span>
+<span class="flex items-center gap-1 hover:text-white cursor-pointer"><b>10</b> <span class="text-white/70 font-normal">Mengikuti</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Wallet & Stats Card (Floating) -->
+<div class="px-4 -mt-11 mb-2 relative z-10">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-md border border-gray-100 dark:border-gray-800 p-4 flex justify-between items-center divide-x divide-gray-100 dark:divide-gray-800">
+<!-- Balance -->
+<div class="flex flex-col gap-1.5 flex-1 pr-2 items-center text-center cursor-pointer group">
+<div class="flex items-center gap-1.5 text-gray-500 dark:text-gray-400 text-xs font-medium group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+                        Dompet
+                    </div>
+<p class="text-[15px] font-bold text-gray-900 dark:text-white truncate w-full">Rp 1.500.000</p>
+</div>
+<!-- Coins -->
+<div class="flex flex-col gap-1.5 flex-1 px-2 items-center text-center cursor-pointer group">
+<div class="flex items-center gap-1.5 text-gray-500 dark:text-gray-400 text-xs font-medium group-hover:text-yellow-500 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-yellow-500 filled">monetization_on</span>
+                        Koin
+                    </div>
+<p class="text-[15px] font-bold text-gray-900 dark:text-white truncate w-full">2.400</p>
+</div>
+<!-- Vouchers -->
+<div class="flex flex-col gap-1.5 flex-1 pl-2 items-center text-center cursor-pointer group">
+<div class="flex items-center gap-1.5 text-gray-500 dark:text-gray-400 text-xs font-medium group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] text-primary">confirmation_number</span>
+                        Voucher
+                    </div>
+<p class="text-[15px] font-bold text-gray-900 dark:text-white truncate w-full">5 Voucher</p>
+</div>
+</div>
+</div>
+<!-- Order Status Section -->
+<div class="px-4 mt-3">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-4">
+<div class="flex justify-between items-center mb-5 border-b border-gray-50 dark:border-gray-800 pb-3">
+<h3 class="font-bold text-base text-gray-900 dark:text-white">Pesanan Saya</h3>
+<a class="text-xs text-gray-500 dark:text-gray-400 hover:text-primary flex items-center gap-0.5 transition-colors" href="#">
+                        Lihat Riwayat <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-5 gap-2">
+<!-- Item 1 -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer relative">
+<div class="relative p-2 rounded-full group-hover:bg-orange-50 dark:group-hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">account_balance_wallet</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white ring-2 ring-white dark:ring-surface-dark">1</span>
+</div>
+<p class="text-[11px] text-center font-medium text-gray-600 dark:text-gray-400 leading-tight group-hover:text-primary">Belum Bayar</p>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="p-2 rounded-full group-hover:bg-orange-50 dark:group-hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">inventory_2</span>
+</div>
+<p class="text-[11px] text-center font-medium text-gray-600 dark:text-gray-400 leading-tight group-hover:text-primary">Dikemas</p>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="p-2 rounded-full group-hover:bg-orange-50 dark:group-hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">local_shipping</span>
+</div>
+<p class="text-[11px] text-center font-medium text-gray-600 dark:text-gray-400 leading-tight group-hover:text-primary">Dikirim</p>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="p-2 rounded-full group-hover:bg-orange-50 dark:group-hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">star</span>
+</div>
+<p class="text-[11px] text-center font-medium text-gray-600 dark:text-gray-400 leading-tight group-hover:text-primary">Beri Nilai</p>
+</div>
+<!-- Item 5 -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="p-2 rounded-full group-hover:bg-orange-50 dark:group-hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">assignment_return</span>
+</div>
+<p class="text-[11px] text-center font-medium text-gray-600 dark:text-gray-400 leading-tight group-hover:text-primary">Pengembalian</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Menu Groups -->
+<div class="px-4 mt-4 flex flex-col gap-4">
+<!-- Group 1: Favorites -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+<a class="flex items-center gap-3 p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors border-b border-gray-50 dark:border-gray-800 last:border-0" href="#">
+<div class="flex items-center justify-center size-8 rounded-full bg-red-50 dark:bg-red-500/10 text-red-500">
+<span class="material-symbols-outlined text-[20px] filled">favorite</span>
+</div>
+<span class="flex-1 text-sm font-medium text-gray-900 dark:text-white">Favorit Saya</span>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</a>
+<a class="flex items-center gap-3 p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors" href="#">
+<div class="flex items-center justify-center size-8 rounded-full bg-blue-50 dark:bg-blue-500/10 text-blue-500">
+<span class="material-symbols-outlined text-[20px]">history</span>
+</div>
+<span class="flex-1 text-sm font-medium text-gray-900 dark:text-white">Terakhir Dilihat</span>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</a>
+</div>
+<!-- Group 2: Account & Support -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+<a class="flex items-center gap-3 p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors border-b border-gray-50 dark:border-gray-800" href="#">
+<div class="flex items-center justify-center size-8 rounded-full bg-teal-50 dark:bg-teal-500/10 text-teal-600">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<span class="flex-1 text-sm font-medium text-gray-900 dark:text-white">Pengaturan Akun</span>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</a>
+<a class="flex items-center gap-3 p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors border-b border-gray-50 dark:border-gray-800" href="#">
+<div class="flex items-center justify-center size-8 rounded-full bg-orange-50 dark:bg-orange-500/10 text-orange-600">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<span class="flex-1 text-sm font-medium text-gray-900 dark:text-white">Alamat Saya</span>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</a>
+<a class="flex items-center gap-3 p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors" href="#">
+<div class="flex items-center justify-center size-8 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</div>
+<span class="flex-1 text-sm font-medium text-gray-900 dark:text-white">Pusat Bantuan</span>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</a>
+</div>
+<button class="w-full py-3 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 font-bold text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                Keluar
+            </button>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 w-full bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 pb-safe pt-2 px-6 z-50">
+<div class="flex justify-between items-center h-16 pb-4">
+<a class="flex flex-col items-center gap-1 w-12 group" href="#">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[24px]">home</span>
+<span class="text-[10px] font-medium text-gray-500 group-hover:text-primary">Beranda</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-12 group" href="#">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[24px]">feed</span>
+<span class="text-[10px] font-medium text-gray-500 group-hover:text-primary">Feed</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-12 group" href="#">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[24px]">storefront</span>
+<span class="text-[10px] font-medium text-gray-500 group-hover:text-primary">Mall</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-12 group" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[24px]">notifications</span>
+</div>
+<span class="text-[10px] font-medium text-gray-500 group-hover:text-primary">Notifikasi</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-12 group" href="#">
+<span class="material-symbols-outlined text-primary text-[24px] filled">person</span>
+<span class="text-[10px] font-bold text-primary">Saya</span>
+</a>
+</div>
+</div>
+</body></html>

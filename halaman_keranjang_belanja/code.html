@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Keranjang Belanja</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48525",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221810",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom checkbox style from the example */
+        .custom-checkbox {
+            --checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(255,255,255)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');
+        }
+        .custom-checkbox:checked {
+            background-image: var(--checkbox-tick-svg);
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-[#181411] dark:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-32">
+<!-- Header -->
+<header class="sticky top-0 z-30 flex items-center bg-white dark:bg-gray-800 p-4 shadow-sm">
+<button class="mr-3 flex items-center justify-center text-[#181411] dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-[#181411] dark:text-white">Keranjang Saya</h2>
+<div class="flex items-center justify-end">
+<button class="text-[#181411] dark:text-white text-base font-bold leading-normal tracking-[0.015em] shrink-0">Ubah</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex flex-col gap-2 p-0">
+<!-- Store Section 1 -->
+<div class="bg-white dark:bg-gray-800 flex flex-col">
+<!-- Store Header -->
+<div class="flex items-center gap-3 px-4 py-3 border-b border-gray-100 dark:border-gray-700">
+<div class="flex size-6 items-center justify-center shrink-0">
+<input checked="" class="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" type="checkbox"/>
+</div>
+<span class="material-symbols-outlined text-[#181411] dark:text-white text-[20px]">storefront</span>
+<p class="text-[#181411] dark:text-white text-base font-bold leading-normal flex-1 truncate">Adidas Official Store</p>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+<!-- Product 1 -->
+<div class="flex gap-4 px-4 py-4 border-b border-gray-50 dark:border-gray-700/50">
+<div class="flex items-center justify-center shrink-0 self-center">
+<input checked="" class="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" type="checkbox"/>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-24 shrink-0 bg-gray-100 dark:bg-gray-700" data-alt="Orange running shoes side view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0bDZqXRpoXgMNvRid8sBLwofGiPrfu24_O-DSSSF8xXqfkMajitLu6pEluvtx1ZnzTatfhlXVbl-PISg-M5pKD5bVpqCf5Phc63dvIslQFI9BddYooXcq0OleiH7Bvxkx1TfV6JY_pIYnBXPh5qfKUeoFME6PXSpfv3ImDaly_8QRFZTtN2Otg4wcXgBMOD8aZqrLaSt2KeUDQS6l5xPma7zDFtQxcdJYCOetp7KjBJr5TVcAi8bgaRQYHAHVe2yD0PywdcnjBjk6");'></div>
+<div class="flex flex-1 flex-col justify-between py-0.5">
+<div>
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-snug line-clamp-2">Sepatu Lari Pria Ultraboost Light - Vivid Orange</p>
+<div class="mt-1 flex items-center gap-1.5 flex-wrap">
+<div class="px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-xs text-gray-500 dark:text-gray-300 flex items-center gap-1 cursor-pointer">
+<span>Variasi: Orange, 42</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<p class="text-xs text-gray-400 line-through">Rp 2.500.000</p>
+<p class="text-primary text-base font-bold leading-normal">Rp 1.999.000</p>
+</div>
+<div class="flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden">
+<button class="w-7 h-7 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<input class="w-8 h-7 p-0 text-center text-sm font-medium bg-white dark:bg-gray-800 border-x border-gray-200 dark:border-gray-600 text-[#181411] dark:text-white focus:outline-none focus:ring-0 [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" type="number" value="1"/>
+<button class="w-7 h-7 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex gap-4 px-4 py-4">
+<div class="flex items-center justify-center shrink-0 self-center">
+<input checked="" class="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" type="checkbox"/>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-24 shrink-0 bg-gray-100 dark:bg-gray-700" data-alt="White sports socks pair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHJ03Z-zkVImQzbkYh-8hRodW-zfB3phyXiwI9PnzCHwiJs2fMXtjjWFtfvRrArOvBB-sC4CK3547gu_AuuGGwXfYVSHhI-k7ZCWgU_Q8G7JGPWGZ5dPKN6vDuiHa5tLFDhb2cfQRMt3eBd1PogpkufKFAV3oZvjmd2Yz-008MJ3pUg_qZ4yzidHwu2r6vtvW-KC0VAYsO9bZ6mVNiVPkMIhfwnkTgxlAOS_7ALIISMklROyO0lwF_zZh_S4zXZE8Mfn05PwOJNwMa");'></div>
+<div class="flex flex-1 flex-col justify-between py-0.5">
+<div>
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-snug line-clamp-2">Kaos Kaki Olahraga Ankle - Putih (Isi 3 Pasang)</p>
+<div class="mt-1 flex items-center gap-1.5 flex-wrap">
+<div class="px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-xs text-gray-500 dark:text-gray-300 flex items-center gap-1 cursor-pointer">
+<span>Variasi: Putih, All Size</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<p class="text-primary text-base font-bold leading-normal">Rp 149.000</p>
+</div>
+<div class="flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden">
+<button class="w-7 h-7 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<input class="w-8 h-7 p-0 text-center text-sm font-medium bg-white dark:bg-gray-800 border-x border-gray-200 dark:border-gray-600 text-[#181411] dark:text-white focus:outline-none focus:ring-0 [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" type="number" value="2"/>
+<button class="w-7 h-7 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Store Section 2 -->
+<div class="bg-white dark:bg-gray-800 flex flex-col mt-2">
+<!-- Store Header -->
+<div class="flex items-center gap-3 px-4 py-3 border-b border-gray-100 dark:border-gray-700">
+<div class="flex size-6 items-center justify-center shrink-0">
+<input class="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" type="checkbox"/>
+</div>
+<span class="material-symbols-outlined text-[#181411] dark:text-white text-[20px]">storefront</span>
+<p class="text-[#181411] dark:text-white text-base font-bold leading-normal flex-1 truncate">Uniqlo Indonesia</p>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+<!-- Product 3 -->
+<div class="flex gap-4 px-4 py-4">
+<div class="flex items-center justify-center shrink-0 self-center">
+<input class="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" type="checkbox"/>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-24 shrink-0 bg-gray-100 dark:bg-gray-700" data-alt="Navy blue hoodie flat lay" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5tGcQcvdYsGvT32Ae50RIFV6SN6WqJleauHrb61PagJD_UnJkf8Zzf0T6ZzaEC-8ftI5TITepcnpgE6PrBXrFCseyTf80I-neA613KILEa4KjoLCzQ3ERF5-dYKzMtGJ2Zh6jeBZ9rGZo6RUGSjDhp6bz2psCmLbZbj8gfZgePiFhgkoll9MB6NRb3Hq0aoRC88tCg_icPHLPBvjqv5So1zQLVRvtK82JVj-QIEH_G26DJXy6973KHmA9RBkJGfdHlFo9-nEdgUxg");'></div>
+<div class="flex flex-1 flex-col justify-between py-0.5">
+<div>
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-snug line-clamp-2">Jaket Hoodie Resleting Pria - Navy Blue</p>
+<div class="mt-1 flex items-center gap-1.5 flex-wrap">
+<div class="px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-xs text-gray-500 dark:text-gray-300 flex items-center gap-1 cursor-pointer">
+<span>Variasi: Navy, L</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<p class="text-primary text-base font-bold leading-normal">Rp 499.000</p>
+</div>
+<div class="flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden">
+<button class="w-7 h-7 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<input class="w-8 h-7 p-0 text-center text-sm font-medium bg-white dark:bg-gray-800 border-x border-gray-200 dark:border-gray-600 text-[#181411] dark:text-white focus:outline-none focus:ring-0 [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" type="number" value="1"/>
+<button class="w-7 h-7 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Voucher Section -->
+<div class="mt-2 flex items-center gap-4 bg-white dark:bg-gray-800 px-4 min-h-14 justify-between cursor-pointer active:bg-gray-50 dark:active:bg-gray-700">
+<div class="flex items-center gap-3">
+<div class="text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">confirmation_number</span>
+</div>
+<p class="text-[#181411] dark:text-white text-base font-medium leading-normal flex-1 truncate">Voucher Shopee</p>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Gunakan / masukkan kode</p>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Notice / Info text -->
+<div class="px-4 py-4 text-center">
+<p class="text-xs text-gray-400 dark:text-gray-500">Semua produk 100% Original</p>
+</div>
+</main>
+<!-- Sticky Bottom Checkout Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40 safe-pb">
+<div class="flex items-center justify-between px-4 py-3 pb-8 md:pb-3">
+<!-- Select All -->
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center shrink-0">
+<input class="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" id="select-all" type="checkbox"/>
+</div>
+<label class="text-sm font-medium text-gray-500 dark:text-gray-300 cursor-pointer hidden sm:block" for="select-all">Semua</label>
+<label class="text-sm font-medium text-gray-500 dark:text-gray-300 cursor-pointer sm:hidden" for="select-all">Semua</label>
+</div>
+<!-- Total & Action -->
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-end">
+<p class="text-xs text-gray-500 dark:text-gray-400">Total</p>
+<p class="text-primary text-lg font-bold leading-tight">Rp 2.297.000</p>
+<p class="text-[10px] text-gray-400 dark:text-gray-500">Hemat Rp 501.000</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-6 rounded-md shadow-sm active:scale-95 transition-all text-sm">
+                        Checkout (3)
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

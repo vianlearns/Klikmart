@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Penilaian Toko</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48525",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#1a1a1a",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#262626",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Material Icon Sizing Override if needed */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px; 
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .outlined-icon {
+            font-variation-settings: 'FILL' 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-gray-100 flex flex-col h-screen overflow-hidden antialiased">
+<!-- Top App Bar -->
+<header class="shrink-0 bg-surface-light dark:bg-surface-dark border-b border-gray-100 dark:border-gray-800 sticky top-0 z-50">
+<div class="flex items-center p-4 pb-3 justify-between h-14">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Penilaian Toko</h2>
+</div>
+</header>
+<!-- Main Content (Scrollable) -->
+<main class="flex-1 overflow-y-auto overflow-x-hidden pb-20">
+<!-- Rating Summary Section -->
+<section class="bg-surface-light dark:bg-surface-dark p-5 mb-2">
+<div class="flex flex-wrap gap-6 items-center">
+<!-- Big Score -->
+<div class="flex flex-col items-start gap-1">
+<div class="flex items-baseline gap-1">
+<span class="text-primary text-5xl font-extrabold tracking-tight">4.8</span>
+<span class="text-gray-400 text-lg font-medium">/5.0</span>
+</div>
+<div class="flex text-primary mb-1">
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star_half</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">2.4k ulasan</p>
+</div>
+<!-- Rating Bars -->
+<div class="flex-1 min-w-[180px] grid grid-cols-[12px_1fr_30px] items-center gap-y-2 gap-x-3 text-xs">
+<!-- 5 Stars -->
+<span class="text-gray-600 dark:text-gray-400 font-medium">5</span>
+<div class="h-1.5 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 88%;"></div>
+</div>
+<span class="text-gray-400 text-right">2.1k</span>
+<!-- 4 Stars -->
+<span class="text-gray-600 dark:text-gray-400 font-medium">4</span>
+<div class="h-1.5 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 8%;"></div>
+</div>
+<span class="text-gray-400 text-right">150</span>
+<!-- 3 Stars -->
+<span class="text-gray-600 dark:text-gray-400 font-medium">3</span>
+<div class="h-1.5 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 3%;"></div>
+</div>
+<span class="text-gray-400 text-right">42</span>
+<!-- 2 Stars -->
+<span class="text-gray-600 dark:text-gray-400 font-medium">2</span>
+<div class="h-1.5 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 1%;"></div>
+</div>
+<span class="text-gray-400 text-right">12</span>
+<!-- 1 Star -->
+<span class="text-gray-600 dark:text-gray-400 font-medium">1</span>
+<div class="h-1.5 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 1%;"></div>
+</div>
+<span class="text-gray-400 text-right">8</span>
+</div>
+</div>
+</section>
+<!-- Filters (Chips) -->
+<section class="bg-surface-light dark:bg-surface-dark py-3 border-t border-gray-100 dark:border-gray-800 sticky top-0 z-40 shadow-sm">
+<div class="flex gap-3 px-4 overflow-x-auto no-scrollbar">
+<!-- Active Chip -->
+<button class="flex h-9 shrink-0 items-center justify-center px-4 rounded-lg border border-primary bg-primary/10 text-primary">
+<span class="text-sm font-semibold">Semua</span>
+</button>
+<!-- Inactive Chips -->
+<button class="flex h-9 shrink-0 items-center justify-center px-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+<span class="text-sm font-medium">5 Bintang (2.1k)</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center px-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+<span class="text-sm font-medium">4 Bintang (150)</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center px-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+<span class="text-sm font-medium">Dengan Media (850)</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center px-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+<span class="text-sm font-medium">Dengan Komentar (1.2k)</span>
+</button>
+</div>
+</section>
+<!-- Reviews List -->
+<div class="flex flex-col gap-2 bg-background-light dark:bg-background-dark">
+<!-- Review Item 1: With Images -->
+<article class="bg-surface-light dark:bg-surface-dark p-4 flex flex-col gap-3">
+<!-- Header -->
+<div class="flex items-start gap-3">
+<div class="size-10 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover bg-center shrink-0" data-alt="Portrait of a user named Budi with short hair" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACAzfllnD-deEva3TvbLmEzwfusB_LmXZreOroxjl6poF6diDri6eXnlC5imEEnc8YR1edHbhx53qJ8HEva-1YcmU6krXAKOeFHMBcrkQHRp7vguEaeJEVx217GesVDipJm4iEwmR8tjcSxkIqEEf7LEp_oPa6_EXKsY1rCt2JhkMDDjGegdUIYGWl7XR3XL3SOnKtoPD3y-gL_KLEMbymd4ZcByjtHYySSk2LcxGqCRU0KriVLvDCPIGF2-L4qS4wu792MVmqL3aq');"></div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">budi_santoso88</p>
+</div>
+<div class="flex text-primary text-[14px] mt-0.5">
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Varian: Hitam, Ukuran XL • 20 Okt 2023</p>
+</div>
+</div>
+<!-- Content -->
+<div>
+<p class="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
+                        Barang sampai dengan aman, pengiriman super cepat! Kualitas bahan kaosnya adem banget, sablonnya juga rapi. Recommended seller nih, bakal langganan terus 👍
+                    </p>
+</div>
+<!-- Images Grid -->
+<div class="grid grid-cols-3 gap-2 mt-1">
+<div class="aspect-square bg-gray-100 rounded-lg bg-cover bg-center" data-alt="Close up of a black t-shirt fabric texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBU-u8qv2bprfSphGH4x_IGevUWgxnT6s_S1qpD3lamtM4XlYAH0iLRuapAjY13QkN3bHBEzyqRqV8_Ete1FJ4JzQmze8FcQfAkdbnYGO-jswuXeuaXbiADozjEhOFX6f2-pgUWCOriiwSO751I68nhpadyOVXy205nrKDlalGydHU62MRhDV6__darjuq43AUrghkNayCv0XIfCGDykT8A8s7eoGHfSkSk-dQKLBGB38t8YwX2nUHp--jfcexPwApyxuppWi0UhtWI');"></div>
+<div class="aspect-square bg-gray-100 rounded-lg bg-cover bg-center" data-alt="Folded black t-shirt on a table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzyZwlhZu4Q6ZJIl4IMo31Fusi5uvbKzgjSa3i9-c9MVbjAqlcg_PCliFgkyOd-m-Nl5xl1bSDSeRpALXv_gNo59WukTzO85WaomFDo9bzbzAg1JjUTCz5ffoPEYqn80S4tKmH5LgZrrRuH6GNn0qVTb8Lf_Ox2SLGXy9cGboVDvtmkwk_QsNj9daMsxgo_VVcf4LPTHGa_LiX4B7YHBeEzIwQET4H0M_ZsM0I6aGjU2UN4bhkHDzyL6ZiDRrZhtuYijbwSa0BbVc3');"></div>
+<div class="relative aspect-square bg-gray-100 rounded-lg bg-cover bg-center overflow-hidden group" data-alt="Person wearing the black t-shirt outdoors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJScEyUzBb8fVS1DCGl9OkMiKVEM30K0PX9hgu7cpBSFxhltknsm1huc2C7Rc10o84Z_i1-Fy5DhI643RXqV1IZTwtRsKXFdj_5OP0MAYu0SSlDjasvvhKQFbEl3e9t-_H57DNwD6vYCZ5VgjNyid-CzpOtLNpQmLxpdbKbm9Bwx4K-bzil1MySvGvCAgqyYdrsLTIkolbhVEOtNHHjKBcqr035zoQPYxTMAy5lLSOXQEppq4lRdUxzuu2TJ_G4Gwt6_HQGzsELJKx');">
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<span class="text-white text-xs font-bold">+2</span>
+</div>
+</div>
+</div>
+<!-- Footer / Action -->
+<div class="flex items-center gap-4 mt-1">
+<button class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined filled-icon text-lg">thumb_up</span>
+<span class="text-xs font-medium">12</span>
+</button>
+<button class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+<span class="material-symbols-outlined outlined-icon text-lg">more_horiz</span>
+</button>
+</div>
+<!-- Seller Response -->
+<div class="bg-gray-50 dark:bg-gray-800/50 p-3 rounded-lg mt-1 border-l-2 border-primary">
+<p class="text-xs font-bold text-gray-900 dark:text-gray-100 mb-1">Respon Penjual:</p>
+<p class="text-xs text-gray-600 dark:text-gray-400">Terima kasih kak sudah belanja di toko kami! Ditunggu orderan selanjutnya ya kak, sehat selalu 😊</p>
+</div>
+</article>
+<!-- Review Item 2: Text Only -->
+<article class="bg-surface-light dark:bg-surface-dark p-4 flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="size-10 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover bg-center shrink-0" data-alt="Portrait of a male user named Ahmad smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXYKCJIR_RUDPJCUmqXOddv7J1XtDAsPpV7ST92gTnIhVWoRy1qPG8KVL7Gm6vCbLlVXZWLxGqlYg7cPNvGwjDMtsISlvyDnbTQiPD-vKNNVe9Td1DNXeLQ1xceeOWVYKrz6laq1XlMsNoVVz90o59BakKKD9ndFi-E2OzNZvvXPQ1o8Z7xQwA17qgjELBnCw46bGb9DJ4YTHwMwxsr7P9ITBQh67-j-tp1o4ozlwIHOjDxgiRx0amm7nDai4C0NQxKUIppkREbVSt');"></div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">ahmad_fauzi99</p>
+</div>
+<div class="flex text-primary text-[14px] mt-0.5">
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined outlined-icon text-gray-300 dark:text-gray-600" style="font-size: 16px;">star</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Varian: Putih, Ukuran L • 18 Okt 2023</p>
+</div>
+</div>
+<div>
+<p class="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
+                        Lumayan lah untuk harga segini. Pengiriman agak lama tapi packing aman. Sesuai deskripsi.
+                    </p>
+</div>
+<div class="flex items-center gap-4 mt-1">
+<button class="flex items-center gap-1.5 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined outlined-icon text-lg">thumb_up</span>
+<span class="text-xs font-medium">Helpful?</span>
+</button>
+</div>
+</article>
+<!-- Review Item 3: Simple -->
+<article class="bg-surface-light dark:bg-surface-dark p-4 flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="text-primary font-bold text-sm">S</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">siti_aminah</p>
+</div>
+<div class="flex text-primary text-[14px] mt-0.5">
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Varian: Navy, Ukuran M • 15 Okt 2023</p>
+</div>
+</div>
+<div>
+<p class="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
+                        Suka banget sama bahannya! 😍
+                    </p>
+</div>
+<!-- Images Grid -->
+<div class="grid grid-cols-4 gap-2 mt-1 w-2/3">
+<div class="aspect-square bg-gray-100 rounded-lg bg-cover bg-center" data-alt="Navy blue t-shirt hanging on a rack" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWQONsGXOkqvSCBWz8ziNzG4WFDJvPSR2VRknmBS-f1f7aj1YXH6rLhWo_pggs7bEDqYJkGPldUkwoBdwDFlIoeiuG4vzX69MxKVdqt534UXnsRH5JFGoZPf535hYNkNkogbDm2YkCIhtak0oP0X8NSGC6tD1sIJFfBeTGYKe0h9w8NvanN8-TXrD023TJsLmoCQIZrgQoi6D75hZNDEKKHR_vi4mgO_68anX2IFjvGLUjQgqzuC4nxSleMVghmbgMYZhWpfYn53UT');"></div>
+</div>
+<div class="flex items-center gap-4 mt-1">
+<button class="flex items-center gap-1.5 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined outlined-icon text-lg">thumb_up</span>
+<span class="text-xs font-medium">3</span>
+</button>
+</div>
+</article>
+<!-- Review Item 4: Long text -->
+<article class="bg-surface-light dark:bg-surface-dark p-4 flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="size-10 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center shrink-0">
+<span class="text-indigo-600 dark:text-indigo-300 font-bold text-sm">D</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">dimas_prakoso</p>
+</div>
+<div class="flex text-primary text-[14px] mt-0.5">
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined filled-icon" style="font-size: 16px;">star</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Varian: Hitam, Ukuran L • 10 Okt 2023</p>
+</div>
+</div>
+<div>
+<p class="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
+                        Awalnya ragu mau beli online karena takut ukuran gak pas, tapi ternyata size chart nya akurat banget. Pas di badan, gak kekecilan dan gak kegedean. Jahitannya juga rapi parah, gak ada benang yang keluar-keluar. Warna hitamnya pekat, udah dicuci sekali gak luntur. Worth it banget sih ini! Fix bakal beli warna lain.
+                    </p>
+</div>
+<div class="flex items-center gap-4 mt-1">
+<button class="flex items-center gap-1.5 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined outlined-icon text-lg">thumb_up</span>
+<span class="text-xs font-medium">45</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Loading State Indicator for infinite scroll simulation -->
+<div class="flex justify-center p-6 bg-background-light dark:bg-background-dark">
+<span class="size-6 border-2 border-gray-300 border-t-primary rounded-full animate-spin"></span>
+</div>
+</main>
+<!-- Bottom Sticky Action -->
+<footer class="shrink-0 bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 p-4 pb-8 sticky bottom-0 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<button class="w-full bg-primary hover:bg-orange-600 text-white font-bold h-12 rounded-lg flex items-center justify-center gap-2 transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">storefront</span>
+            Kunjungi Toko
+        </button>
+</footer>
+</body></html>

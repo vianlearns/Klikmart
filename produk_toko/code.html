@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Produk Toko - Gadget Murah Official</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48525",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221810",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181411] dark:text-white antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-20">
+<!-- TopAppBar -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md p-4 pb-2 justify-between border-b border-[#f5f2f0] dark:border-white/10">
+<div class="flex items-center gap-4 flex-1">
+<button class="text-[#181411] dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<!-- Search Bar simulating a header input -->
+<div class="flex-1 flex items-center h-10 px-3 bg-white dark:bg-white/5 rounded-lg border border-[#e5e7eb] dark:border-white/10">
+<span class="material-symbols-outlined text-gray-400 text-[20px] mr-2">search</span>
+<input class="w-full bg-transparent border-none p-0 text-sm focus:ring-0 placeholder-gray-400 text-[#181411] dark:text-white" placeholder="Cari di Gadget Murah..." type="text"/>
+</div>
+</div>
+<div class="flex items-center justify-end gap-1 ml-2">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-[#181411] dark:text-white relative">
+<span class="material-symbols-outlined text-2xl">shopping_cart</span>
+<span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">3</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-[#181411] dark:text-white">
+<span class="material-symbols-outlined text-2xl">more_vert</span>
+</button>
+</div>
+</div>
+<!-- ProfileHeader -->
+<div class="relative w-full bg-background-light dark:bg-background-dark">
+<!-- Cover Image (Optional background decoration) -->
+<div class="h-24 w-full bg-gradient-to-r from-primary/20 to-orange-100 dark:to-orange-900/20" data-alt="Abstract orange gradient background pattern"></div>
+<div class="px-4 pb-4 -mt-12">
+<div class="flex flex-col gap-4">
+<div class="flex gap-4 items-end">
+<div class="bg-white dark:bg-gray-800 p-1 rounded-full shadow-md">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-20 w-20 border border-gray-100 dark:border-gray-700" data-alt="Store logo showing a minimalist gadget icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAifDkwoixFVXGY8iAYlIMswnln-A8VenZYpsfTBUPSzv9RoH7XuUTy8PBxvwTliXHmS0qnCMyYJpQTrCFF0NOZ6KGg7XvXUXUy8Lk8-1MD4N00Ge7st0LuyYUncgH29YtIfn8kPonMLdt8DtcVOfxKPXjmnPD72HnNMrDKg-_Sl6Vx-FhYGltguZaJ8G-ri6qnG_34QIT3NzYqQR43bTwh39l6Ha4xIc6_4qYkl2TjQTqSLwWZhBvzYObv0QWkvF_KcRC-FoYZJCBm");'></div>
+</div>
+<div class="flex flex-col justify-end pb-1 flex-1 min-w-0">
+<div class="flex items-center gap-1">
+<h2 class="text-[#181411] dark:text-white text-lg font-bold leading-tight truncate">Gadget Murah Official</h2>
+<span class="material-symbols-outlined text-blue-500 text-[16px] filled">verified</span>
+</div>
+<div class="flex items-center gap-2 text-[#8a7460] dark:text-gray-400 text-xs mt-1">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-primary text-[14px] filled">star</span> 4.9</span>
+<span>•</span>
+<span>12.5k Pengikut</span>
+</div>
+</div>
+</div>
+<div class="flex w-full gap-3">
+<button class="flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold shadow-sm hover:bg-primary/90 transition-colors">
+<span class="truncate">Follow</span>
+</button>
+<button class="flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-white dark:bg-white/10 border border-[#e5e7eb] dark:border-white/10 text-[#181411] dark:text-white text-sm font-bold hover:bg-gray-50 dark:hover:bg-white/5 transition-colors flex gap-2">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span class="truncate">Chat</span>
+</button>
+</div>
+<!-- Store performance summary (optional extra context) -->
+<div class="flex justify-between items-center py-3 border-t border-b border-gray-200 dark:border-white/10 text-xs text-[#8a7460] dark:text-gray-400">
+<div class="flex flex-col items-center flex-1 border-r border-gray-200 dark:border-white/10">
+<span class="font-bold text-[#181411] dark:text-white text-sm">230</span>
+<span>Produk</span>
+</div>
+<div class="flex flex-col items-center flex-1 border-r border-gray-200 dark:border-white/10">
+<span class="font-bold text-[#181411] dark:text-white text-sm">4.9</span>
+<span>Rating</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<span class="font-bold text-[#181411] dark:text-white text-sm">98%</span>
+<span>Chat</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Filters (Chips) -->
+<div class="sticky top-[69px] z-40 bg-background-light dark:bg-background-dark border-b border-[#f5f2f0] dark:border-white/10 shadow-sm">
+<div class="flex gap-3 p-3 overflow-x-auto no-scrollbar items-center">
+<!-- Active Chip -->
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-primary/10 border border-primary/20 px-4 transition-colors">
+<p class="text-primary text-sm font-bold leading-normal">Relevansi</p>
+</button>
+<!-- Inactive Chips -->
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-white dark:bg-white/5 border border-transparent dark:border-white/10 px-4 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-normal">Terbaru</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-white dark:bg-white/5 border border-transparent dark:border-white/10 px-4 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-[#181411] dark:text-white">trending_up</span>
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-normal">Terlaris</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-white dark:bg-white/5 border border-transparent dark:border-white/10 px-4 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-[#181411] dark:text-white">swap_vert</span>
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-normal">Harga</p>
+</button>
+<button class="flex size-8 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/5 border border-transparent dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors ml-auto">
+<span class="material-symbols-outlined text-[20px] text-[#181411] dark:text-white">filter_list</span>
+</button>
+</div>
+</div>
+<!-- ImageGrid (Product Feed) -->
+<div class="grid grid-cols-2 gap-3 p-3 bg-white dark:bg-[#1a120b] pt-4">
+<!-- Product 1 -->
+<div class="flex flex-col gap-2 group cursor-pointer bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 hover:shadow-md transition-shadow pb-3 overflow-hidden">
+<div class="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Light blue silicone iPhone case back view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLPCDG_nf9W5YIN2hZcZggzclshSj_i8_Uk0XeqOCswpTGdEgXWhB48F0uwUEIae480AWpwRx3A5V4_Eei1q_5ABvSCoQsRoJicAbwGfPbwl-BkOEkfLF2Cl3jMUFcI6bXS4lCWQmx1SQUjzAMkHD2xcfiemxRPqzLXs3t79SPGyo7guG4rnD6u0Dg9kx95RwH41Cn-9Vsvdrb9Px42j5a48Yy08ovfDUHKNZhKNX6q_X6DOm5oVYF0UZBsQtoxNJQZrjM40Qdt5Ju");'></div>
+<div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-bl-lg">20% OFF</div>
+</div>
+<div class="px-2 flex flex-col h-full justify-between">
+<div>
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-snug line-clamp-2 mb-1">iPhone 13 Case Silicone Soft Touch Original - Blue</p>
+<div class="flex items-center gap-1 mb-1">
+<span class="bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 text-[10px] px-1 rounded font-bold">Mall</span>
+<span class="bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400 text-[10px] px-1 rounded font-bold">Grosir</span>
+</div>
+</div>
+<div>
+<p class="text-primary text-base font-bold leading-normal">Rp 50.000</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-500 text-[12px] filled">star</span>
+<p class="text-[#8a7460] dark:text-gray-400 text-xs font-normal leading-normal">4.8 (200 terjual)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex flex-col gap-2 group cursor-pointer bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 hover:shadow-md transition-shadow pb-3 overflow-hidden">
+<div class="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="White coiled USB-C cable on a desk" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHTUhm7ny9CNqMnwf-4g2FbYqvjZr8IWn6b3zcTSjMHuA8jVic7dH0zFEl0JvcelJTGD_ZU6STvqTJKD2XR1W9DYNp0lQab2cUn3omjYBei9_zQPGWxBKEGgRaSjYtM3W27lODIM829MvB8GQLQNZn2k-2x-nCkV2vhRVz1Pi0SeY5fz6Oj99eXZ0nVKIFlqIr4MlGWorgkNcGi9zzyXNCGh25znQbwpUEOf3BRMkC_cDiIpA0CyZRKbqB5h7vZyPoJ79MN7U-DTYp");'></div>
+</div>
+<div class="px-2 flex flex-col h-full justify-between">
+<div>
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-snug line-clamp-2 mb-1">USB-C Cable Fast Charging 60W Braided Nylon 1M</p>
+<div class="flex items-center gap-1 mb-1">
+<span class="bg-primary/10 text-primary text-[10px] px-1 rounded font-bold">Star+</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<p class="text-gray-400 text-xs line-through decoration-gray-400">Rp 50.000</p>
+<span class="text-red-500 text-xs font-bold">-50%</span>
+</div>
+<p class="text-primary text-base font-bold leading-normal">Rp 25.000</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-500 text-[12px] filled">star</span>
+<p class="text-[#8a7460] dark:text-gray-400 text-xs font-normal leading-normal">4.5 (1.2rb terjual)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="flex flex-col gap-2 group cursor-pointer bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 hover:shadow-md transition-shadow pb-3 overflow-hidden">
+<div class="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Black TWS bluetooth earbuds with charging case" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzXEx79X0B6iJxGkecxZImc5Ea0atb7J9rd7HEPAiJpvsN7shoNDkVWIqK-LUAw_FitasB9-xrNPC7a1bwrhxZODICV1AGS1HEQsiqur7gULZTsdLl_Wb25fNeZNi8XUz0XkHu07dZivePKa-3h55BNeDbrPcRfrzgXaaIMTsKznRiSyip9y8FRp7VwJSJ29WZ2D6nikbOO-ME9NjCzZB7ojLFrreUohWtPXaRj59ctmMwFK_fwlful8RfHUrLM77inANdhfXKU6Wf");'></div>
+</div>
+<div class="px-2 flex flex-col h-full justify-between">
+<div>
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-snug line-clamp-2 mb-1">Bluetooth Headset TWS Stereo Bass Waterproof</p>
+</div>
+<div>
+<p class="text-primary text-base font-bold leading-normal">Rp 150.000</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-500 text-[12px] filled">star</span>
+<p class="text-[#8a7460] dark:text-gray-400 text-xs font-normal leading-normal">4.5 (50 terjual)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="flex flex-col gap-2 group cursor-pointer bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 hover:shadow-md transition-shadow pb-3 overflow-hidden">
+<div class="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Slim black 10000mAh powerbank" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBg4rn2i-sN1xV41-q8DLemJid-TsPHcXwbxOhkJJAmNpAO8tkb2dRLJWaLBnlw0OY1FpachZuB0oaMl0Elow0gib0ixk0KyKZUhuwCqzsu-qqGpdt_MiP2Fq-p8F7srFMFmHeE47zQwXwgBnJZieIZZzU2yic8tseEgI6_0xW1Z_B6Ott2WEQBbSWJ4tj9M42IrqRzAdHIEFGywjbLBAOQha6Dn3UJiMPlgxhTZ0trskxt3WKm3oieHwgd6P4EyAohHVu4P0g8dqR8");'></div>
+<div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-bl-lg">COD</div>
+</div>
+<div class="px-2 flex flex-col h-full justify-between">
+<div>
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-snug line-clamp-2 mb-1">Powerbank 10000mAh Slim Fast Charge Output 2.4A</p>
+</div>
+<div>
+<p class="text-primary text-base font-bold leading-normal">Rp 120.000</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-500 text-[12px] filled">star</span>
+<p class="text-[#8a7460] dark:text-gray-400 text-xs font-normal leading-normal">4.9 (10rb+ terjual)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="flex flex-col gap-2 group cursor-pointer bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 hover:shadow-md transition-shadow pb-3 overflow-hidden">
+<div class="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Smartwatch with black band on white surface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMaJLL1ZJRvx4ytHVyBumoZqy776SfMNjhTU0scbhowkrQ6YwyfQCM8KwIe_T1G1g1_I9lWdT4rGk2vGPengohO08IsY1gcTiG3XJPscawEEZoOdB0DIdNR-jsR-_jHrZ3MT1ASqQzvp7ih7kujeeHNsFz-ojxbSyM8BZA3W3GaJVrT9OJitKHDXEfVxbc0QE0NNJ5PDJjScJldFHg124PjFXOkFj7R9l1SfOEY7OX9r40Gqt2ACcffiMDqw3LWygB3aDA_9n9QECy");'></div>
+</div>
+<div class="px-2 flex flex-col h-full justify-between">
+<div>
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-snug line-clamp-2 mb-1">Smartwatch Series 7 Health Tracker</p>
+</div>
+<div>
+<p class="text-primary text-base font-bold leading-normal">Rp 850.000</p>
+<div class="flex items-center gap-1 mt-1">
+<p class="text-[#8a7460] dark:text-gray-400 text-xs font-normal leading-normal">Jakarta Pusat</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="flex flex-col gap-2 group cursor-pointer bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 hover:shadow-md transition-shadow pb-3 overflow-hidden">
+<div class="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Mini portable bluetooth speaker" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDG0K1oOxTjyVjzQIiBMyH2fJR37OXYWHtzRfZ4wrZZt3IIfkKEhJwqoGvtZ5exmOAzTxJWvuMylcrbzQYSFUITjwlB_a9J2TBFv4hJMRUUycTZbV8i3HCmmcQOR3V5bwmyy_XJDC4Z8Ii7lcM8MQ0SBwYEES-DU8RpiGQCMtf4fv41zDmzkYHMw5Fcft_W8JHxto2X32mwnpOnqsraSpHC9yLHMELoHwSN4n4Np7WViygkJhY1kTTUyFzV-bwPgUxiE856DBqOCPQF");'></div>
+</div>
+<div class="px-2 flex flex-col h-full justify-between">
+<div>
+<p class="text-[#181411] dark:text-white text-sm font-medium leading-snug line-clamp-2 mb-1">Portable Mini Speaker Bass Boosted</p>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<p class="text-gray-400 text-xs line-through decoration-gray-400">Rp 120.000</p>
+<span class="text-red-500 text-xs font-bold">-25%</span>
+</div>
+<p class="text-primary text-base font-bold leading-normal">Rp 90.000</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-500 text-[12px] filled">star</span>
+<p class="text-[#8a7460] dark:text-gray-400 text-xs font-normal leading-normal">4.3 (150 terjual)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer for Bottom Nav -->
+<div class="h-16 w-full"></div>
+<!-- BottomNavBar -->
+<div class="fixed bottom-0 left-0 right-0 flex gap-2 border-t border-[#f5f2f0] dark:border-white/10 bg-white dark:bg-background-dark/95 backdrop-blur-md px-4 pb-safe pt-2 z-50">
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-primary" href="#">
+<span class="material-symbols-outlined text-2xl filled">storefront</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Produk</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#8a7460] dark:text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Kategori</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#8a7460] dark:text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">feed</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Feed</p>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#8a7460] dark:text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">info</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Info</p>
+</a>
+</div>
+</div>
+</body></html>

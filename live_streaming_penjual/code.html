@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Streaming Penjual - Seller App</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48525",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221810",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Gradient mask for chat fade effect */
+        .chat-mask {
+            mask-image: linear-gradient(to bottom, transparent, black 10%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display antialiased overflow-hidden">
+<div class="relative h-screen w-full flex flex-col bg-background-dark text-white overflow-hidden">
+<!-- Background Video Feed Simulation -->
+<!-- In a real app, this would be the <video> element -->
+<div class="absolute inset-0 z-0">
+<div class="h-full w-full bg-cover bg-center" data-alt="Live video feed of a fashion seller presenting a beige coat" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_ffEhfk-8WsMRlpMmcGGoWrlIZRL88yAbgClH5H8DHWMWEAIvwgkDfK6TkRxAfFRXIT3bojWWlb7vDNGPzWV5qTYuf9QD3Tn8BSvRxQvfUq7sbhqUOaI1XJDpbTdLgXuXePNGHo0ijuijZtV-7pFOqLyZ598VFTgHv8FNUF3TEo0db3_qEfcnoW9dlBEWaNTD1kKDECY7eHBC9zN3YZNtEE0MyJHXzQylrr05EncgsDUKnSgCzRTJCKUZf6BLbFri_eLs2OiNBcOA');">
+</div>
+<!-- Gradient Overlays for Readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent via-60% to-black/80"></div>
+</div>
+<!-- Safe Area Top Spacer -->
+<div class="h-12 w-full shrink-0 z-10 pointer-events-none"></div>
+<!-- Top Header Overlay -->
+<header class="relative z-10 flex items-center justify-between px-4 pb-2">
+<!-- Left: Seller Profile -->
+<div class="flex items-center gap-2 bg-black/30 backdrop-blur-md rounded-full p-1 pr-4 border border-white/10">
+<div class="h-9 w-9 rounded-full bg-cover bg-center border border-white/20" data-alt="Portrait of the seller smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgrm18X7w-qe6tsws2pps1svph6sYsu07KljxmmLiqU5_u_Dqax51df3OBAWeJSEDIZoGBDSWGpSC6E4dXQmy1HxUhFXDPYALbqOoktewgKXOIITtFS9M-OvlG_G0i1rdOhGscpmaip0a-AbybjfaCs2XLl2XbXLpTBKDqw_uevKYys1xuVbMuzFvCNR_-iuvsijdovWGhaKfdeein-46zlzPXyfDV7PeQLCPvA_gtQOPaPfD6doVw7VKV6SejyxU1e3crgF8EEb0J');">
+</div>
+<div class="flex flex-col justify-center">
+<h2 class="text-xs font-bold leading-tight">Fashion Store Official</h2>
+<span class="text-[10px] text-white/80">Premium Local Brand</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white text-xs font-bold px-3 py-1.5 rounded-full ml-1 transition-colors">
+                    Follow
+                </button>
+</div>
+<!-- Right: Viewer Stats & Close -->
+<div class="flex items-center gap-2">
+<!-- Viewer Chips -->
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-2">
+<div class="h-6 w-14 shrink-0 flex items-center justify-center rounded bg-primary shadow-lg shadow-primary/20">
+<p class="text-white text-[10px] font-bold tracking-wide">LIVE</p>
+</div>
+<div class="h-6 shrink-0 flex items-center justify-center gap-x-1 rounded bg-black/40 backdrop-blur-md px-2 border border-white/10">
+<span class="material-symbols-outlined text-[14px] text-white">visibility</span>
+<p class="text-white text-[10px] font-medium">1.2k</p>
+</div>
+</div>
+</div>
+<button class="flex size-9 shrink-0 items-center justify-center rounded-full bg-black/20 backdrop-blur-md text-white hover:bg-black/40 transition">
+<span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area (Invisible spacer to push bottom content down) -->
+<div class="flex-1 relative z-10 pointer-events-none">
+<!-- Right Floating Actions -->
+<div class="absolute right-4 bottom-4 flex flex-col gap-4 pointer-events-auto items-center">
+<!-- Share Button -->
+<div class="flex flex-col items-center gap-1">
+<button class="size-10 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-md border border-white/10 active:scale-95 transition">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">share</span>
+</button>
+<span class="text-[10px] font-bold drop-shadow-md">Share</span>
+</div>
+<!-- Filters/Magic Button -->
+<div class="flex flex-col items-center gap-1">
+<button class="size-10 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-md border border-white/10 active:scale-95 transition">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">face</span>
+</button>
+<span class="text-[10px] font-bold drop-shadow-md">Effect</span>
+</div>
+<!-- Like Button -->
+<div class="flex flex-col items-center gap-1">
+<button class="size-12 flex items-center justify-center rounded-full bg-primary/20 backdrop-blur-sm border border-primary/50 text-primary active:scale-90 transition animate-pulse">
+<span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1; font-size: 28px;">favorite</span>
+</button>
+<span class="text-[10px] font-bold drop-shadow-md">24.5k</span>
+</div>
+</div>
+<!-- Voucher Floating Toast -->
+<div class="absolute top-4 left-4 pointer-events-auto">
+<div class="flex items-center gap-3 bg-gradient-to-r from-orange-600 to-primary p-2 pr-4 rounded-lg shadow-lg border border-white/20 animate-bounce cursor-pointer">
+<div class="bg-white/20 rounded p-1">
+<span class="material-symbols-outlined text-white text-lg">confirmation_number</span>
+</div>
+<div>
+<p class="text-[10px] font-medium text-white/90 uppercase tracking-wider">Flash Voucher</p>
+<p class="text-xs font-bold text-white">50% OFF Ends in 04:59</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Area Overlay -->
+<div class="relative z-20 flex flex-col justify-end px-4 pb-8 gap-4">
+<!-- Chat Area & Pinned Product Row -->
+<div class="flex items-end justify-between gap-2">
+<!-- Live Chat Stream -->
+<div class="w-2/3 h-48 flex flex-col justify-end gap-2 overflow-hidden chat-mask">
+<!-- Comment 1 -->
+<div class="flex items-start gap-2 animate-[fadeIn_0.5s_ease-out]">
+<div class="bg-black/30 backdrop-blur-sm rounded-2xl rounded-tl-none p-2 px-3 border border-white/5">
+<p class="text-sm text-white/90">
+<span class="font-bold text-white/60 mr-1 text-xs">Agus S.</span>
+                                Is the material cotton?
+                            </p>
+</div>
+</div>
+<!-- Comment 2 -->
+<div class="flex items-start gap-2 animate-[fadeIn_0.5s_ease-out]">
+<div class="bg-primary/20 backdrop-blur-sm rounded-2xl rounded-tl-none p-2 px-3 border border-primary/30">
+<p class="text-sm text-white">
+<span class="font-bold text-primary mr-1 text-xs">System</span>
+                                Sarah just bought 2 items! 🔥
+                            </p>
+</div>
+</div>
+<!-- Comment 3 -->
+<div class="flex items-start gap-2 animate-[fadeIn_0.5s_ease-out]">
+<div class="h-6 w-6 rounded-full bg-cover bg-center shrink-0 border border-white/20" data-alt="User avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGokA9kgglWd1_bbQzio_ZObdnejApKF8o8oskhrW92Xl9RLx0PG0h-wSz2rl7UFmqtl-x3yayGxFo-v-_Q4PD8jRo6RENw_gIHym1EjFDz7ExeuNGoNczMZgE4U_m71tGGt-U_nuArprt6Hw0d3x0Qe70NQXlXBiPpBM1mh40ya2x-T0w-hgy6BPa3jCmDPJ1uLG2iLeg_9TASFTFU3KVM8-WR6mAT8MFpis_rXWPV3X0YwJRChpyOK0muoPPyWchwNj0fYtlwhkl');"></div>
+<div class="bg-black/30 backdrop-blur-sm rounded-2xl rounded-tl-none p-2 px-3 border border-white/5">
+<p class="text-sm text-white/90">
+<span class="font-bold text-white/60 mr-1 text-xs">Siti Aminah</span>
+                                Is the XL size available?
+                            </p>
+</div>
+</div>
+<!-- Comment 4 -->
+<div class="flex items-start gap-2 animate-[fadeIn_0.5s_ease-out]">
+<div class="h-6 w-6 rounded-full bg-cover bg-center shrink-0 border border-white/20" data-alt="User avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBezxR18Hj3ywUqLwqts9cXMljzrWqVrGe3D6ehAmGHqA1bd_YzoydOLEd9M3M_QCDUdLWbGTlHwRCD3EfXlgJso9ZBVoix9jwb4lSFhidOz6mqCZDJYHdY-KTFI3o5n7g51vuAxQ7GRwGeG_Hq2TcydOn0HB797PO-vZuLqIdl1MQM7i0StvC8eqZRAZdZ0IsTQWp_-gl37usLXHW1e0vz7bv0PZ6vnMFi0ZZ5kEVQb6_auY21vfhiLsAGOdRT2C4jCDVRFDquBEuj');"></div>
+<div class="bg-black/30 backdrop-blur-sm rounded-2xl rounded-tl-none p-2 px-3 border border-white/5">
+<p class="text-sm text-white/90">
+<span class="font-bold text-primary mr-1 text-xs">Budi Santoso</span>
+                                Can you show the back detail?
+                            </p>
+</div>
+</div>
+</div>
+<!-- Floating Pinned Product (Above Action Bar) -->
+<!-- We place it absolutely to float nicely on the right or inline depending on preference. Here inline right. -->
+<!-- Actually, let's float it above the keyboard/input area -->
+</div>
+<!-- Pinned Product Card -->
+<div class="relative w-full">
+<div class="absolute bottom-0 left-0 bg-white dark:bg-[#221810] p-2 rounded-xl flex items-center gap-3 w-[70%] shadow-2xl border border-white/10 animate-[slideUp_0.4s_ease-out]">
+<div class="h-12 w-12 rounded-lg bg-cover bg-center shrink-0 bg-gray-200" data-alt="Thumbnail of the floral dress being sold" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCJMt-KX2XCczsYvJgFKVyq1yQc1USC4yclBpwEop9jvkbekZM-XnQUGkWIPurRxMKWMY3zSaPcVN7UYi0JRRdVlIwMIkqGIyuxRxFObsomEKMaF3bPxuwb69KjcgeK2r51D_m-J_wwx8sKHzVS0auHQLG5LQsIMpNcGS2_TdYhM1udJKs55rIMWr7l6LYCmh_Ln1OjClAI6KZGYqF5QS6hM5cllNq4MVT7dGVA12NVasAJHUE9HJLFRyFKsiE7z2uShTtttLyIawQ');">
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline gap-2">
+<p class="text-primary font-bold text-sm">Rp 150.000</p>
+<span class="text-[10px] text-gray-400 line-through">Rp 300rb</span>
+</div>
+<p class="text-xs text-black dark:text-gray-300 truncate font-medium">Floral Summer Dress</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg shadow-primary/30 shrink-0">
+                        Buy Now
+                    </button>
+<!-- Close Product Pin -->
+<button class="absolute -top-2 -right-2 bg-gray-600 rounded-full p-0.5 text-white shadow-sm">
+<span class="material-symbols-outlined text-[12px]">close</span>
+</button>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="flex items-center gap-3 pt-2">
+<!-- Shopping Bag -->
+<button class="relative shrink-0 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md size-11 border border-white/10 text-white hover:bg-black/50 transition">
+<span class="material-symbols-outlined">shopping_bag</span>
+<div class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-sm">
+                        12
+                    </div>
+</button>
+<!-- Input Field -->
+<div class="flex-1">
+<div class="flex h-11 w-full items-center rounded-full bg-black/40 backdrop-blur-md px-4 border border-white/10 text-white focus-within:bg-black/60 focus-within:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-white/50 text-xl mr-2">chat_bubble_outline</span>
+<input class="w-full bg-transparent border-none p-0 text-sm placeholder-white/50 focus:ring-0 text-white" placeholder="Ask about this product..." type="text"/>
+<button class="ml-2 text-primary font-bold text-sm">Send</button>
+</div>
+</div>
+<!-- More/Menu -->
+<button class="shrink-0 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md size-11 border border-white/10 text-white hover:bg-black/50 transition">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<!-- Home Indicator Spacer -->
+<div class="h-2 w-full"></div>
+</div>
+</div>
+<!-- Animation Keyframes -->
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body></html>

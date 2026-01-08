@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pesanan Masuk Penjual</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48525",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221810",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d241d",
+                        "text-primary-light": "#181411",
+                        "text-primary-dark": "#f5f2f0",
+                        "text-secondary-light": "#8a7460",
+                        "text-secondary-dark": "#b09b88",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark antialiased transition-colors duration-200">
+<!-- Sticky Header Container -->
+<div class="sticky top-0 z-20 bg-surface-light dark:bg-surface-dark shadow-sm">
+<!-- Top App Bar -->
+<div class="flex items-center justify-between p-4 pb-2">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-text-primary-light dark:text-text-primary-dark" style="font-size: 24px;">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Pesanan Saya</h2>
+<div class="flex items-center justify-end absolute right-4 gap-3">
+<button class="text-text-primary-light dark:text-text-primary-dark">
+<span class="material-symbols-outlined" style="font-size: 24px;">chat</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-2">
+<label class="flex flex-col w-full h-11">
+<div class="flex w-full flex-1 items-center rounded-lg h-full bg-[#f5f2f0] dark:bg-[#3a322b] overflow-hidden">
+<div class="flex items-center justify-center pl-3 pr-2">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark" style="font-size: 22px;">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none bg-transparent border-none focus:outline-0 focus:ring-0 text-text-primary-light dark:text-text-primary-dark placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark text-sm font-normal leading-normal h-full" placeholder="Cari No. Pesanan atau Nama Pembeli"/>
+<div class="flex items-center justify-center pr-3 border-l border-gray-300 dark:border-gray-600 pl-3 h-6 my-auto">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark" style="font-size: 22px;">filter_list</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Tabs / Chips -->
+<div class="flex gap-3 px-4 py-3 overflow-x-auto no-scrollbar border-b border-gray-100 dark:border-white/5">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-4 shadow-sm transition-transform active:scale-95">
+<p class="text-white text-sm font-semibold leading-normal">Perlu Dikirim (3)</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f5f2f0] dark:bg-[#3a322b] px-4 transition-transform active:scale-95">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">Dikirim</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f5f2f0] dark:bg-[#3a322b] px-4 transition-transform active:scale-95">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">Selesai</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f5f2f0] dark:bg-[#3a322b] px-4 transition-transform active:scale-95">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">Pembatalan</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f5f2f0] dark:bg-[#3a322b] px-4 transition-transform active:scale-95">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">Pengembalian</p>
+</button>
+</div>
+</div>
+<!-- Main Content List -->
+<div class="flex flex-col pb-24">
+<!-- Meta Text -->
+<div class="px-4 py-3 flex items-center justify-between">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-normal">Menampilkan 3 pesanan yang perlu diproses</p>
+<span class="text-primary text-xs font-medium cursor-pointer">Atur Sekaligus</span>
+</div>
+<!-- Card 1 -->
+<div class="px-4 mb-4">
+<div class="flex flex-col gap-0 rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_2px_8px_rgba(0,0,0,0.05)] overflow-hidden">
+<!-- Card Header -->
+<div class="flex items-center justify-between p-3 border-b border-gray-50 dark:border-white/5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Avatar of user Budi Santoso" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBlmB04kjPMd_04sL9vgQVMLGZczf07vAwzfhmLIcjGJ5DdiTNM2VRH6gKWZy987IZ2fBuqjqZnJbLggqwPwSR7_FDP9Xtlrn4OU2xVs-yWA1m051j9iI5OlB0pMG3J-4FptKDenBXNS2bzh4cIVteWxkPT9jeIUGogZTF5mUGiDJ-9lYO9hUjgX2XjV-vXzbDQxqu-VgJuK3Jv0z8T2U1QrJm_aTmEJO4WFoM52DuHG6AYFFfyDCZVsPNxX48Varc1hs4DVX6xS6U');"></div>
+<span class="text-sm font-bold text-text-primary-light dark:text-text-primary-dark">Budi Santoso</span>
+</div>
+<span class="text-primary text-xs font-semibold bg-primary/10 px-2 py-1 rounded">Perlu Dikirim</span>
+</div>
+<!-- Product Section -->
+<div class="flex gap-3 p-3 bg-gray-50/50 dark:bg-white/5">
+<div class="w-20 h-20 shrink-0 bg-gray-200 rounded-lg bg-cover bg-center" data-alt="Black cotton t-shirt product image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC62DAUQkNEd0PauAXAYH0XIxbmjnarOCuPxG8XhokMQXy6lijvyiGSbdWivcgJBiwvLrEf1XQQJIQytXU-gCsO8tRc0eDbHaoAOx1xwtRGE-uvRtRzxdhaJIPMB1sRa_VrDoahJI98alzuWZ-ymgJEcFZ2Jg7w24W8-mlRtIEB8vKbLvEmOW2YZShUGiq-P1KNp9Cjqgd7e6uQI3ukhzfVPKywegVA-V7LExqsx8K_ozJHg4YmTLJxTF4ueDIU9XNNg3evkrqiOm1C');"></div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<p class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-tight line-clamp-2">Kaos Polos Cotton Combed 30s Premium Quality - Hitam</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs mt-1">Variasi: Hitam, Size L</p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">x 1</span>
+<span class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">Rp 45.000</span>
+</div>
+</div>
+</div>
+<!-- Summary & Logistics -->
+<div class="p-3 border-b border-gray-50 dark:border-white/5">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-1 text-xs text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined" style="font-size: 16px;">local_shipping</span>
+<span>J&amp;T Express - Hemat</span>
+</div>
+<div class="text-right">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Total Pesanan: </span>
+<span class="text-base font-bold text-primary">Rp 57.000</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-orange-50 dark:bg-orange-900/10 p-2 rounded border border-orange-100 dark:border-orange-900/20">
+<span class="material-symbols-outlined text-primary" style="font-size: 16px;">alarm</span>
+<span class="text-xs text-primary font-medium">Kirim sebelum 24 Okt 2023</span>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-3 flex items-center justify-end gap-3">
+<button class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-600 text-text-primary-light dark:text-text-primary-dark text-sm font-medium bg-transparent">
+                        Hubungi Pembeli
+                    </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-white text-sm font-bold shadow-sm flex items-center gap-1">
+                        Atur Pengiriman
+                    </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="px-4 mb-4">
+<div class="flex flex-col gap-0 rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_2px_8px_rgba(0,0,0,0.05)] overflow-hidden">
+<!-- Card Header -->
+<div class="flex items-center justify-between p-3 border-b border-gray-50 dark:border-white/5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Avatar of user Siti Aminah" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9aQWbKSKlqZ5yedn2aF4CGD2MsUmyhN4lT1lryx-9tPk8k6Ej_C6mxKV9nfz_lo5ziVdKlCwJjVW1cxFvb6h0HrZ1YPWjfc0EMFzj-FmiHfwkanwkdVfjsr9MNFRGSmBxyzSUr-966QbQSBQPSFUXhesdwT6hX8NJOCFd6xSJCNJYpVqPvh5wMs_xqBqvAWRO7yxlGsaPmSgrkSTireSCDS8hzdvjkE6TX_34Gm6djfVeVSpoOFqJbIzhD9Y6x28Tx_NzlfaBQBUl');"></div>
+<span class="text-sm font-bold text-text-primary-light dark:text-text-primary-dark">Siti Aminah</span>
+</div>
+<span class="text-primary text-xs font-semibold bg-primary/10 px-2 py-1 rounded">Perlu Dikirim</span>
+</div>
+<!-- Product Section (Multiple items example) -->
+<div class="flex gap-3 p-3 bg-gray-50/50 dark:bg-white/5 border-b border-dashed border-gray-200 dark:border-gray-700">
+<div class="w-20 h-20 shrink-0 bg-gray-200 rounded-lg bg-cover bg-center" data-alt="White sneakers product image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBW3o3RDXPtNgHxUGXgryvfQy636MDkSNA1x6gTWmnOjgVYl07IbIaUzmA3ipUnYaTgEZGgFPN6fI_WnYAOM_tMsLvsP0mP20ECXx_Kzgx85ey-S7G881xUrxR8eq-8g3MlFAOgpRGifLhkrmBrlgM7gl4-_qT9mkzZ_x39gC2FnZm5kDvDFSWchC9lLG-Dc5JtMFRjBbkQNPrCkkxQI7cbcj06kW6kDrBP_e4d7XACV2R2kY2xCE9aP3K3hnMOoYxgaDAJwBTg6Y4O');"></div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<p class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-tight line-clamp-2">Sepatu Sneakers Wanita Casual Putih</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs mt-1">Variasi: Putih, 38</p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">x 1</span>
+<span class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">Rp 125.000</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3 p-3 bg-gray-50/50 dark:bg-white/5">
+<div class="w-20 h-20 shrink-0 bg-gray-200 rounded-lg bg-cover bg-center" data-alt="Pack of socks product image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_fOWjXopchBGgcpcUhJdexH5Aiufh7Xgg2fXW4G4z7sQ4LyEv8kDmg-6OreuhWSjzkjf7jDkOSuZjvVFbwk9FIYo2R4R6SNmbXlcn13GGcN3C25b9Iy0vtHaeIvMUmI_y3Hv3wGSiUs87zQRECJd700r5CH-ayFnOvqycAGwmHO9aINqM9PF50ZNKhpSrGRX98L02D275DCyH3qOZ0TyPUAevE7S1KDbvvWTI111w2SvJapxDwf74ec1cqqmqrSnCZcT0R4VtW8nR');"></div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<p class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-tight line-clamp-2">Kaos Kaki Polos Mata Kaki (3 Pasang)</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs mt-1">Variasi: Mix Warna</p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">x 1</span>
+<span class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">Rp 25.000</span>
+</div>
+</div>
+</div>
+<!-- Summary & Logistics -->
+<div class="p-3 border-b border-gray-50 dark:border-white/5">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-1 text-xs text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined" style="font-size: 16px;">local_shipping</span>
+<span>SiCepat - Reguler</span>
+</div>
+<div class="text-right">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Total Pesanan: </span>
+<span class="text-base font-bold text-primary">Rp 162.000</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-orange-50 dark:bg-orange-900/10 p-2 rounded border border-orange-100 dark:border-orange-900/20">
+<span class="material-symbols-outlined text-primary" style="font-size: 16px;">alarm</span>
+<span class="text-xs text-primary font-medium">Kirim sebelum 25 Okt 2023</span>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-3 flex items-center justify-end gap-3">
+<button class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-600 text-text-primary-light dark:text-text-primary-dark text-sm font-medium bg-transparent">
+                        Hubungi Pembeli
+                    </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-white text-sm font-bold shadow-sm flex items-center gap-1">
+                        Atur Pengiriman
+                    </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="px-4 mb-4">
+<div class="flex flex-col gap-0 rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_2px_8px_rgba(0,0,0,0.05)] overflow-hidden">
+<!-- Card Header -->
+<div class="flex items-center justify-between p-3 border-b border-gray-50 dark:border-white/5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Avatar of user Toko Sebelah" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUjzPG9Vw2U0TNxb4GWg5u3Ghd-8oPQ2aeX2cXXvKPSnT9GrYAJNrnyr4D_v58dEM6oru6fxK8pnzZihgjWiJo2CM9qtLJeL65ovLDTG13TJqUuKQ3RX3dpeTpYKsbt6f8WrxnZHPv0LnYSlxUe_EcrVbH2McwCLx9NdA0WTjLyqznyIbUlCG-n-x04Lem1aowmGApvm4404YUo1mfOGhoIomq8N1MQaiv7jIrEY12b7R2qWrl9RRYVOyE1_w1ebpnslYiMdmq_t4M');"></div>
+<span class="text-sm font-bold text-text-primary-light dark:text-text-primary-dark">Agus Setiawan</span>
+</div>
+<span class="text-primary text-xs font-semibold bg-primary/10 px-2 py-1 rounded">Perlu Dikirim</span>
+</div>
+<!-- Product Section -->
+<div class="flex gap-3 p-3 bg-gray-50/50 dark:bg-white/5">
+<div class="w-20 h-20 shrink-0 bg-gray-200 rounded-lg bg-cover bg-center" data-alt="Electronic power bank product image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmr-DjUKJjlFVC_mNQpVthmRUjXp1UbtvvwLe2JH5DzzBqIy8MnIHBf_AbIxscOu4jpP_7-ZfWd9qcGLvA48H7ozPUBLXt8N9W0q_qCll7b9bLB9kE8pMPU8FIcRrWStY0QoKnnACirYzQxFJOOcnR0X9P6uIM7NuE8eBEUrAFWGHZjkDjXLZR3KTH2gKmJQhry_XNj3vZq3BJek6_FE_doB-bsLbOWdLrc-BvpFfWMqvLP21gnshet5KNCto-fdOQUObQTadaouZ1');"></div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<p class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-tight line-clamp-2">Powerbank 10000mAh Fast Charging - Hitam</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs mt-1">Variasi: Hitam</p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">x 1</span>
+<span class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">Rp 150.000</span>
+</div>
+</div>
+</div>
+<!-- Summary & Logistics -->
+<div class="p-3 border-b border-gray-50 dark:border-white/5">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-1 text-xs text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined" style="font-size: 16px;">local_shipping</span>
+<span>SPX Standard</span>
+</div>
+<div class="text-right">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Total Pesanan: </span>
+<span class="text-base font-bold text-primary">Rp 158.000</span>
+</div>
+</div>
+<!-- No Warning for this one, plenty of time -->
+<div class="flex items-center gap-1 text-xs text-text-secondary-light dark:text-text-secondary-dark mt-1">
+<span class="material-symbols-outlined" style="font-size: 16px; color: #8a7460;">calendar_today</span>
+<span>Batas kirim: 26 Okt 2023</span>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-3 flex items-center justify-end gap-3">
+<button class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-600 text-text-primary-light dark:text-text-primary-dark text-sm font-medium bg-transparent">
+                        Hubungi Pembeli
+                    </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-white text-sm font-bold shadow-sm flex items-center gap-1">
+                        Atur Pengiriman
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-white/10 pb-5 pt-3 px-6 z-30">
+<div class="flex items-center justify-between">
+<div class="flex flex-col items-center gap-1 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined text-[26px]">home</span>
+<span class="text-[10px] font-medium">Beranda</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined text-[26px]">inventory_2</span>
+<span class="text-[10px] font-medium">Produk</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary cursor-pointer">
+<span class="material-symbols-outlined text-[26px] fill-current">receipt_long</span>
+<span class="text-[10px] font-bold">Pesanan</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined text-[26px]">account_balance_wallet</span>
+<span class="text-[10px] font-medium">Keuangan</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined text-[26px]">person</span>
+<span class="text-[10px] font-medium">Saya</span>
+</div>
+</div>
+</div>
+</body></html>

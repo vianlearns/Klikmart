@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voucher Center</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48525",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221810",
+                        "surface-dark": "#322820", 
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col pb-20">
+<!-- Sticky Header -->
+<div class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-200 dark:border-white/10">
+<div class="flex items-center p-4 justify-between">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 24px;">arrow_back</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-2">Voucher Center</h2>
+<div class="flex items-center justify-end gap-3">
+<span class="material-symbols-outlined text-slate-900 dark:text-white cursor-pointer" style="font-size: 24px;">search</span>
+<p class="text-primary text-sm font-bold leading-normal tracking-[0.015em] shrink-0 cursor-pointer">My Vouchers</p>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-3 px-4 pb-4 overflow-x-auto no-scrollbar">
+<div class="flex h-9 shrink-0 items-center justify-center rounded-lg bg-primary px-4 cursor-pointer shadow-lg shadow-primary/20">
+<p class="text-white text-sm font-bold leading-normal">All</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-transparent px-4 cursor-pointer whitespace-nowrap">
+<p class="text-slate-600 dark:text-gray-300 text-sm font-medium leading-normal">Free Shipping</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-transparent px-4 cursor-pointer whitespace-nowrap">
+<p class="text-slate-600 dark:text-gray-300 text-sm font-medium leading-normal">Cashback</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-transparent px-4 cursor-pointer whitespace-nowrap">
+<p class="text-slate-600 dark:text-gray-300 text-sm font-medium leading-normal">Shopee Mall</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-transparent px-4 cursor-pointer whitespace-nowrap">
+<p class="text-slate-600 dark:text-gray-300 text-sm font-medium leading-normal">Food</p>
+</div>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex flex-col gap-6 pt-4">
+<!-- Featured Carousel -->
+<div class="w-full pl-4 overflow-x-hidden">
+<div class="flex gap-4 overflow-x-auto no-scrollbar pr-4">
+<!-- Card 1 -->
+<div class="flex-shrink-0 w-72 rounded-xl overflow-hidden relative aspect-[2/1] bg-gradient-to-r from-orange-600 to-orange-400">
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="absolute inset-0 p-5 flex flex-col justify-between z-10">
+<div>
+<span class="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded">LIMITED TIME</span>
+<h3 class="text-white text-2xl font-bold mt-2 leading-tight">Flash<br/>Vouchers</h3>
+</div>
+<div class="flex justify-between items-end">
+<p class="text-white/90 text-sm font-medium">Ends in 02:45:12</p>
+<button class="bg-white text-primary text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">View All</button>
+</div>
+</div>
+<div class="absolute right-[-20px] bottom-[-20px] w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+</div>
+<!-- Card 2 -->
+<div class="flex-shrink-0 w-72 rounded-xl overflow-hidden relative aspect-[2/1] bg-gradient-to-r from-blue-600 to-blue-400">
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="absolute inset-0 p-5 flex flex-col justify-between z-10">
+<div>
+<span class="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded">BRAND DAY</span>
+<h3 class="text-white text-2xl font-bold mt-2 leading-tight">Super<br/>Brand Day</h3>
+</div>
+<div class="flex justify-between items-end">
+<p class="text-white/90 text-sm font-medium">Up to 80% OFF</p>
+<button class="bg-white text-blue-600 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">Check Now</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Daily Best Vouchers -->
+<div class="px-4">
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-[20px] font-bold leading-tight">Daily Best Vouchers</h2>
+<span class="text-primary text-sm font-semibold cursor-pointer">See All</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Voucher Card 1 -->
+<div class="flex items-stretch rounded-lg bg-white dark:bg-surface-dark shadow-sm overflow-hidden relative">
+<!-- Left Decoration -->
+<div class="w-1.5 bg-primary h-auto"></div>
+<!-- Content -->
+<div class="flex flex-1 p-3 items-center gap-3">
+<div class="size-16 shrink-0 bg-gray-100 dark:bg-white/5 rounded-lg flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-center bg-cover" data-alt="Abstract orange geometry representing discount" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsVu-0CVcsUu3wbey3oDeXbBRgQ_DzHdylt6bCu1ql66xF1dEv-MEPRhYtMd_PD05vUzfK0oVYY7IMq49ush0Pbn3jYVtWYyJU_uRaLVgxKs2j32XAPQ0V9UEum7C3ZhaSwTKEond8EFfN5ZW5IG5DFIuM7-tNeAPXnd2KOln2gUxsPQ4WIa-BgNyojf3LCqZAeekv63JrXP1nvJTaGA1SvA6R5sv5zo8UYt9ZlyYTRbw8aekypLVc3mV03n2y6DE94vzcLMrJnhnU");'></div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<h3 class="text-primary text-lg font-extrabold leading-tight">50% OFF</h3>
+<p class="text-slate-700 dark:text-gray-300 text-sm font-medium truncate">Min. spend $15</p>
+<p class="text-slate-400 dark:text-gray-500 text-xs mt-1">Expiring in 5h</p>
+</div>
+<div class="flex flex-col items-end gap-2 shrink-0 border-l border-dashed border-gray-200 dark:border-white/10 pl-3 py-1">
+<button class="bg-primary hover:bg-orange-600 text-white text-sm font-bold px-4 py-1.5 rounded-lg transition-colors shadow-md shadow-primary/20">
+                                    Claim
+                                </button>
+<span class="text-[10px] text-slate-400 dark:text-gray-500 font-medium">92% claimed</span>
+<div class="w-full h-1 bg-gray-200 dark:bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[92%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Voucher Card 2 -->
+<div class="flex items-stretch rounded-lg bg-white dark:bg-surface-dark shadow-sm overflow-hidden relative opacity-75">
+<!-- Left Decoration -->
+<div class="w-1.5 bg-gray-400 dark:bg-gray-600 h-auto"></div>
+<!-- Content -->
+<div class="flex flex-1 p-3 items-center gap-3">
+<div class="size-16 shrink-0 bg-gray-100 dark:bg-white/5 rounded-lg flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-center bg-cover" data-alt="Dark futuristic electronic pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmEfaEAIARcYoQTEr0l3swD5-YjXpEcMwwMm6_IMc_Jqtuh9bvVOClOYBRWncaod9vhPdWHOcrqYmrVhjIUxv06ziP21h9nI8BFEnnEfYvigBXheNwEByEbp5qkpI3SCIB0kAF_5DngRyW7-SxM-IntFCSmVc81lnC8IdRF8NtONT-ZK8SNjNVX7cFGLpZbiU5XhAA4aVmJyfIZYm_suIGy7m2MYZDtdBtjx4E44I3iYqpM-040ZxsS7uX7Btuy5Vli-Bj5qe57bnA");'></div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<h3 class="text-slate-900 dark:text-white text-lg font-extrabold leading-tight">$10 OFF</h3>
+<p class="text-slate-700 dark:text-gray-300 text-sm font-medium truncate">Electronics Category</p>
+<p class="text-slate-400 dark:text-gray-500 text-xs mt-1">Valid till 25 Oct</p>
+</div>
+<div class="flex flex-col items-center justify-center gap-2 shrink-0 border-l border-dashed border-gray-200 dark:border-white/10 pl-3 min-w-[80px]">
+<button class="bg-transparent border border-gray-300 dark:border-gray-600 text-slate-400 dark:text-gray-500 text-sm font-bold px-3 py-1.5 rounded-lg cursor-not-allowed">
+                                    Used
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Free Shipping -->
+<div class="px-4 pb-2">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-[#00bfa5]" style="font-size: 24px;">local_shipping</span>
+<h2 class="text-[20px] font-bold leading-tight">Free Shipping</h2>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<!-- Shipping Voucher -->
+<div class="flex items-stretch rounded-lg bg-white dark:bg-surface-dark shadow-sm overflow-hidden relative">
+<div class="w-1.5 bg-[#00bfa5] h-auto"></div>
+<div class="flex flex-1 p-3 items-center gap-3">
+<div class="size-14 shrink-0 bg-[#e0f2f1] dark:bg-[#004d40] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[#00695c] dark:text-[#4db6ac]" style="font-size: 32px;">local_shipping</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">Free Shipping</h3>
+<p class="text-slate-500 dark:text-gray-400 text-xs font-medium">Min. spend $0</p>
+<p class="text-primary text-[10px] font-bold mt-1 px-1.5 py-0.5 bg-primary/10 rounded w-fit">Special</p>
+</div>
+<div class="flex items-center justify-center pl-2">
+<button class="bg-primary hover:bg-orange-600 text-white text-sm font-bold px-4 py-1.5 rounded-lg transition-colors">
+                                    Claim
+                                </button>
+</div>
+</div>
+</div>
+<!-- Shipping Voucher 2 -->
+<div class="flex items-stretch rounded-lg bg-white dark:bg-surface-dark shadow-sm overflow-hidden relative">
+<div class="w-1.5 bg-[#00bfa5] h-auto"></div>
+<div class="flex flex-1 p-3 items-center gap-3">
+<div class="size-14 shrink-0 bg-[#e0f2f1] dark:bg-[#004d40] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[#00695c] dark:text-[#4db6ac]" style="font-size: 32px;">local_shipping</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">Free Shipping Xtra</h3>
+<p class="text-slate-500 dark:text-gray-400 text-xs font-medium">Min. spend $30</p>
+<p class="text-slate-400 dark:text-gray-500 text-[10px] mt-1">All Payment Methods</p>
+</div>
+<div class="flex items-center justify-center pl-2">
+<button class="bg-primary hover:bg-orange-600 text-white text-sm font-bold px-4 py-1.5 rounded-lg transition-colors">
+                                    Claim
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Shopee Mall -->
+<div class="px-4 pb-6">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#d50000]" style="font-size: 24px;">storefront</span>
+<h2 class="text-[20px] font-bold leading-tight">Shopee Mall</h2>
+</div>
+<span class="text-primary text-sm font-semibold cursor-pointer">See All</span>
+</div>
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+<!-- Brand Voucher Card -->
+<div class="flex-shrink-0 w-64 bg-white dark:bg-surface-dark rounded-lg p-3 shadow-sm border-l-4 border-[#d50000]">
+<div class="flex gap-3 items-start">
+<div class="size-12 rounded-full border border-gray-100 dark:border-white/10 overflow-hidden shrink-0">
+<div class="w-full h-full bg-center bg-cover" data-alt="Sport shoe brand logo on dark background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB28exmoYrLtGGIi4vHKiZbdS03sOXukHnzWImUXX5uQNSse_VR89_lu36o5Z1RZ45MOLJyfoXjwPRyOOno6bMUn40TvsKhr88qf4lfIa1mZs7cha7oEyaMs0P7g9MWz7alb1eYpn5Enr4f7wG_5yuf93cbNMEx8Wtgm0LsbL-2RarCJq5J66q1cE7-WyN_aoxor0T7_fOCz4uaSEZxfasI7U842RZXY350KFSsQku-EVgJtkLNuanvtxoJRZw7oIz-6sICGz5hKGV-");'></div>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white truncate">Official Sports Store</h4>
+<p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Nike, Adidas &amp; more</p>
+</div>
+</div>
+<div class="mt-3 bg-background-light dark:bg-background-dark rounded p-2 flex justify-between items-center">
+<div>
+<p class="text-primary font-bold text-sm">$20 OFF</p>
+<p class="text-[10px] text-slate-500 dark:text-gray-400">Min. spend $100</p>
+</div>
+<button class="text-primary text-xs font-bold border border-primary rounded px-2 py-1 hover:bg-primary hover:text-white transition-colors">Claim</button>
+</div>
+</div>
+<!-- Brand Voucher Card 2 -->
+<div class="flex-shrink-0 w-64 bg-white dark:bg-surface-dark rounded-lg p-3 shadow-sm border-l-4 border-[#d50000]">
+<div class="flex gap-3 items-start">
+<div class="size-12 rounded-full border border-gray-100 dark:border-white/10 overflow-hidden shrink-0">
+<div class="w-full h-full bg-center bg-cover" data-alt="Cosmetics brand logo with lipstick" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_Ra6NO6zNwmXjVfxeQ4IAhx-IL2WHu9S9Sj0gBCeE3lgxWHD96byZeaPhTC57SAeHktWzzw5CIwdR2AIWssCuRE698gYCYiLX4IbSecE7nuMkcWCodcsGvn25EBe1UFDpyYmFzRsE12xGGC8HyI87H3BmqzXgSdLjQHc52WJ4-6-4SawxnYHhlsTzX0drr4WsxK8lDy_s5yAVqFqRdOFhXGVl0lhOe6TFQDuQlBNDhP19k_svw5z2z9G7GBEWU0wqvCy8JYqTKge-");'></div>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white truncate">Beauty Official</h4>
+<p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">L'Oreal, Maybelline</p>
+</div>
+</div>
+<div class="mt-3 bg-background-light dark:bg-background-dark rounded p-2 flex justify-between items-center">
+<div>
+<p class="text-primary font-bold text-sm">15% Cashback</p>
+<p class="text-[10px] text-slate-500 dark:text-gray-400">Capped at $5</p>
+</div>
+<button class="text-primary text-xs font-bold border border-primary rounded px-2 py-1 hover:bg-primary hover:text-white transition-colors">Claim</button>
+</div>
+</div>
+</div>
+</div>
+<!-- End Spacer -->
+<div class="h-10"></div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 w-full bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-white/5 pb-5 pt-3 px-6 z-50">
+<div class="flex justify-between items-end">
+<div class="flex flex-col items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors" style="font-size: 24px;">home</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors" style="font-size: 24px;">feed</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Feed</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer">
+<div class="size-10 bg-primary rounded-full flex items-center justify-center -mt-5 shadow-lg shadow-primary/40 border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">confirmation_number</span>
+</div>
+<span class="text-[10px] font-bold text-primary">Voucher</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors" style="font-size: 24px;">shopping_cart</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Cart</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors" style="font-size: 24px;">person</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Me</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

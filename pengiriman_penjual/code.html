@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pengiriman Penjual</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f48525",
+              "primary-dark": "#d66e12",
+              "background-light": "#f8f7f5",
+              "background-dark": "#221810",
+              "surface-light": "#ffffff",
+              "surface-dark": "#2a2018",
+              "text-main-light": "#181411",
+              "text-main-dark": "#f8f7f5",
+              "text-sec-light": "#8a7460",
+              "text-sec-dark": "#a89480",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark h-screen flex flex-col overflow-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-surface-light dark:bg-surface-dark px-4 py-3 justify-between border-b border-[#e6e0db] dark:border-[#3a2e26] shrink-0 z-20">
+<div class="flex size-10 shrink-0 items-center justify-start cursor-pointer hover:opacity-70">
+<span class="material-symbols-outlined text-text-main-light dark:text-text-main-dark" style="font-size: 24px;">arrow_back</span>
+</div>
+<h2 class="text-text-main-light dark:text-text-main-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Pengiriman Saya</h2>
+<div class="flex size-10 items-center justify-end gap-3">
+<button class="flex items-center justify-center text-text-main-light dark:text-text-main-dark">
+<span class="material-symbols-outlined" style="font-size: 24px;">help</span>
+</button>
+</div>
+</div>
+<!-- Sticky Tabs -->
+<div class="bg-surface-light dark:bg-surface-dark z-10 shrink-0">
+<div class="flex border-b border-[#e6e0db] dark:border-[#3a2e26] w-full overflow-x-auto no-scrollbar">
+<a class="flex min-w-[100px] flex-col items-center justify-center border-b-[3px] border-primary text-primary px-4 py-3 flex-1" href="#">
+<p class="text-sm font-bold leading-normal whitespace-nowrap">Perlu Dikirim <span class="ml-1 text-xs bg-primary/10 px-1.5 py-0.5 rounded-full text-primary">3</span></p>
+</a>
+<a class="flex min-w-[100px] flex-col items-center justify-center border-b-[3px] border-transparent text-text-sec-light dark:text-text-sec-dark px-4 py-3 flex-1 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-bold leading-normal whitespace-nowrap">Dikirim</p>
+</a>
+<a class="flex min-w-[100px] flex-col items-center justify-center border-b-[3px] border-transparent text-text-sec-light dark:text-text-sec-dark px-4 py-3 flex-1 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-bold leading-normal whitespace-nowrap">Selesai</p>
+</a>
+<a class="flex min-w-[100px] flex-col items-center justify-center border-b-[3px] border-transparent text-text-sec-light dark:text-text-sec-dark px-4 py-3 flex-1 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-bold leading-normal whitespace-nowrap">Dibatalkan</p>
+</a>
+</div>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto overflow-x-hidden">
+<!-- Search Bar -->
+<div class="px-4 py-3 bg-surface-light dark:bg-surface-dark sticky top-0 z-10 shadow-sm">
+<label class="flex flex-col h-11 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-[#f5f2f0] dark:bg-[#3a2e26]">
+<div class="text-text-sec-light dark:text-text-sec-dark flex items-center justify-center pl-3 pr-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 bg-transparent border-none text-text-main-light dark:text-text-main-dark focus:outline-0 focus:ring-0 placeholder:text-text-sec-light dark:placeholder:text-text-sec-dark px-0 text-sm font-normal leading-normal" placeholder="Cari pesanan, ID, atau nama pembeli" value=""/>
+</div>
+</label>
+<!-- Filter Chips -->
+<div class="flex gap-2 mt-3 overflow-x-auto no-scrollbar pb-1">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full border border-primary bg-primary/10 px-4">
+<p class="text-primary text-xs font-bold leading-normal">Semua</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full border border-[#e6e0db] dark:border-[#4a3b30] bg-surface-light dark:bg-surface-dark px-4">
+<p class="text-text-sec-light dark:text-text-sec-dark text-xs font-medium leading-normal">J&amp;T Express</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full border border-[#e6e0db] dark:border-[#4a3b30] bg-surface-light dark:bg-surface-dark px-4">
+<p class="text-text-sec-light dark:text-text-sec-dark text-xs font-medium leading-normal">SiCepat</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full border border-[#e6e0db] dark:border-[#4a3b30] bg-surface-light dark:bg-surface-dark px-4">
+<p class="text-text-sec-light dark:text-text-sec-dark text-xs font-medium leading-normal">Shopee Xpress</p>
+</button>
+</div>
+</div>
+<!-- Orders List -->
+<div class="flex flex-col gap-3 p-4 pb-24">
+<!-- Card 1: Urgent -->
+<div class="flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_1px_3px_rgba(0,0,0,0.1)] overflow-hidden border border-transparent dark:border-[#3a2e26]">
+<!-- Header -->
+<div class="flex items-center justify-between px-4 py-3 border-b border-[#f0ece9] dark:border-[#3a2e26]">
+<div class="flex items-center gap-2">
+<span class="font-bold text-sm text-text-main-light dark:text-text-main-dark">user_budi99</span>
+<span class="px-1.5 py-0.5 rounded bg-primary/10 text-[10px] font-bold text-primary uppercase">COD</span>
+</div>
+<span class="text-xs text-primary font-bold uppercase tracking-wide">Perlu Dikirim</span>
+</div>
+<!-- Body -->
+<div class="p-4 flex gap-3 hover:bg-[#fcfbfb] dark:hover:bg-[#2f241c] transition-colors cursor-pointer">
+<div class="size-20 shrink-0 bg-gray-100 dark:bg-gray-800 rounded-md overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Black men's t-shirt folded neatly" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCcCAHUspE3Fvd1yg84CUSZWozjqq8flb5oq9mgEkbv6V_g2TYshJq2re8lfjzsjIpR24S1W8ZTmykMxxGY_DMowaqBXKLV74eqooZ7dylgj8GUk33Wxe7mXCILDuvqquxPP4lidklC7Nwp6is_Jrm_WMuC6pEnyUi3lP0EAz5O6CijYN7eJrHsoWFUwwXcU2G8RlyKLt-BHPRk470a-fP8wsJctmwg70waldLxUxf-P4gqP7Qd9_PjUoFvDC25ufTZrjazep-Q5zc9");'></div>
+</div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<p class="text-text-main-light dark:text-text-main-dark text-sm font-medium leading-snug line-clamp-2">Kaos Polos Cotton Combed 30s - Hitam, XL</p>
+<p class="text-text-sec-light dark:text-text-sec-dark text-xs mt-1">Variasi: Hitam, XL</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="text-text-sec-light dark:text-text-sec-dark text-xs">x 1</span>
+<span class="text-text-main-light dark:text-text-main-dark font-medium text-sm">Rp45.000</span>
+</div>
+</div>
+</div>
+<!-- Alert Section -->
+<div class="px-4 py-2 bg-red-50 dark:bg-red-900/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600 dark:text-red-400" style="font-size: 16px;">schedule</span>
+<p class="text-xs text-red-600 dark:text-red-400 font-medium">Kirim sebelum: Hari ini 14:00</p>
+</div>
+<!-- Footer / Actions -->
+<div class="p-4 border-t border-[#f0ece9] dark:border-[#3a2e26]">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-1.5">
+<div class="w-12 h-6 bg-contain bg-no-repeat bg-left" data-alt="J&amp;T Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHWzX4VO5vBBBzkk7_nQkE3TVP-wNblx5N7Egs_nTTVTIcw6fOujO5aG9eGXzTkvqENzQybsPT68SLDaAA-W72sjSq37072zw92IGWwATTrmOWU2LKdxV-KZDgAzkaKoQnZpDh5B9SW_-aqO9-IVI4VNXCsn57ZDx5GepUQk5gNP_Zob5SJ2ZtfcVAX70W09aUY_dA_mxsgh7f0ZZSTfVXJLrqNR-qXeENyu7uiBArFqkRBeS2Hr-Ow0rOt22_KuaQEahNGQleRh68"); background-size: contain;'></div>
+<span class="text-xs text-text-sec-light dark:text-text-sec-dark border-l border-gray-300 pl-2 ml-1">Reguler</span>
+</div>
+<div class="text-right">
+<span class="text-xs text-text-sec-light dark:text-text-sec-dark">Total Pesanan:</span>
+<span class="text-primary font-bold text-base ml-1">Rp57.000</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 h-10 border border-[#e6e0db] dark:border-[#4a3b30] rounded-lg text-text-main-light dark:text-text-main-dark text-sm font-bold flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#3a2e26] transition-colors">
+<span class="material-symbols-outlined" style="font-size: 18px;">chat</span>
+                            Hubungi
+                        </button>
+<button class="flex-[2] h-10 bg-primary hover:bg-primary-dark rounded-lg text-white text-sm font-bold shadow-md shadow-primary/20 flex items-center justify-center gap-2 transition-colors">
+                            Atur Pengiriman
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Standard -->
+<div class="flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_1px_3px_rgba(0,0,0,0.1)] overflow-hidden border border-transparent dark:border-[#3a2e26]">
+<div class="flex items-center justify-between px-4 py-3 border-b border-[#f0ece9] dark:border-[#3a2e26]">
+<div class="flex items-center gap-2">
+<span class="font-bold text-sm text-text-main-light dark:text-text-main-dark">sari_rahayu_88</span>
+</div>
+<span class="text-xs text-primary font-bold uppercase tracking-wide">Perlu Dikirim</span>
+</div>
+<div class="p-4 flex gap-3 hover:bg-[#fcfbfb] dark:hover:bg-[#2f241c] transition-colors cursor-pointer">
+<div class="size-20 shrink-0 bg-gray-100 dark:bg-gray-800 rounded-md overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Serum bottle cosmetic product" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDXAQnBOMCrmX56bCqCGuvCz_c158NMWtr9WhgO6iyQq8nnSdAyUe2yIJZAk87Bilsh2I-sVMAZC37KUtxKoj-ss8vzNGaQjLn2UP42zjQo0PYu2MMy7KJ9o-BCspXsSbDcF7kfUi9kP_dOQjq1CtUOwQnpYd3M5_jWNuKjai9lOSyhXkRAhnkLem_rOWRQrTP5D_UlBKmEflZtoK-cPctb3ra9aqoANOIu2pYM3N7ztodW7xCprDENOt3hfkeFZs8PAYYQsW94BO0");'></div>
+</div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<p class="text-text-main-light dark:text-text-main-dark text-sm font-medium leading-snug line-clamp-2">Serum Wajah Glowing Brightening 30ml</p>
+<p class="text-text-sec-light dark:text-text-sec-dark text-xs mt-1">Variasi: 30ml</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="text-text-sec-light dark:text-text-sec-dark text-xs">x 2</span>
+<span class="text-text-main-light dark:text-text-main-dark font-medium text-sm">Rp180.000</span>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-[#f0ece9] dark:border-[#3a2e26]">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-1.5">
+<div class="h-6 flex items-center" data-alt="SiCepat Logo">
+<span class="text-red-600 font-black italic text-sm tracking-tighter">SiCepat</span>
+</div>
+<span class="text-xs text-text-sec-light dark:text-text-sec-dark border-l border-gray-300 pl-2 ml-1">HALU</span>
+</div>
+<div class="text-right">
+<span class="text-xs text-text-sec-light dark:text-text-sec-dark">Total Pesanan:</span>
+<span class="text-primary font-bold text-base ml-1">Rp365.000</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 h-10 border border-[#e6e0db] dark:border-[#4a3b30] rounded-lg text-text-main-light dark:text-text-main-dark text-sm font-bold flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#3a2e26] transition-colors">
+<span class="material-symbols-outlined" style="font-size: 18px;">chat</span>
+</button>
+<button class="flex-[3] h-10 bg-primary hover:bg-primary-dark rounded-lg text-white text-sm font-bold shadow-md shadow-primary/20 flex items-center justify-center gap-2 transition-colors">
+                            Atur Pengiriman
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Multi-item -->
+<div class="flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_1px_3px_rgba(0,0,0,0.1)] overflow-hidden border border-transparent dark:border-[#3a2e26]">
+<div class="flex items-center justify-between px-4 py-3 border-b border-[#f0ece9] dark:border-[#3a2e26]">
+<div class="flex items-center gap-2">
+<span class="font-bold text-sm text-text-main-light dark:text-text-main-dark">mega_shop_client</span>
+</div>
+<span class="text-xs text-primary font-bold uppercase tracking-wide">Perlu Dikirim</span>
+</div>
+<!-- Main Item -->
+<div class="p-4 flex gap-3 hover:bg-[#fcfbfb] dark:hover:bg-[#2f241c] transition-colors cursor-pointer pb-2">
+<div class="size-20 shrink-0 bg-gray-100 dark:bg-gray-800 rounded-md overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Canvas tote bag mockup" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVUrUuG5Ve5eEDvJvP0GJmhXX6ZOTnChTg4Uri_k38b7ARp49HoVO9V53RzfS_HfWx5vON4PHyVF26qplFfPN97mEo4MCMQqI-ltqRnZpAecVCoc7PEhvU5FHRV4dm8eu9Whm1_ccaWrPFvo-KeIqgLtfGA9HSBgW6Eqb-pMZggub0i30HADIlXEPtHu-q-Wnfu4NotyYrebM4RCzoL6fbxJnNCXsgyE4w5IQF4o0l1GcimCmmmXywRqRJRK6en3ch59TtpwxzKx8G");'></div>
+</div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<p class="text-text-main-light dark:text-text-main-dark text-sm font-medium leading-snug line-clamp-1">Tote Bag Kanvas Premium - Ivory</p>
+<p class="text-text-sec-light dark:text-text-sec-dark text-xs mt-1">Variasi: Ivory</p>
+</div>
+<div class="flex justify-between items-end mt-1">
+<span class="text-text-sec-light dark:text-text-sec-dark text-xs">x 1</span>
+</div>
+</div>
+</div>
+<!-- More items hint -->
+<div class="px-4 pb-4">
+<p class="text-xs text-text-sec-light dark:text-text-sec-dark">+ 2 produk lainnya</p>
+</div>
+<div class="px-4 py-2 bg-orange-50 dark:bg-orange-900/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400" style="font-size: 16px;">calendar_month</span>
+<p class="text-xs text-orange-600 dark:text-orange-400 font-medium">Kirim sebelum: 16 Des 2023</p>
+</div>
+<div class="p-4 border-t border-[#f0ece9] dark:border-[#3a2e26]">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-1.5">
+<div class="h-6 flex items-center" data-alt="Shopee Xpress Logo">
+<span class="text-primary font-black text-sm tracking-tight">Shopee</span> <span class="text-primary text-xs ml-0.5 font-bold">Xpress</span>
+</div>
+<span class="text-xs text-text-sec-light dark:text-text-sec-dark border-l border-gray-300 pl-2 ml-1">Hemat</span>
+</div>
+<div class="text-right">
+<span class="text-xs text-text-sec-light dark:text-text-sec-dark">Total Pesanan:</span>
+<span class="text-primary font-bold text-base ml-1">Rp125.500</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 h-10 border border-[#e6e0db] dark:border-[#4a3b30] rounded-lg text-text-main-light dark:text-text-main-dark text-sm font-bold flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#3a2e26] transition-colors">
+<span class="material-symbols-outlined" style="font-size: 18px;">chat</span>
+</button>
+<button class="flex-[3] h-10 bg-primary hover:bg-primary-dark rounded-lg text-white text-sm font-bold shadow-md shadow-primary/20 flex items-center justify-center gap-2 transition-colors">
+                            Atur Pengiriman
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bulk Action Bottom Bar (Sticky) -->
+<div class="w-full bg-surface-light dark:bg-surface-dark border-t border-[#e6e0db] dark:border-[#3a2e26] p-4 shrink-0 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-30">
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<input class="size-5 rounded border-gray-300 text-primary focus:ring-primary dark:bg-[#3a2e26] dark:border-[#4a3b30]" type="checkbox"/>
+<span class="text-sm font-bold text-text-main-light dark:text-text-main-dark">Pilih Semua</span>
+</div>
+<button class="bg-text-main-light dark:bg-white text-white dark:text-black px-6 py-2.5 rounded-lg text-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">print</span>
+                Cetak Massal
+            </button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Detail Produk</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48525",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221810",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-gray-100 dark:bg-black font-display text-[#181411] dark:text-white antialiased">
+<!-- Mobile Container (Simulating Phone View centered on desktop, full width on mobile) -->
+<div class="relative flex min-h-screen flex-col w-full mx-auto max-w-md bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden pb-[80px]">
+<!-- Top Navigation (Floating) -->
+<div class="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-4 pt-4 pb-2 bg-gradient-to-b from-black/40 to-transparent pointer-events-none h-24">
+<!-- Back Button -->
+<button class="pointer-events-auto flex items-center justify-center size-10 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<!-- Right Actions -->
+<div class="pointer-events-auto flex items-center gap-3">
+<button class="flex items-center justify-center size-10 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+<div class="relative">
+<button class="flex items-center justify-center size-10 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<!-- Cart Badge -->
+<span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white border-2 border-transparent">3</span>
+</div>
+</div>
+</div>
+<!-- Main Scrollable Content -->
+<div class="flex-1 overflow-y-auto no-scrollbar scroll-smooth">
+<!-- Hero Image Carousel -->
+<div class="relative w-full aspect-square bg-gray-200 dark:bg-gray-800">
+<div class="flex w-full h-full overflow-x-auto snap-x snap-mandatory no-scrollbar">
+<div class="w-full h-full flex-shrink-0 snap-center bg-cover bg-center" data-alt="Sepatu sneakers putih minimalis di permukaan cerah" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDuqPRJo2vZX275Ep93i2nMU6XEMgz3nJCSgwuAcsKr56v6bHkLFWdX9a6Tdl8SoVsaGAQRpWTc6AE83OoLLSv7KF203c0_6NRD3blN5BP1NcJJ4HnX8Z2Gx6lAQaaoqdtWynS7qQhnlILsUSH2ASF9u-bMrvEwXT40nrHgzhtKv-DZwIwlal2BeD3cCy3hPtfL7FX5w0PVsgrgE01pNpV4jTH4_buoc1brMD2tTjVLH8RBbXlin6BOopszhjWi8f-MfwbgIG5Jd7A-');"></div>
+<div class="w-full h-full flex-shrink-0 snap-center bg-cover bg-center" data-alt="Detail tekstur sepatu bagian samping" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8N3jHHjYKg-AGE6Sm-ah1T1gTwLcBbRPFqH1c2YBi3fY9CKaimw1vZx9sLr3JTnTFjU24l23URSOgapeJFpJKbB8AhJo43iALLCwiFNP25qqEVgwqdrbv06Zzr2Tmaty8mmTUUAgMCumHOzUSTFKsMoRQ3knORhDGmKN6XBndjKdOsJP4tTECTcaZxn0W0X8ovdVzH6ZrcQQlH4jtqTshAf2AwZj-085kFfWKXyNsZ5gZhJ_6G6Db41KpUX2tloJlKoCSF16xPLpC');"></div>
+<div class="w-full h-full flex-shrink-0 snap-center bg-cover bg-center" data-alt="Model menggunakan sepatu sneakers lifestyle" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6pgvDLnmVewGJc928SvLDOPIWrS0YYiTrXpvQAgqzf2N7x0nVzZTzG1IoTiWtyWq2sKMmoaoGZH0DhVjqLpoXPslKjAvbTjaEFLbZo6SwoN0xxobyb6S6_60LezFyg-x868mHhECk35jZG8uPXB07-VrWqD00Y80zdujGiVGV8JECphEKIoRu57Rr5g-B5mkFgOw9SSrLLUT7XetX1mwgJ8psZWaA7A2_wzCn6Io4nIGa6cmpXpwwkteUy2ZTwrwGFTmIyAt5qIih');"></div>
+</div>
+<!-- Page Indicator -->
+<div class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium text-white tracking-wider">
+                    1/5
+                </div>
+</div>
+<!-- Price & Flash Sale Section -->
+<div class="bg-white dark:bg-[#221810] px-4 pt-4 pb-3">
+<div class="flex items-center gap-2 mb-1">
+<h1 class="text-primary text-2xl font-bold tracking-tight">Rp 150.000</h1>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary/10 text-primary">25% OFF</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-gray-400 dark:text-gray-500 mb-3">
+<span class="line-through">Rp 200.000</span>
+<span class="text-xs">• Diskon Terbatas</span>
+</div>
+<h2 class="text-[#181411] dark:text-gray-100 text-lg font-bold leading-snug mb-3 line-clamp-2">
+                    Sepatu Sneakers Pria Casual Import - High Quality Canvas - Putih/Hitam
+                </h2>
+<div class="flex items-center justify-between text-sm border-t border-gray-100 dark:border-white/10 pt-3">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-[#181411] dark:text-white font-semibold">
+<span class="material-symbols-outlined text-primary text-[18px] fill-current">star</span>
+                            4.8 <span class="text-gray-400 font-normal text-xs ml-1">(2.1rb)</span>
+</div>
+<div class="h-3 w-px bg-gray-300 dark:bg-gray-700"></div>
+<div class="text-[#181411] dark:text-white text-xs">
+                            Terjual <span class="font-semibold">5rb+</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Spacer -->
+<div class="h-2 w-full bg-gray-100 dark:bg-[#1a120b]"></div>
+<!-- Shipping Info -->
+<div class="bg-white dark:bg-[#221810] px-4 py-3 flex items-center justify-between active:bg-gray-50 dark:active:bg-white/5 cursor-pointer">
+<div class="flex items-center gap-3 overflow-hidden">
+<span class="material-symbols-outlined text-green-600 dark:text-green-500">local_shipping</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#181411] dark:text-white">Gratis Ongkir</span>
+<span class="text-xs text-gray-500 dark:text-gray-400 truncate">Ongkir Rp0 dengan minimal belanja Rp30rb</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-xl">chevron_right</span>
+</div>
+<!-- Spacer -->
+<div class="h-px w-full bg-gray-100 dark:bg-[#2c241b]"></div>
+<!-- Variations -->
+<div class="bg-white dark:bg-[#221810] px-4 py-3 flex items-center justify-between active:bg-gray-50 dark:active:bg-white/5 cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400 w-16">Variasi</span>
+<span class="text-sm text-[#181411] dark:text-white font-medium">Putih, Ukuran 42</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-xl">chevron_right</span>
+</div>
+<!-- Spacer -->
+<div class="h-2 w-full bg-gray-100 dark:bg-[#1a120b]"></div>
+<!-- Seller Info -->
+<div class="bg-white dark:bg-[#221810] px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-full bg-gray-200 bg-cover bg-center border border-gray-100 dark:border-gray-700" data-alt="Avatar penjual toko sepatu" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXv9G0h5fKAAQ5cOuikuUtGkEryqlixvzsm6g6Dkb4LuOMODWlWeBl8RtyVuxcml4IsK6oH_6RqIvmKoPIaqhYN8EYuQw7GUB-MoJP7deTEYX9jdxvv_MSr2TGm-r3tKt4s2gUP6qfHjl25aYH7-K3qS4LsD9Z1emr4TeW-xAs3Q-JA9AFXG5wuYXahlBhUrMq_2NNTCgXQWCC5xkdpsII5A-XujiFcrNqV18wmi5wFyL2mzs6xen1aSDKHauVEV4mAFkndVDIhXqF')"></div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1">
+<h3 class="font-bold text-[#181411] dark:text-white truncate">Sneakers Official Store</h3>
+<span class="material-symbols-outlined text-primary text-[14px] fill-current" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1">
+<span class="text-green-600 dark:text-green-500 font-medium">Online</span>
+<span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                            Jakarta Pusat
+                        </p>
+</div>
+<button class="border border-primary text-primary px-3 py-1.5 rounded text-xs font-bold hover:bg-primary/5 transition-colors">
+                        Kunjungi
+                    </button>
+</div>
+</div>
+<!-- Spacer -->
+<div class="h-2 w-full bg-gray-100 dark:bg-[#1a120b]"></div>
+<!-- Description -->
+<div class="bg-white dark:bg-[#221810] px-4 py-4">
+<h3 class="text-base font-bold text-[#181411] dark:text-white mb-2">Rincian Produk</h3>
+<!-- Specs Grid -->
+<div class="grid grid-cols-[100px_1fr] gap-y-2 text-sm mb-4">
+<span class="text-gray-500 dark:text-gray-400">Bahan</span>
+<span class="text-[#181411] dark:text-white">Canvas Premium</span>
+<span class="text-gray-500 dark:text-gray-400">Negara Asal</span>
+<span class="text-[#181411] dark:text-white">Indonesia</span>
+<span class="text-gray-500 dark:text-gray-400">Stok</span>
+<span class="text-[#181411] dark:text-white">142</span>
+</div>
+<div class="relative overflow-hidden transition-all">
+<p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
+                        Sepatu sneakers pria dengan desain casual yang cocok untuk kegiatan sehari-hari. Dibuat dengan bahan canvas premium yang sirkulasi udaranya baik sehingga nyaman dipakai seharian.
+                        <br/><br/>
+                        Fitur Utama:
+                        <br/>- Sol karet anti-slip
+                        <br/>- Insole empuk memory foam
+                        <br/>- Jahitan rapi dan kuat
+                        <br/>- Tersedia ukuran 39-44
+                    </p>
+</div>
+<div class="flex justify-center pt-2 border-t border-gray-100 dark:border-white/5 mt-2">
+<button class="flex items-center gap-1 text-primary text-sm font-medium">
+                        Lihat Selengkapnya
+                        <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Spacer -->
+<div class="h-2 w-full bg-gray-100 dark:bg-[#1a120b]"></div>
+<!-- Reviews Preview -->
+<div class="bg-white dark:bg-[#221810] px-4 py-4 mb-6">
+<div class="flex items-center justify-between mb-4">
+<div class="flex flex-col">
+<h3 class="text-base font-bold text-[#181411] dark:text-white">Penilaian Produk</h3>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-primary text-[16px] fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold text-[#181411] dark:text-white">4.8</span>
+<span class="text-xs text-gray-400">/5.0</span>
+<span class="text-xs text-gray-400 ml-1">(2.1rb ulasan)</span>
+</div>
+</div>
+<button class="text-primary text-sm font-medium">Lihat Semua</button>
+</div>
+<!-- Review Item 1 -->
+<div class="border-b border-gray-100 dark:border-gray-800 pb-4 mb-4">
+<div class="flex items-start gap-2 mb-2">
+<div class="size-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Avatar pembeli ulasan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJjXiA3g-cw0-A6LDuKrriH-Y69RuGHX5JGXBynLrWKtY-dGosiodfxl0znk4a64ltnYCapnChyHZmbPnk3YQXsMCWSSMRE4A-wHCNYcjODUvM1pqR1h--nn1qni6sR7fWmaleNeIDq5nmf0RF7fef09fe1S_Rl_XFjI4uJ66caft9ZCao2iYwThhco1BV12ln0bUIizZwAb6Lkh-zgT3csQq9y8A__bI5gjBb30PwyONqa6r5a9a79nw-mvx9ko2Zk2ftLViRlLBe')"></div>
+<div class="flex-1">
+<div class="text-xs font-medium text-[#181411] dark:text-white">Sarah W.</div>
+<div class="flex items-center gap-0.5 mt-0.5 mb-1">
+<span class="material-symbols-outlined text-primary text-[12px] fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[12px] fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[12px] fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[12px] fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[12px] fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-2">Variasi: Putih, 42</p>
+<p class="text-sm text-gray-700 dark:text-gray-300 leading-snug">Barang bagus banget, sesuai ekspektasi. Pengiriman cepat cuma 2 hari sampe. Recommended seller!</p>
+<!-- Review Images -->
+<div class="flex gap-2 mt-3 overflow-x-auto no-scrollbar">
+<div class="size-16 flex-shrink-0 rounded-md bg-gray-100 bg-cover bg-center" data-alt="Foto ulasan produk dari pembeli 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAznLLAaqzEjBGAGuzi4ec4M16DBRvnBGFsBlzoRsjRr_5GonYey8kDq54yREcpEG6zUMqQ6htLURRY4RETCF0J4kN_SL1nFQFOvGN6WG4Rgred0hDw_KGZj0NCFc04LRY4zdxQ8JBK3cIbiejsF1I4oHMnAtqf4BGhdRUSe6YibrdUUjYDphq6bloXSaZ3nXkgtG_mV5Kvqf5Mt6yJn4Xyckh7GQCilhT40Kovum3_ijQ61fyg3udXVgyh9bssMid9Aa3rnamtwRhe')"></div>
+<div class="size-16 flex-shrink-0 rounded-md bg-gray-100 bg-cover bg-center" data-alt="Foto ulasan produk dari pembeli 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFY1zyX38YanvesUpPnoLwK-1Nqf1Hiv9WtidE2fJb4PjNrEZWl7xhNJ6eAsXOjZujyzm7RAbuyl_xhnIBa8LHqhbqWzEUNrOQ2GNe_0TlbpjMGre5ZRZWSAgAi3rnZQX12fcXTqQzi7KOYHSOV0zXRq1lfEygJzHfAv5FT3vXv1VlhqgEixuXpH8r9LseljUhE5RilN04LIFoR51eOVW5UUqF0aKK4uoi6dDTD-6mfCSuMEbUL0vWHIlBamXbs4JvI5YN8mBR7jB4')"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Review Item 2 -->
+<div class="flex items-start gap-2">
+<div class="size-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Avatar pembeli kedua" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDI91F4SWOQ478uQgwLzfxRkrgZ4rrR_QWRpnvJdEFAO0MhvtB3R-r2OHsDbgeZyZoP_mF6Mm5QJlA19PV2nyLNnuG9aLPLBnzv8-b0TkGCN-30JOzp9qUDqcin-kD-wvPAX7vYVynbnERvd20qzgY9j67QGYtrE56jlNPvMrN6SZnCc6xFIyRlVS1J_13AxD_VdaBrxpAFRkjhv0BC3gCRdSK9wVSW5lWNLiEM7Ev7o90YQUoAIRW5zvXSJ4xnBd7JcC89Zq42QRK2')"></div>
+<div class="flex-1">
+<div class="text-xs font-medium text-[#181411] dark:text-white">Budi Santoso</div>
+<div class="flex items-center gap-0.5 mt-0.5 mb-1">
+<span class="material-symbols-outlined text-primary text-[12px] fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[12px] fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[12px] fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[12px] fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-gray-300 text-[12px] fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-sm text-gray-700 dark:text-gray-300 leading-snug">Kualitas oke untuk harga segini. Sol agak sedikit keras tapi masih nyaman.</p>
+</div>
+</div>
+</div>
+<!-- "You may also like" Section (Placeholder) -->
+<div class="p-4">
+<h3 class="text-base font-bold text-[#181411] dark:text-white mb-3">Produk Serupa</h3>
+<div class="grid grid-cols-2 gap-3">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-[#221810] rounded-lg overflow-hidden border border-gray-100 dark:border-gray-800">
+<div class="aspect-square bg-gray-200 bg-cover bg-center" data-alt="Rekomendasi produk sepatu 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBb8uXoT_Tz6qwEJ_xD4ev392eXM4AV8IzEMN2xpc3fVPyEpe5rvTPwKuIWACdbySUpwz4pUT_FfOII9-7Rfn2P2C9HwtKWaPBAXkPJytiieuW42QFGFakU27KDM6N4ewFBSWpbNFMlTd13t20fElOjbqECntM36tuBw5zhg1rBIXtCWowZFMHsN6r_TDo9YbkwketdpLdoAfheMet46nip9e7BHu_FTX4L4xHmMYwKC8uHNPVlznyD0ST90EoHMe2SYdR8lqhKUmoP')"></div>
+<div class="p-2">
+<div class="text-xs font-medium text-gray-800 dark:text-gray-200 truncate">Sneakers Sporty Black</div>
+<div class="text-sm font-bold text-primary mt-1">Rp 180.000</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-[#221810] rounded-lg overflow-hidden border border-gray-100 dark:border-gray-800">
+<div class="aspect-square bg-gray-200 bg-cover bg-center" data-alt="Rekomendasi produk sepatu 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUu_8vbCgv-mgzAy4dV_4lYr1EfLSDVr37JbbjSjic-0nNGxc1VoLKZrv6K-r6frGG6ChIYH0PUTLYtDX7uv4IGdNYJi_NnOqFsULo0MqNPNGW8ZleADoZKmA_0LWPWM6PcYYGNh9NakKuyjIUtRR43vojbry8li6c5HZFkXgT4co5rnkFVAJ6peG_2w4A8ZT361javrjOCDv3StJdlC2XitKwdGCOhLGubQRlmj4tWEjGPe1qaBYH8pz6vUUwahTilngvg-HuHQJX')"></div>
+<div class="p-2">
+<div class="text-xs font-medium text-gray-800 dark:text-gray-200 truncate">Slip On Canvas</div>
+<div class="text-sm font-bold text-primary mt-1">Rp 125.000</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-[#221810] border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] w-full max-w-md mx-auto">
+<div class="flex items-center px-4 py-3 gap-3 safe-area-bottom">
+<!-- Chat Button -->
+<button class="flex flex-col items-center justify-center gap-0.5 text-gray-500 dark:text-gray-400 hover:text-primary transition-colors min-w-[48px]">
+<span class="material-symbols-outlined text-[24px]">chat_bubble_outline</span>
+<span class="text-[10px] font-medium">Chat</span>
+</button>
+<div class="w-px h-8 bg-gray-200 dark:bg-gray-700"></div>
+<!-- Add to Cart (Secondary) -->
+<button class="flex-1 flex items-center justify-center gap-2 h-10 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+<span class="text-sm font-bold whitespace-nowrap">+ Keranjang</span>
+</button>
+<!-- Buy Now (Primary) -->
+<button class="flex-1 flex items-center justify-center h-10 rounded-lg bg-primary text-white hover:bg-primary/90 shadow-md shadow-primary/30 transition-colors">
+<span class="text-sm font-bold">Beli Sekarang</span>
+</button>
+</div>
+<!-- iOS Safe Area Spacer -->
+<div class="h-[env(safe-area-inset-bottom)] w-full bg-white dark:bg-[#221810]"></div>
+</div>
+</div>
+</body></html>
