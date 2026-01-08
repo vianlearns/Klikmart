@@ -17,7 +17,7 @@ export function HomePage() {
                         </div>
                         <input
                             className="block w-full pl-10 pr-3 py-2.5 border-none rounded-xl bg-background-light dark:bg-[#2c241d] text-sm placeholder-gray-400 dark:text-white focus:ring-1 focus:ring-primary"
-                            placeholder="Search for products, brands..."
+                            placeholder="Cari produk, merek..."
                             type="text"
                         />
                         <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
@@ -83,7 +83,7 @@ export function HomePage() {
                             </div>
                         </div>
                         <Link to="/flash-sale" className="text-sm font-semibold text-primary flex items-center">
-                            See All <Icon name="chevron_right" size={16} />
+                            Lihat Semua <Icon name="chevron_right" size={16} />
                         </Link>
                     </div>
                     <div className="flex overflow-x-auto gap-4 hide-scrollbar pb-4">
@@ -100,14 +100,14 @@ export function HomePage() {
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <div className="flex items-baseline gap-2">
-                                        <span className="text-primary font-bold text-sm">${product.price}</span>
-                                        <span className="text-gray-400 text-xs line-through">${product.originalPrice}</span>
+                                        <span className="text-primary font-bold text-sm">Rp {product.price.toLocaleString('id-ID')}</span>
+                                        <span className="text-gray-400 text-xs line-through">Rp {product.originalPrice?.toLocaleString('id-ID')}</span>
                                     </div>
                                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-1">
                                         <div className="bg-primary h-1.5 rounded-full" style={{ width: `${product.soldPercent}%` }} />
                                     </div>
                                     <span className="text-[10px] text-gray-500 mt-0.5">
-                                        {product.soldPercent >= 90 ? 'Almost Gone' : `${product.soldPercent}% Sold`}
+                                        {product.soldPercent >= 90 ? 'Hampir Habis' : `${product.soldPercent}% Terjual`}
                                     </span>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@ export function HomePage() {
                 {/* Recommended Grid */}
                 <div className="px-4">
                     <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 sticky top-0 bg-white dark:bg-[#1a120b] py-2 z-10">
-                        Recommended For You
+                        Rekomendasi Untukmu
                     </h2>
                     <div className="grid grid-cols-2 gap-4">
                         {recommendedProducts.map((product) => (
@@ -139,7 +139,7 @@ export function HomePage() {
                     </div>
                     <div className="py-8 flex justify-center">
                         <button className="flex items-center gap-2 text-primary font-semibold text-sm hover:underline">
-                            Load More Products <Icon name="expand_more" size={18} />
+                            Muat Produk Lainnya <Icon name="expand_more" size={18} />
                         </button>
                     </div>
                 </div>
