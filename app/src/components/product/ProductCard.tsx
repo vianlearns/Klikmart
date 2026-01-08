@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Icon } from '../common/Icon';
 
 interface ProductCardProps {
@@ -11,16 +12,28 @@ interface ProductCardProps {
     location?: string;
 }
 
+// Fungsi untuk mengubah nama produk menjadi slug URL
+function createProductSlug(name: string): string {
+    return name
+        .toLowerCase()
+        .replace(/[^a-zA-Z0-9\s-]/g, '') // Hapus karakter spesial
+        .replace(/\s+/g, '-') // Ganti spasi dengan dash
+        .replace(/-+/g, '-') // Hapus dash ganda
+        .trim();
+}
+
 export function ProductCard({
     name,
     image,
     price,
     originalPrice,
     rating,
-    reviews,
+    reviews
 }: ProductCardProps) {
+    const productSlug = createProductSlug(name);
+    
     return (
-        <div className="group bg-white dark:bg-[#2c241d] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden flex flex-col">
+        <Link to={`/product/${productSlug}`} className="group bg-white dark:bg-[#2c241d] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden flex flex-col hover:shadow-md transition-shadow duration-200">
             <div className="relative aspect-[4/5] bg-gray-100 overflow-hidden">
                 <div
                     className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
@@ -54,6 +67,6 @@ export function ProductCard({
                     </button>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }

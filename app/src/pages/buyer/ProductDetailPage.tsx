@@ -1,18 +1,43 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
+import { ProductCard } from '../../components/product/ProductCard';
+import { recommendedProducts } from '../../data/mockData';
 
 const productImages = [
     'https://lh3.googleusercontent.com/aida-public/AB6AXuDuqPRJo2vZX275Ep93i2nMU6XEMgz3nJCSgwuAcsKr56v6bHkLFWdX9a6Tdl8SoVsaGAQRpWTc6AE83OoLLSv7KF203c0_6NRD3blN5BP1NcJJ4HnX8Z2Gx6lAQaaoqdtWynS7qQhnlILsUSH2ASF9u-bMrvEwXT40nrHgzhtKv-DZwIwlal2BeD3cCy3hPtfL7FX5w0PVsgrgE01pNpV4jTH4_buoc1brMD2tTjVLH8RBbXlin6BOopszhjWi8f-MfwbgIG5Jd7A-',
     'https://lh3.googleusercontent.com/aida-public/AB6AXuA8N3jHHjYKg-AGE6Sm-ah1T1gTwLcBbRPFqH1c2YBi3fY9CKaimw1vZx9sLr3JTnTFjU24l23URSOgapeJFpJKbB8AhJo43iALLCwiFNP25qqEVgwqdrbv06Zzr2Tmaty8mmTUUAgMCumHOzUSTFKsMoRQ3knORhDGmKN6XBndjKdOsJP4tTECTcaZxn0W0X8ovdVzH6ZrcQQlH4jtqTshAf2AwZj-085kFfWKXyNsZ5gZhJ_6G6Db41KpUX2tloJlKoCSF16xPLpC',
 ];
 
-const similarProducts = [
-    { id: 's1', name: 'Sneakers Sporty Black', price: 180000, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBb8uXoT_Tz6qwEJ_xD4ev392eXM4AV8IzEMN2xpc3fVPyEpe5rvTPwKuIWACdbySUpwz4pUT_FfOII9-7Rfn2P2C9HwtKWaPBAXkPJytiieuW42QFGFakU27KDM6N4ewFBSWpbNFMlTd13t20fElOjbqECntM36tuBw5zhg1rBIXtCWowZFMHsN6r_TDo9YbkwketdpLdoAfheMet46nip9e7BHu_FTX4L4xHmMYwKC8uHNPVlznyD0ST90EoHMe2SYdR8lqhKUmoP' },
-    { id: 's2', name: 'Slip On Canvas', price: 125000, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAUu_8vbCgv-mgzAy4dV_4lYr1EfLSDVr37JbbjSjic-0nNGxc1VoLKZrv6K-r6frGG6ChIYH0PUTLYtDX7uv4IGdNYJi_NnOqFsULo0MqNPNGW8ZleADoZKmA_0LWPWM6PcYYGNh9NakKuyjIUtRR43vojbry8li6c5HZFkXgT4co5rnkFVAJ6peG_2w4A8ZT361javrjOCDv3StJdlC2XitKwdGCOhLGubQRlmj4tWEjGPe1qaBYH8pz6vUUwahTilngvg-HuHQJX' },
-];
+// Fungsi untuk mengubah slug menjadi title
+function slugToTitle(slug: string): string {
+    return slug
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
 
 export function ProductDetailPage() {
+    const { title } = useParams<{ title: string }>();
+    
+    // Cari produk berdasarkan title (slug)
+    const productTitle = title ? slugToTitle(title) : '';
+    const product = recommendedProducts.find(p => p.name.toLowerCase() === productTitle.toLowerCase());
+    
+    // Jika produk tidak ditemukan, gunakan data default
+    const currentProduct = product || {
+        id: 'default',
+        name: 'Sepatu Sneakers Pria Casual Import - High Quality Canvas - Putih/Hitam',
+        image: productImages[0],
+        price: 150000,
+        originalPrice: 200000,
+        rating: 4.8,
+        reviews: '2.1rb'
+    };
+
+    // Filter produk serupa (kecuali produk saat ini)
+    const similarProducts = recommendedProducts.filter(p => p.id !== currentProduct.id).slice(0, 4);
+
     return (
         <MobileContainer className="bg-background-light dark:bg-background-dark">
             {/* Top Navigation (Floating) */}
@@ -54,15 +79,19 @@ export function ProductDetailPage() {
                 {/* Price & Flash Sale Section */}
                 <div className="bg-white dark:bg-[#221810] px-4 pt-4 pb-3">
                     <div className="flex items-center gap-2 mb-1">
-                        <h1 className="text-primary text-2xl font-bold tracking-tight">Rp 150.000</h1>
-                        <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary/10 text-primary">25% OFF</span>
+                        <h1 className="text-primary text-2xl font-bold tracking-tight">Rp {currentProduct.price.toLocaleString('id-ID')}</h1>
+                        {currentProduct && 'discount' in currentProduct && (currentProduct as any).discount ? (
+                            <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary/10 text-primary">{(currentProduct as any).discount}% OFF</span>
+                        ) : null}
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-400 dark:text-gray-500 mb-3">
-                        <span className="line-through">Rp 200.000</span>
-                        <span className="text-xs">• Diskon Terbatas</span>
-                    </div>
+                    {'originalPrice' in currentProduct && currentProduct.originalPrice && (
+                        <div className="flex items-center gap-2 text-sm text-gray-400 dark:text-gray-500 mb-3">
+                            <span className="line-through">Rp {currentProduct.originalPrice.toLocaleString('id-ID')}</span>
+                            <span className="text-xs">• Diskon Terbatas</span>
+                        </div>
+                    )}
                     <h2 className="text-[#181411] dark:text-gray-100 text-lg font-bold leading-snug mb-3 line-clamp-2">
-                        Sepatu Sneakers Pria Casual Import - High Quality Canvas - Putih/Hitam
+                        {currentProduct.name}
                     </h2>
                     <div className="flex items-center justify-between text-sm border-t border-gray-100 dark:border-white/10 pt-3">
                         <div className="flex items-center gap-4">
@@ -171,13 +200,16 @@ export function ProductDetailPage() {
                     <h3 className="text-base font-bold text-[#181411] dark:text-white mb-3">Produk Serupa</h3>
                     <div className="grid grid-cols-2 gap-3">
                         {similarProducts.map((product) => (
-                            <div key={product.id} className="bg-white dark:bg-[#221810] rounded-lg overflow-hidden border border-gray-100 dark:border-gray-800">
-                                <div className="aspect-square bg-gray-200 bg-cover bg-center" style={{ backgroundImage: `url('${product.image}')` }} />
-                                <div className="p-2">
-                                    <div className="text-xs font-medium text-gray-800 dark:text-gray-200 truncate">{product.name}</div>
-                                    <div className="text-sm font-bold text-primary mt-1">Rp {product.price.toLocaleString('id-ID')}</div>
-                                </div>
-                            </div>
+                            <ProductCard
+                                key={product.id}
+                                id={product.id}
+                                name={product.name}
+                                image={product.image}
+                                price={product.price}
+                                originalPrice={product.originalPrice}
+                                rating={product.rating || 4.5}
+                                reviews={product.reviews || '100'}
+                            />
                         ))}
                     </div>
                 </div>

@@ -125,17 +125,16 @@ export function HomePage() {
                     </h2>
                     <div className="grid grid-cols-2 gap-4">
                         {recommendedProducts.map((product) => (
-                            <Link key={product.id} to={`/product/${product.id}`}>
-                                <ProductCard
-                                    id={product.id}
-                                    name={product.name}
-                                    image={product.image}
-                                    price={product.price}
-                                    originalPrice={product.originalPrice}
-                                    rating={product.rating}
-                                    reviews={product.reviews}
-                                />
-                            </Link>
+                            <ProductCard
+                                key={product.id}
+                                id={product.id}
+                                name={product.name}
+                                image={product.image}
+                                price={product.price}
+                                originalPrice={product.originalPrice}
+                                rating={product.rating}
+                                reviews={product.reviews}
+                            />
                         ))}
                     </div>
                     <div className="py-8 flex justify-center">
