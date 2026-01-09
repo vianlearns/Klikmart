@@ -6,7 +6,7 @@ export function CheckoutPage() {
     return (
         <MobileContainer className="bg-background-light dark:bg-background-dark pb-28">
             {/* Header */}
-            <div className="sticky top-0 z-20 flex items-center bg-white dark:bg-surface-dark px-4 py-3 shadow-sm border-b border-gray-100 dark:border-gray-800">
+            <div className="sticky top-0 z-20 flex items-center bg-white dark:bg-surface-dark px-4 py-3 shadow-sm border-b border-gray-100 dark:border-gray-800 md:px-6">
                 <Link to="/cart" className="text-text-main dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <Icon name="arrow_back" />
                 </Link>
@@ -14,7 +14,7 @@ export function CheckoutPage() {
             </div>
 
             {/* Address Section */}
-            <div className="mt-3 bg-white dark:bg-surface-dark px-4 py-4">
+            <div className="mt-3 bg-white dark:bg-surface-dark px-4 py-4 md:max-w-2xl md:mx-auto">
                 <div className="flex gap-3 justify-between items-center cursor-pointer group">
                     <div className="flex items-start gap-3 flex-1">
                         <Icon name="location_on" className="text-primary mt-1" />
@@ -36,7 +36,7 @@ export function CheckoutPage() {
             </div>
 
             {/* Product/Store Section */}
-            <div className="mt-3 flex flex-col gap-4 bg-white dark:bg-surface-dark p-4">
+            <div className="mt-3 flex flex-col gap-4 bg-white dark:bg-surface-dark p-4 md:max-w-2xl md:mx-auto">
                 {/* Store Header */}
                 <div className="flex items-center gap-2 border-b border-gray-100 dark:border-gray-800 pb-3">
                     <Icon name="storefront" className="text-text-main dark:text-white" size={20} />
@@ -62,7 +62,7 @@ export function CheckoutPage() {
                 </div>
 
                 {/* Shipping Option */}
-                <div className="border-t border-gray-100 dark:border-gray-800 pt-3 mt-1">
+                <div className="border-t border-gray-100 dark:border-gray-800 pt-3 mt-1 md:max-w-2xl md:mx-auto">
                     <div className="flex items-center justify-between py-2 cursor-pointer group">
                         <div className="flex flex-col">
                             <p className="text-text-main dark:text-white text-sm font-medium">Opsi Pengiriman</p>
@@ -95,7 +95,7 @@ export function CheckoutPage() {
             </div>
 
             {/* Payment Method */}
-            <div className="mt-3 bg-white dark:bg-surface-dark px-4 py-4">
+            <div className="mt-3 bg-white dark:bg-surface-dark px-4 py-4 md:max-w-2xl md:mx-auto">
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
                         <Icon name="payments" className="text-primary" />
@@ -118,7 +118,7 @@ export function CheckoutPage() {
             </div>
 
             {/* Cost Breakdown */}
-            <div className="mt-3 bg-white dark:bg-surface-dark px-4 py-4 mb-4">
+            <div className="mt-3 bg-white dark:bg-surface-dark px-4 py-4 mb-4 md:max-w-2xl md:mx-auto">
                 <h3 className="text-text-main dark:text-white text-sm font-bold mb-3 flex gap-2 items-center">
                     <Icon name="receipt_long" size={16} />
                     Rincian Pembayaran
@@ -148,7 +148,7 @@ export function CheckoutPage() {
             </div>
 
             {/* Safe Transaction Guarantee */}
-            <div className="px-6 mb-6">
+            <div className="px-6 mb-6 md:max-w-2xl md:mx-auto">
                 <div className="flex items-center justify-center gap-2 text-text-secondary dark:text-gray-500 text-xs">
                     <Icon name="verified_user" size={16} />
                     <p>Transaksi aman dan terpercaya</p>
@@ -157,7 +157,7 @@ export function CheckoutPage() {
 
             {/* Sticky Footer */}
             <div className="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] max-w-md mx-auto">
-                <div className="w-full px-4 py-3 flex items-center justify-end gap-4">
+                <div className="w-full px-4 py-3 flex items-center justify-end gap-4 md:max-w-2xl md:mx-auto">
                     <div className="flex flex-col items-end">
                         <p className="text-text-secondary dark:text-gray-400 text-xs">Total Pembayaran</p>
                         <p className="text-primary text-lg font-bold leading-tight">Rp 1.856.000</p>

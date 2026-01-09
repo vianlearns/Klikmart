@@ -17,7 +17,7 @@ const navItems: NavItem[] = [
 
 export function BottomNavBuyer() {
     return (
-        <nav className="absolute bottom-0 w-full bg-white dark:bg-[#1a120b] border-t border-gray-100 dark:border-gray-800 pb-safe pt-2 px-6 z-50">
+        <nav className="fixed bottom-0 w-full bg-white dark:bg-[#1a120b] border-t border-gray-100 dark:border-gray-800 pb-safe pt-2 px-6 z-50 md:hidden">
             <div className="flex justify-between items-center pb-4">
                 {navItems.map((item) => (
                     <NavLink

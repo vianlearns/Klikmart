@@ -63,7 +63,7 @@ export function CartPage() {
     return (
         <MobileContainer className="bg-background-light dark:bg-background-dark">
             {/* Header */}
-            <header className="sticky top-0 z-30 flex items-center bg-white dark:bg-gray-800 p-4 shadow-sm">
+            <header className="sticky top-0 z-30 flex items-center bg-white dark:bg-gray-800 p-4 shadow-sm md:px-6">
                 <Link to="/" className="mr-3 flex items-center justify-center text-[#181411] dark:text-white">
                     <Icon name="arrow_back" />
                 </Link>
@@ -72,7 +72,7 @@ export function CartPage() {
             </header>
 
             {/* Main Content */}
-            <main className="flex-1 overflow-y-auto pb-32 flex flex-col gap-2 p-0">
+            <main className="flex-1 overflow-y-auto pb-32 flex flex-col gap-2 p-0 md:max-w-2xl md:mx-auto">
                 {cartStores.map((store) => (
                     <div key={store.id} className="bg-white dark:bg-gray-800 flex flex-col">
                         {/* Store Header */}
@@ -142,8 +142,8 @@ export function CartPage() {
             </main>
 
             {/* Sticky Bottom Checkout Bar */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40 w-full max-w-md mx-auto">
-                <div className="flex items-center justify-between px-4 py-3 pb-8 md:pb-3">
+            <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40 w-full">
+                <div className="flex items-center justify-between px-4 py-3 pb-8 md:pb-3 md:max-w-2xl md:mx-auto">
                     {/* Select All */}
                     <div className="flex items-center gap-3">
                         <input type="checkbox" className="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" />
