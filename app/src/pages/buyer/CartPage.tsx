@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
+import logoHorizontal from '../../assets/klikmart-horizontal.svg';
 
 const cartStores = [
     {
@@ -62,8 +63,45 @@ export function CartPage() {
 
     return (
         <MobileContainer className="bg-background-light dark:bg-background-dark">
-            {/* Header */}
-            <header className="sticky top-0 z-30 flex items-center bg-white dark:bg-gray-800 p-4 shadow-sm md:px-6">
+            {/* Desktop Header */}
+            <header className="hidden md:block sticky top-0 z-50 bg-white dark:bg-[#1a120b] shadow-sm">
+                <div className="px-4 py-4 w-full md:max-w-7xl md:mx-auto md:px-6">
+                    <div className="flex items-center gap-8">
+                        <Link to="/" className="flex items-center">
+                            <img src={logoHorizontal} alt="Klikmart" className="h-14 w-auto" />
+                        </Link>
+                        <div className="flex-1 relative max-w-2xl">
+                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <Icon name="search" className="text-primary" size={20} />
+                            </div>
+                            <input
+                                className="block w-full pl-10 pr-3 py-2.5 border-none rounded-xl bg-background-light dark:bg-[#2c241d] text-sm placeholder-gray-400 dark:text-white focus:ring-1 focus:ring-primary"
+                                placeholder="Cari produk di keranjang..."
+                                type="text"
+                            />
+                        </div>
+                        <div className="flex items-center gap-6">
+                            <Link to="/wishlist" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
+                                <Icon name="favorite" size={20} />
+                                Wishlist
+                            </Link>
+                            <Link to="/notification" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
+                                <Icon name="notifications" size={20} />
+                                Notifikasi
+                            </Link>
+                            <Link to="/profile" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
+                                <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
+                                    <Icon name="person" size={20} />
+                                </div>
+                                <span>Akun Saya</span>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            {/* Mobile Header */}
+            <header className="md:hidden sticky top-0 z-30 flex items-center bg-white dark:bg-gray-800 p-4 shadow-sm">
                 <Link to="/" className="mr-3 flex items-center justify-center text-[#181411] dark:text-white">
                     <Icon name="arrow_back" />
                 </Link>
@@ -72,59 +110,109 @@ export function CartPage() {
             </header>
 
             {/* Main Content */}
-            <main className="flex-1 overflow-y-auto pb-32 flex flex-col gap-2 p-0 md:max-w-2xl md:mx-auto">
-                {cartStores.map((store) => (
-                    <div key={store.id} className="bg-white dark:bg-gray-800 flex flex-col">
-                        {/* Store Header */}
-                        <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-100 dark:border-gray-700">
-                            <div className="flex size-6 items-center justify-center shrink-0">
-                                <input type="checkbox" defaultChecked={store.checked} className="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" />
-                            </div>
-                            <Icon name="storefront" className="text-[#181411] dark:text-white" size={20} />
-                            <p className="text-[#181411] dark:text-white text-base font-bold leading-normal flex-1 truncate">{store.name}</p>
-                            <Icon name="chevron_right" className="text-gray-400" />
-                        </div>
+            <main className="flex-1 overflow-y-auto pb-32 md:pb-10 flex flex-col gap-4 p-0 md:max-w-7xl md:mx-auto md:grid md:grid-cols-12 md:gap-8 md:px-6 md:py-8 w-full">
+                {/* Left Column: Cart Items */}
+                <div className="md:col-span-8 flex flex-col gap-4">
+                    <h1 className="hidden md:block text-2xl font-bold mb-2 text-[#181411] dark:text-white">Keranjang Belanja</h1>
 
-                        {/* Products */}
-                        {store.items.map((item, idx) => (
-                            <div key={item.id} className={`flex gap-4 px-4 py-4 ${idx < store.items.length - 1 ? 'border-b border-gray-50 dark:border-gray-700/50' : ''}`}>
-                                <div className="flex items-center justify-center shrink-0 self-center">
-                                    <input type="checkbox" defaultChecked={item.checked} className="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" />
+                    {cartStores.map((store) => (
+                        <div key={store.id} className="bg-white dark:bg-gray-800 flex flex-col md:rounded-xl md:border md:border-gray-100 dark:md:border-gray-700 md:shadow-sm overflow-hidden">
+                            {/* Store Header */}
+                            <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-100 dark:border-gray-700">
+                                <div className="flex size-6 items-center justify-center shrink-0">
+                                    <input type="checkbox" defaultChecked={store.checked} className="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" />
                                 </div>
-                                <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-24 shrink-0 bg-gray-100 dark:bg-gray-700" style={{ backgroundImage: `url("${item.image}")` }} />
-                                <div className="flex flex-1 flex-col justify-between py-0.5">
-                                    <div>
-                                        <p className="text-[#181411] dark:text-white text-sm font-medium leading-snug line-clamp-2">{item.name}</p>
-                                        <div className="mt-1 flex items-center gap-1.5 flex-wrap">
-                                            <div className="px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-xs text-gray-500 dark:text-gray-300 flex items-center gap-1 cursor-pointer">
-                                                <span>Variasi: {item.variant}</span>
-                                                <Icon name="expand_more" size={14} />
+                                <Icon name="storefront" className="text-[#181411] dark:text-white" size={20} />
+                                <p className="text-[#181411] dark:text-white text-base font-bold leading-normal flex-1 truncate">{store.name}</p>
+                                <Icon name="chevron_right" className="text-gray-400" />
+                            </div>
+
+                            {/* Products */}
+                            {store.items.map((item, idx) => (
+                                <div key={item.id} className={`flex gap-4 px-4 py-4 ${idx < store.items.length - 1 ? 'border-b border-gray-50 dark:border-gray-700/50' : ''}`}>
+                                    <div className="flex items-center justify-center shrink-0 self-center">
+                                        <input type="checkbox" defaultChecked={item.checked} className="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" />
+                                    </div>
+                                    <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-24 shrink-0 bg-gray-100 dark:bg-gray-700" style={{ backgroundImage: `url("${item.image}")` }} />
+                                    <div className="flex flex-1 flex-col justify-between py-0.5">
+                                        <div>
+                                            <p className="text-[#181411] dark:text-white text-sm font-medium leading-snug line-clamp-2">{item.name}</p>
+                                            <div className="mt-1 flex items-center gap-1.5 flex-wrap">
+                                                <div className="px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-xs text-gray-500 dark:text-gray-300 flex items-center gap-1 cursor-pointer">
+                                                    <span>Variasi: {item.variant}</span>
+                                                    <Icon name="expand_more" size={14} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-end justify-between mt-2">
+                                            <div className="flex flex-col">
+                                                {item.originalPrice && <p className="text-xs text-gray-400 line-through">Rp {item.originalPrice.toLocaleString('id-ID')}</p>}
+                                                <p className="text-primary text-base font-bold leading-normal">Rp {item.price.toLocaleString('id-ID')}</p>
+                                            </div>
+                                            <div className="flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden">
+                                                <button className="w-7 h-7 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 transition-colors">
+                                                    <Icon name="remove" size={16} />
+                                                </button>
+                                                <input type="number" defaultValue={item.quantity} className="w-8 h-7 p-0 text-center text-sm font-medium bg-white dark:bg-gray-800 border-x border-gray-200 dark:border-gray-600 text-[#181411] dark:text-white focus:outline-none focus:ring-0" />
+                                                <button className="w-7 h-7 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 transition-colors">
+                                                    <Icon name="add" size={16} />
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="flex items-end justify-between mt-2">
-                                        <div className="flex flex-col">
-                                            {item.originalPrice && <p className="text-xs text-gray-400 line-through">Rp {item.originalPrice.toLocaleString('id-ID')}</p>}
-                                            <p className="text-primary text-base font-bold leading-normal">Rp {item.price.toLocaleString('id-ID')}</p>
-                                        </div>
-                                        <div className="flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden">
-                                            <button className="w-7 h-7 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 transition-colors">
-                                                <Icon name="remove" size={16} />
-                                            </button>
-                                            <input type="number" defaultValue={item.quantity} className="w-8 h-7 p-0 text-center text-sm font-medium bg-white dark:bg-gray-800 border-x border-gray-200 dark:border-gray-600 text-[#181411] dark:text-white focus:outline-none focus:ring-0" />
-                                            <button className="w-7 h-7 flex items-center justify-center bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 transition-colors">
-                                                <Icon name="add" size={16} />
-                                            </button>
-                                        </div>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
+
+                    {/* Notice */}
+                    <div className="px-4 py-4 text-center md:text-left md:px-0">
+                        <p className="text-xs text-gray-400 dark:text-gray-500">Semua produk 100% Original</p>
+                    </div>
+                </div>
+
+                {/* Right Column: Summary (Desktop) */}
+                <div className="hidden md:block md:col-span-4">
+                    <div className="sticky top-28 flex flex-col gap-4">
+                        <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm p-6">
+                            <h3 className="text-lg font-bold mb-4 text-[#181411] dark:text-white">Ringkasan Belanja</h3>
+
+                            {/* Voucher Desktop */}
+                            <div className="flex items-center gap-3 mb-6 p-3 rounded-lg border border-dashed border-gray-300 dark:border-gray-600 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                                <Icon name="confirmation_number" className="text-primary" />
+                                <p className="text-[#181411] dark:text-white text-sm font-medium flex-1">Makin hemat pakai promo</p>
+                                <Icon name="chevron_right" className="text-gray-400" size={20} />
+                            </div>
+
+                            <div className="space-y-3 mb-6">
+                                <div className="flex justify-between text-sm">
+                                    <span className="text-gray-500 dark:text-gray-400">Total Harga ({checkedItemsCount} barang)</span>
+                                    <span className="text-[#181411] dark:text-white font-medium">Rp {totalPrice.toLocaleString('id-ID')}</span>
+                                </div>
+                                {totalDiscount > 0 && (
+                                    <div className="flex justify-between text-sm">
+                                        <span className="text-gray-500 dark:text-gray-400">Total Diskon</span>
+                                        <span className="text-green-600 font-medium">-Rp {totalDiscount.toLocaleString('id-ID')}</span>
                                     </div>
+                                )}
+                            </div>
+
+                            <div className="border-t border-gray-100 dark:border-gray-700 pt-4 mb-6">
+                                <div className="flex justify-between items-center">
+                                    <span className="font-bold text-lg text-[#181411] dark:text-white">Total Belanja</span>
+                                    <span className="font-bold text-lg text-primary">Rp {totalPrice.toLocaleString('id-ID')}</span>
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                ))}
 
-                {/* Voucher Section */}
-                <div className="mt-2 flex items-center gap-4 bg-white dark:bg-gray-800 px-4 min-h-14 justify-between cursor-pointer active:bg-gray-50 dark:active:bg-gray-700">
+                            <Link to="/checkout" className="flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-xl shadow-lg shadow-primary/30 transition-all active:scale-95">
+                                Beli ({checkedItemsCount})
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Mobile Voucher Section (Only visible on mobile) */}
+                <div className="md:hidden mt-2 flex items-center gap-4 bg-white dark:bg-gray-800 px-4 min-h-14 justify-between cursor-pointer active:bg-gray-50 dark:active:bg-gray-700">
                     <div className="flex items-center gap-3">
                         <Icon name="confirmation_number" className="text-primary" />
                         <p className="text-[#181411] dark:text-white text-base font-medium leading-normal flex-1 truncate">Voucher Klikmart</p>
@@ -134,16 +222,11 @@ export function CartPage() {
                         <Icon name="chevron_right" className="text-gray-400" size={20} />
                     </div>
                 </div>
-
-                {/* Notice */}
-                <div className="px-4 py-4 text-center">
-                    <p className="text-xs text-gray-400 dark:text-gray-500">Semua produk 100% Original</p>
-                </div>
             </main>
 
-            {/* Sticky Bottom Checkout Bar */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40 w-full">
-                <div className="flex items-center justify-between px-4 py-3 pb-8 md:pb-3 md:max-w-2xl md:mx-auto">
+            {/* Sticky Bottom Checkout Bar (Mobile Only) */}
+            <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40 w-full">
+                <div className="flex items-center justify-between px-4 py-3 pb-8">
                     {/* Select All */}
                     <div className="flex items-center gap-3">
                         <input type="checkbox" className="custom-checkbox h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors cursor-pointer" />

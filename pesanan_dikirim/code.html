@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pesanan Dikirim</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#f48525",
+                "background-light": "#f8f7f5",
+                "background-dark": "#221810",
+                "surface-light": "#ffffff",
+                "surface-dark": "#27211b",
+                "border-dark": "#393028",
+                },
+                fontFamily: {
+                "display": ["Manrope", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+            },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen">
+<div class="relative flex flex-col w-full max-w-md mx-auto h-full min-h-screen bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm p-4 pb-2 border-b border-gray-200 dark:border-border-dark">
+<div class="flex items-center justify-between">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-gray-900 dark:text-white" style="font-size: 20px;">arrow_back_ios_new</span>
+</button>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Pesanan Dikirim</h2>
+</div>
+</header>
+<!-- Filter Chips -->
+<div class="sticky top-[61px] z-40 bg-background-light dark:bg-background-dark pt-2 pb-4">
+<div class="flex gap-3 px-4 overflow-x-auto no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-primary px-5 shadow-lg shadow-primary/20">
+<p class="text-white text-sm font-semibold whitespace-nowrap">Semua</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-[#393028] border border-gray-200 dark:border-transparent px-5">
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium whitespace-nowrap">Dalam Perjalanan</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-[#393028] border border-gray-200 dark:border-transparent px-5">
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium whitespace-nowrap">Kurir Membawa Paket</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-[#393028] border border-gray-200 dark:border-transparent px-5">
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium whitespace-nowrap">Tiba di Tujuan</p>
+</button>
+</div>
+</div>
+<!-- Order List -->
+<div class="flex flex-col gap-4 px-4 pb-8">
+<!-- Card 1 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-transparent overflow-hidden">
+<!-- Shop Header -->
+<div class="flex items-center justify-between p-4 pb-2 border-b border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 filled" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<p class="text-gray-900 dark:text-white text-sm font-bold">Tokopedia Official</p>
+</div>
+<p class="text-primary text-xs font-bold uppercase tracking-wide">Sedang Dikirim</p>
+</div>
+<!-- Product Content -->
+<div class="p-4 flex gap-4">
+<div class="relative shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Black running shoes side view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJTthX6YN3qLn5EuT6TZiGbBTLGE1W3c7GHymz644qVuS3VtGCAEEJc9Mejd78VbhCw87u9MsWCpXH-HAStepwux47UtH1Ns33xr80jLMTxOlqS_O1wWtQMyX_Q61aXRNHVS1SViKOtdBGlV8k3HRoW-zAxsOSPLZmS87K1HYDhFconcFT6nbeksGO8KgzdtqzO9uLeGR7SkLnxG4oWeCAGeD4faSBGcSOZmLWhSx-4Ih2oNMlNnFq3C0OGTAAYQDSBg245zDgR54-");'></div>
+</div>
+<div class="flex flex-col justify-center gap-1 flex-1">
+<h3 class="text-gray-900 dark:text-white text-base font-bold leading-tight line-clamp-2">Nike Air Max 97 - Black</h3>
+<p class="text-gray-500 dark:text-[#baaa9c] text-sm font-normal">1x • Ukuran 42</p>
+<p class="text-gray-500 dark:text-[#baaa9c] text-sm font-normal mt-1">Estimasi tiba: 24 Okt</p>
+</div>
+</div>
+<!-- Tracking Update Highlight -->
+<div class="px-4 pb-4">
+<div class="flex flex-col gap-2 p-3 bg-gray-50 dark:bg-[#181411] rounded-lg border border-gray-100 dark:border-[#54473b]">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+<span class="text-xs font-bold uppercase">Update Terkini</span>
+</div>
+<p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Paket telah sampai di Gudang Sortir Jakarta Timur (Cakung DC).</p>
+</div>
+</div>
+<!-- Actions Footer -->
+<div class="flex items-center justify-between p-4 pt-0 gap-3">
+<div class="flex flex-col gap-1 min-w-0 flex-1">
+<span class="text-gray-400 text-xs">No. Resi (JNE Regular)</span>
+<div class="flex items-center gap-2 group cursor-pointer">
+<span class="text-gray-900 dark:text-white font-mono font-medium truncate">JPX1829304</span>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-sm">content_copy</span>
+</div>
+</div>
+<button class="shrink-0 bg-primary hover:bg-primary/90 text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors flex items-center gap-2">
+                        Lacak
+                    </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-transparent overflow-hidden">
+<!-- Shop Header -->
+<div class="flex items-center justify-between p-4 pb-2 border-b border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 filled" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<p class="text-gray-900 dark:text-white text-sm font-bold">Gadget Store ID</p>
+</div>
+<p class="text-primary text-xs font-bold uppercase tracking-wide">Kurir Membawa Paket</p>
+</div>
+<!-- Product Content -->
+<div class="p-4 flex gap-4">
+<div class="relative shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="USB cable coiled on table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcHHC8rZMPcbsdRX92NqK7IsN0qusvwdReetRFU4y5HGEG6aii2bDOZcuHlfZZBM1SIMmRNj_E-HoDV6ams11EdPYlWy8Cc7FknUdJseDBk6ArcunBzRzC7LsvKzxB0b6Kc7fgXC8tn_TA3zdZuy26XH2s_JnLZu1v7N-Z38FP2a8TJxf_479Uxksz8FN8gPdoujukoRbG7YDNKgUJe2VhIZyqxqKwD3jLNYeddfA1lGYWDRCCQIHdxiA87IHJUbu1_qs58jtP1zKY");'></div>
+</div>
+<div class="flex flex-col justify-center gap-1 flex-1">
+<h3 class="text-gray-900 dark:text-white text-base font-bold leading-tight line-clamp-2">Anker USB-C to USB-C Cable 2M</h3>
+<p class="text-gray-500 dark:text-[#baaa9c] text-sm font-normal">2x • Braided Red</p>
+<p class="text-gray-500 dark:text-[#baaa9c] text-sm font-normal mt-1">Estimasi tiba: Hari ini</p>
+</div>
+</div>
+<!-- Tracking Update Highlight -->
+<div class="px-4 pb-4">
+<div class="flex flex-col gap-2 p-3 bg-gray-50 dark:bg-[#181411] rounded-lg border border-gray-100 dark:border-[#54473b]">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">two_wheeler</span>
+<span class="text-xs font-bold uppercase">Update Terkini</span>
+</div>
+<p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Kurir sedang menuju lokasi pengiriman. Mohon pastikan ada penerima.</p>
+</div>
+</div>
+<!-- Actions Footer -->
+<div class="flex items-center justify-between p-4 pt-0 gap-3">
+<div class="flex flex-col gap-1 min-w-0 flex-1">
+<span class="text-gray-400 text-xs">No. Resi (SiCepat)</span>
+<div class="flex items-center gap-2 group cursor-pointer">
+<span class="text-gray-900 dark:text-white font-mono font-medium truncate">ID-99887766</span>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-sm">content_copy</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="shrink-0 bg-primary/10 hover:bg-primary/20 text-primary dark:text-primary text-sm font-bold px-4 py-2.5 rounded-lg transition-colors border border-primary/20 dark:border-transparent">
+                            Lacak
+                        </button>
+<button class="shrink-0 bg-primary hover:bg-primary/90 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-colors">
+                            Diterima
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-transparent overflow-hidden opacity-70">
+<!-- Shop Header -->
+<div class="flex items-center justify-between p-4 pb-2 border-b border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 filled" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<p class="text-gray-900 dark:text-white text-sm font-bold">Uniqlo Indonesia</p>
+</div>
+<p class="text-gray-500 text-xs font-bold uppercase tracking-wide">Diproses</p>
+</div>
+<!-- Product Content -->
+<div class="p-4 flex gap-4">
+<div class="relative shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Folded grey t-shirt texture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3bidFiozK5IMcZ88AKnM8cxVlX1037RepIyBAH5QFxk9we9hMn-LWkkKPz532n6aWZurIlyWTATRzS-Pw2TiXL0mDpEQ8EXr8rFEJQ200kSErRXw0Dh4NuzSvBRxAIwZF2j5Ica0WnofL-y5kVIBlSg9vPm70qze0iHZYzlfkSQZUfe6YzaBgB0p9Dm9BNKabJaAFO57J-r5w-IBeK1AXN8DMe7NFWzTeT-mwPz2jlN1aYBLN4QZrJQxvaTi8ed9Sb13suJhSkPXU");'></div>
+</div>
+<div class="flex flex-col justify-center gap-1 flex-1">
+<h3 class="text-gray-900 dark:text-white text-base font-bold leading-tight line-clamp-2">AIRism Cotton Oversized Tee</h3>
+<p class="text-gray-500 dark:text-[#baaa9c] text-sm font-normal">3x • White, Black, Grey</p>
+</div>
+</div>
+<!-- Actions Footer -->
+<div class="flex items-center justify-end p-4 pt-0 gap-3">
+<button class="shrink-0 bg-transparent hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-300 text-sm font-bold px-5 py-2.5 rounded-lg transition-colors border border-gray-200 dark:border-gray-700">
+                        Hubungi Penjual
+                    </button>
+</div>
+</div>
+<div class="h-20"></div> <!-- Spacer for bottom navigation if needed -->
+</div>
+</div>
+</body></html>

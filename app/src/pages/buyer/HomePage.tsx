@@ -79,9 +79,9 @@ export function HomePage() {
                                 <Icon name="favorite" size={20} />
                                 Wishlist
                             </Link>
-                            <Link to="/orders" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
-                                <Icon name="receipt_long" size={20} />
-                                Transaksi
+                            <Link to="/notification" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
+                                <Icon name="notifications" size={20} />
+                                Notifikasi
                             </Link>
                             <Link to="/profile" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
                                 <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">

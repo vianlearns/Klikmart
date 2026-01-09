@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pesanan Dalam Pengemasan</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48525",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221810",
+                        "surface-dark": "#2f251e", // Slightly lighter for cards
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen font-display flex flex-col overflow-x-hidden text-slate-900 dark:text-white pb-6">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-white/5 shadow-sm">
+<div class="flex items-center p-4 justify-between h-14">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight flex-1 text-center">Pesanan Saya</h2>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">chat_bubble</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="px-4 pb-3">
+<div class="flex w-full items-center rounded-lg bg-white dark:bg-surface-dark/50 border border-gray-200 dark:border-white/10 overflow-hidden h-10">
+<div class="flex items-center justify-center pl-3 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm text-slate-900 dark:text-white placeholder:text-gray-400 px-3 h-full" placeholder="Cari pesanan dalam pengemasan..."/>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex border-b border-gray-200 dark:border-white/10 w-full overflow-x-auto scrollbar-hide">
+<a class="flex flex-col items-center justify-center min-w-[100px] px-4 pb-3 pt-2 flex-1 cursor-pointer group" href="#">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium group-hover:text-primary transition-colors whitespace-nowrap">Belum Bayar</p>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[100px] px-4 pb-3 pt-2 flex-1 border-b-[3px] border-primary cursor-pointer" href="#">
+<p class="text-primary text-sm font-bold whitespace-nowrap">Dikemas</p>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[100px] px-4 pb-3 pt-2 flex-1 border-b-[3px] border-transparent cursor-pointer group" href="#">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium group-hover:text-primary transition-colors whitespace-nowrap">Dikirim</p>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[100px] px-4 pb-3 pt-2 flex-1 border-b-[3px] border-transparent cursor-pointer group" href="#">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium group-hover:text-primary transition-colors whitespace-nowrap">Selesai</p>
+</a>
+</div>
+</div>
+<!-- Main Content List -->
+<div class="flex flex-col gap-3 p-4">
+<!-- Notice Banner -->
+<div class="flex items-start gap-3 bg-primary/10 dark:bg-primary/20 p-3 rounded-lg border border-primary/20">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">info</span>
+<p class="text-xs text-slate-700 dark:text-gray-200 leading-relaxed">
+                Mohon bersabar, penjual sedang memproses pesanan Anda. Hubungi penjual jika pesanan belum dikirim dalam 2 hari.
+            </p>
+</div>
+<!-- Order Card 1 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-white/5 gap-4">
+<!-- Header: Store & Status -->
+<div class="flex items-center justify-between border-b border-gray-100 dark:border-white/5 pb-3">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-gray-500">storefront</span>
+</div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Toko Sepatu Official</p>
+<span class="material-symbols-outlined text-[16px] text-gray-400">chevron_right</span>
+</div>
+<p class="text-primary text-sm font-bold">Sedang Dikemas</p>
+</div>
+<!-- Product Item -->
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-20 shrink-0 bg-gray-100 dark:bg-gray-800" data-alt="Black high top canvas sneakers side view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDy3HzpPujqW19vo2-zThhMwTFjGtPzp4gJXI7RsWwXRoKSEmKKN4FERzm3Swkwu32MBCYaSE21FV0-ulkLQqm6SrwDu27IzQZWR_V33x9k--725UTnhY_1nSsUQkUQ7I6JfuWdHAqIBvW6B1lAb9aW8RObMaIAuXLHOTUM2w-ZUXLYsb5VldBSiKUBlEBMdChwb_cnZ_pJbCNEkchKtyuZcLiV9c9srMRiUHdR7kEAdXJpMKe8ExuYx8rgJyGABXR_NuvpA58KNSn7");'></div>
+<div class="flex flex-col flex-1 min-w-0 justify-between py-0.5">
+<div>
+<p class="text-slate-900 dark:text-white text-sm font-medium line-clamp-1">Sneakers Canvas High Top Classic - Edisi Terbatas</p>
+<div class="flex items-center mt-1 gap-2">
+<p class="text-gray-500 dark:text-gray-400 text-xs bg-gray-100 dark:bg-white/5 px-1.5 py-0.5 rounded">Hitam, 42</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs">x1</p>
+</div>
+</div>
+<div class="flex items-end justify-between mt-2">
+<p class="text-slate-900 dark:text-white font-bold text-sm">Rp 150.000</p>
+</div>
+</div>
+</div>
+<!-- Shipping Estimate -->
+<div class="flex items-center gap-2 py-2">
+<span class="material-symbols-outlined text-primary text-[18px]">local_shipping</span>
+<p class="text-xs text-green-600 dark:text-green-400 font-medium">Akan dikirim sebelum 24 Okt</p>
+</div>
+<!-- Footer: Total & Actions -->
+<div class="flex flex-col gap-3 pt-3 border-t border-gray-100 dark:border-white/5">
+<div class="flex justify-between items-center">
+<p class="text-xs text-gray-500 dark:text-gray-400">Total Pesanan (1 Produk):</p>
+<p class="text-sm font-bold text-primary">Rp 162.000</p>
+</div>
+<div class="flex gap-2 justify-end">
+<button class="px-4 py-2 rounded-lg border border-gray-300 dark:border-white/20 text-slate-700 dark:text-gray-300 text-xs font-bold hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        Hubungi Penjual
+                    </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-white text-xs font-bold shadow-sm hover:bg-opacity-90 transition-colors">
+                        Rincian Pesanan
+                    </button>
+</div>
+</div>
+</div>
+<!-- Order Card 2 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-white/5 gap-4">
+<!-- Header: Store & Status -->
+<div class="flex items-center justify-between border-b border-gray-100 dark:border-white/5 pb-3">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-gray-500">storefront</span>
+</div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Gadget Store ID</p>
+<span class="material-symbols-outlined text-[16px] text-gray-400">chevron_right</span>
+</div>
+<p class="text-primary text-sm font-bold">Sedang Dikemas</p>
+</div>
+<!-- Product Item 1 -->
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-20 shrink-0 bg-gray-100 dark:bg-gray-800" data-alt="White USB-C charging cable coiled up" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQXrHc18YTldw5pa55ylP7ePoPp8-_slkxw1kglWti0B6ookj9I2svwW7cmK9-mDTIsh5cHsT9aPlrMDQAIfbESfIgZGp3SBBi-42UJqS-CGJeJWkNlVFJUnGmZf_fmgoUQDn-lW7KvFaiH1kbgJp8YHCm2uqMt0v0WQm469R5VhfSsOJF_VkA7poxnpheBfu4dr3xOiw1CcoN-nnlqCNRcMdkG8ZJ0fkxv0tD2cl2Sas5h2mZTSwLpDsWXCrLExK2n0KB3nQYtzzo");'></div>
+<div class="flex flex-col flex-1 min-w-0 justify-between py-0.5">
+<div>
+<p class="text-slate-900 dark:text-white text-sm font-medium line-clamp-1">Kabel Data USB Type-C Fast Charging 60W</p>
+<div class="flex items-center mt-1 gap-2">
+<p class="text-gray-500 dark:text-gray-400 text-xs bg-gray-100 dark:bg-white/5 px-1.5 py-0.5 rounded">Putih, 1m</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs">x2</p>
+</div>
+</div>
+<div class="flex items-end justify-between mt-2">
+<p class="text-slate-900 dark:text-white font-bold text-sm">Rp 45.000</p>
+</div>
+</div>
+</div>
+<!-- Product Item 2 (Multi-item order) -->
+<div class="flex gap-3 relative">
+<!-- Connector Line -->
+<div class="absolute left-[39px] -top-5 bottom-8 border-l-2 border-dotted border-gray-200 dark:border-white/10 -z-10"></div>
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-20 shrink-0 bg-gray-100 dark:bg-gray-800" data-alt="Transparent phone case for smartphone" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdqES4uk4XOvRkgiVh3Hb7ahpzjiZCTAZFDBhoOyaiktMiWVyLsbj9BtfmjOCK3lciH-ftUBBQS17-heiD25M2Y_myAoiUhk7fmch1PFxWT71gS_t0hbGBE9bgAaUpEJ6stw5nCXRPR7CecsDVzI1i2GyF6arE2RUWDvfCdCsj-uP0S3I6A7xuI7TcKZZRxYogMy_NFEs_Zj7zYDrxLvFpofUm3B-dfSX_Eit5Tk9XUeUpixnd8Dl6oJjlpC8NmKQgjfMbWFThS3RP");'></div>
+<div class="flex flex-col flex-1 min-w-0 justify-between py-0.5">
+<div>
+<p class="text-slate-900 dark:text-white text-sm font-medium line-clamp-1">Casing HP Anti Crack Transparent</p>
+<div class="flex items-center mt-1 gap-2">
+<p class="text-gray-500 dark:text-gray-400 text-xs bg-gray-100 dark:bg-white/5 px-1.5 py-0.5 rounded">iPhone 13</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs">x1</p>
+</div>
+</div>
+<div class="flex items-end justify-between mt-2">
+<p class="text-slate-900 dark:text-white font-bold text-sm">Rp 15.000</p>
+</div>
+</div>
+</div>
+<!-- Shipping Estimate -->
+<div class="flex items-center gap-2 py-2">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 text-[18px]">schedule</span>
+<p class="text-xs text-gray-500 dark:text-gray-400">Estimasi tiba 25 - 27 Okt</p>
+</div>
+<!-- Footer: Total & Actions -->
+<div class="flex flex-col gap-3 pt-3 border-t border-gray-100 dark:border-white/5">
+<div class="flex justify-between items-center">
+<p class="text-xs text-gray-500 dark:text-gray-400">Total Pesanan (3 Produk):</p>
+<p class="text-sm font-bold text-primary">Rp 115.000</p>
+</div>
+<div class="flex gap-2 justify-end">
+<button class="px-4 py-2 rounded-lg border border-gray-300 dark:border-white/20 text-slate-700 dark:text-gray-300 text-xs font-bold hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                        Hubungi Penjual
+                    </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-white text-xs font-bold shadow-sm hover:bg-opacity-90 transition-colors">
+                        Rincian Pesanan
+                    </button>
+</div>
+</div>
+</div>
+<!-- Empty State Placeholder (Visual only, implying end of list) -->
+<div class="flex flex-col items-center justify-center py-8 opacity-50">
+<div class="size-2 rounded-full bg-gray-300 dark:bg-gray-700 mb-6"></div>
+<p class="text-xs text-gray-400 dark:text-gray-600">Tidak ada pesanan lain</p>
+</div>
+</div>
+</body></html>

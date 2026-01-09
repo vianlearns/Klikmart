@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pesanan Pengembalian</title>
+<!-- Google Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f48525",
+              "background-light": "#f8f7f5",
+              "background-dark": "#221810",
+              "surface-light": "#ffffff",
+              "surface-dark": "#2a1f17",
+              "surface-dark-highlight": "#352920",
+              "text-secondary-light": "#64748b",
+              "text-secondary-dark": "#baaa9c",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        /* Hide scrollbar for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-200 dark:border-white/5 transition-colors duration-300">
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Pesanan Pengembalian</h2>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3 bg-background-light dark:bg-background-dark">
+<label class="flex flex-col min-w-40 h-11 w-full shadow-sm">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-transparent group focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent transition-all">
+<div class="text-text-secondary-light dark:text-text-secondary-dark flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-none bg-transparent text-slate-900 dark:text-white focus:outline-0 focus:ring-0 border-none h-full placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark px-0 text-sm font-medium leading-normal" placeholder="Cari berdasarkan No. Pesanan atau Produk" value=""/>
+</div>
+</label>
+</div>
+<!-- Tabs -->
+<div class="sticky top-[60px] z-40 bg-background-light dark:bg-background-dark pt-1">
+<div class="flex border-b border-gray-200 dark:border-[#3a2e24] px-2 justify-between overflow-x-auto no-scrollbar">
+<button class="flex min-w-[80px] flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-3 pt-2 px-2 flex-1 transition-colors">
+<span class="text-sm font-bold leading-normal tracking-[0.015em] whitespace-nowrap">Semua</span>
+</button>
+<button class="flex min-w-[80px] flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary-light dark:text-text-secondary-dark hover:text-slate-700 dark:hover:text-white pb-3 pt-2 px-2 flex-1 transition-colors">
+<span class="text-sm font-bold leading-normal tracking-[0.015em] whitespace-nowrap">Diproses</span>
+</button>
+<button class="flex min-w-[80px] flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary-light dark:text-text-secondary-dark hover:text-slate-700 dark:hover:text-white pb-3 pt-2 px-2 flex-1 transition-colors">
+<span class="text-sm font-bold leading-normal tracking-[0.015em] whitespace-nowrap">Selesai</span>
+</button>
+<button class="flex min-w-[80px] flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary-light dark:text-text-secondary-dark hover:text-slate-700 dark:hover:text-white pb-3 pt-2 px-2 flex-1 transition-colors">
+<span class="text-sm font-bold leading-normal tracking-[0.015em] whitespace-nowrap">Dibatalkan</span>
+</button>
+</div>
+</div>
+<!-- Content Feed -->
+<div class="flex flex-col gap-4 p-4 pb-20">
+<!-- Information Banner -->
+<div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-lg p-3 flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-xl mt-0.5">info</span>
+<p class="text-xs text-blue-800 dark:text-blue-200 leading-relaxed">
+                    Pastikan Anda mengirimkan produk sebelum batas waktu yang ditentukan untuk menghindari pembatalan otomatis.
+                </p>
+</div>
+<!-- Card 1: Action Required (Input Resi) -->
+<div class="flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden">
+<!-- Header -->
+<div class="flex items-center justify-between p-4 pb-2 border-b border-gray-50 dark:border-white/5">
+<div class="flex items-center gap-2">
+<div class="bg-gray-100 dark:bg-surface-dark-highlight p-1 rounded-full">
+<span class="material-symbols-outlined text-sm">storefront</span>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">Official Nike Store</span>
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+</div>
+<span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded">Kirim Produk</span>
+</div>
+<!-- Product Body -->
+<div class="p-4 flex gap-4">
+<div class="relative w-20 h-20 shrink-0">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg border border-gray-100 dark:border-white/5" data-alt="Red Nike Air Jordan Low sneakers side view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBID3IJNtzvwv4fJq5t5vydpG8AWdzQ9AkiYo4_cQhTq_AtA62bJICf7NtXZkPb1d3ZbBHNCPU4mQZp4rZ91cpm5JPewyayA-zZnmaibHZTk0mF82iLZvlE8cX1BvxTrksHEJEKBDdBapHOMFJWa6-pnLCrACw6FKsMsdzVFcB_aWTHYGbuf4yyIifTgUZD9b3dT7zjnqVBH6r_t0HwcXXGZMw2Ce9Gz0i2tOVfzFOR3C6fQ7j7tNycAnjCnaIVceIaoPg4yPD2wj2D");'></div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-tight line-clamp-2 mb-1">Sepatu Nike Air Jordan Low - Merah</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-medium mb-2">Variasi: Merah, Size 42 • 1x</p>
+<div class="mt-auto">
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Pengembalian Dana:</p>
+<p class="text-primary text-base font-bold">Rp 2.500.000</p>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-4 pt-0 flex flex-col gap-3">
+<div class="flex items-start gap-2 bg-orange-50 dark:bg-orange-900/20 p-2.5 rounded-lg">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400 text-lg mt-0.5">schedule</span>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-orange-700 dark:text-orange-300">Batas Waktu: 25 Okt 2023</span>
+<span class="text-[10px] text-orange-600/80 dark:text-orange-400/80">Input resi sebelum tanggal ini agar tidak batal.</span>
+</div>
+</div>
+<div class="flex gap-3 justify-end mt-1">
+<button class="flex-1 py-2 px-4 rounded-lg border border-gray-200 dark:border-white/10 text-slate-700 dark:text-white text-sm font-semibold hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                            Batalkan
+                        </button>
+<button class="flex-[2] py-2 px-4 rounded-lg bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+                            Input Resi
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Pending (Menunggu Penjual) -->
+<div class="flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden">
+<!-- Header -->
+<div class="flex items-center justify-between p-4 pb-2 border-b border-gray-50 dark:border-white/5">
+<div class="flex items-center gap-2">
+<div class="bg-gray-100 dark:bg-surface-dark-highlight p-1 rounded-full">
+<span class="material-symbols-outlined text-sm">storefront</span>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">Uniqlo Indonesia</span>
+</div>
+<span class="text-xs font-semibold text-text-secondary-light dark:text-text-secondary-dark">Menunggu Respon</span>
+</div>
+<!-- Product Body -->
+<div class="p-4 flex gap-4">
+<div class="relative w-20 h-20 shrink-0">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg border border-gray-100 dark:border-white/5" data-alt="Blue plaid flannel shirt folded neatly" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDukqJCpCm_cHVaGBB-N0ExAihBVVVGUOUMtjLZp9T9JyncAB4BFnda5rnWEXg6iMQ-H1bD1A4BrhudSccsvxoayNCzxM8Gfx7nf1qX6YWKGl5qj8_eJ6U1pDUaMNllSuDTvNHIcJfoARyyvPpEjHsc2h994se2uExg1ZONa4QoWSyfn9FeEbzTqunmkcwmYAOyMyoVFGK3XPodaOTcCI5_9ii5mOOUIQHoBFYyTBOJ7I4FZ9504JXS5Cqis_pWeVF9qT3yFWTrz9Eh");'></div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-tight line-clamp-2 mb-1">Kemeja Flannel Kotak-kotak Premium</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-medium mb-2">Variasi: Navy Blue, L • 1x</p>
+<div class="mt-auto">
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Pengembalian Dana:</p>
+<p class="text-primary text-base font-bold">Rp 399.000</p>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-4 pt-0 flex flex-col gap-3">
+<div class="h-px w-full bg-gray-100 dark:bg-white/5"></div>
+<div class="flex gap-3 justify-end">
+<button class="flex-1 py-2 px-4 rounded-lg border border-gray-200 dark:border-white/10 text-slate-700 dark:text-white text-sm font-semibold hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                            Lihat Detail
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Completed (Selesai) -->
+<div class="flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden opacity-90">
+<!-- Header -->
+<div class="flex items-center justify-between p-4 pb-2 border-b border-gray-50 dark:border-white/5">
+<div class="flex items-center gap-2">
+<div class="bg-gray-100 dark:bg-surface-dark-highlight p-1 rounded-full">
+<span class="material-symbols-outlined text-sm">storefront</span>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">Spigen Official</span>
+</div>
+<div class="flex items-center gap-1 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="text-xs font-semibold">Selesai</span>
+</div>
+</div>
+<!-- Product Body -->
+<div class="p-4 flex gap-4">
+<div class="relative w-20 h-20 shrink-0">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg border border-gray-100 dark:border-white/5 grayscale-[50%]" data-alt="Black sleek iPhone 14 Pro Max case back view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwKWHXKPBpIhFd-7FC1qzSWwb9U08UDwbealfgVI3-uRcHFnGjAXITAIjmr4sy78e7PLeoXS8EnGBUyfZES7vH3hmhVPAyI536YntfBefrKP_EkrIotU2-JHzMqDb45hdbQ_Aquxyz7k32qcznim4twEW8zQPTujS768jV2QzNZsiLTwqUyuqEp00f4C_BluJIzseVI5oasrpKwXyKfVNZcAbfDgOoxNfWvHlAenEcmN64Dc8Z2EpdwSRIDSi7Vg2Dr3T8ly_bPv7f");'></div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-tight line-clamp-2 mb-1">Casing iPhone 14 Pro Max Ultra Hybrid</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-medium mb-2">Variasi: Crystal Clear • 1x</p>
+<div class="mt-auto">
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Total Dikembalikan:</p>
+<p class="text-slate-900 dark:text-white text-base font-bold">Rp 150.000</p>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-4 pt-0 flex flex-col gap-3">
+<div class="flex items-start gap-2 bg-gray-50 dark:bg-white/5 p-2.5 rounded-lg border border-gray-100 dark:border-white/5">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-lg mt-0.5">account_balance_wallet</span>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-700 dark:text-gray-200">Dana telah cair ke ShopeePay</span>
+<span class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark">12 Sep 2023, 14:30 WIB</span>
+</div>
+</div>
+<div class="flex gap-3 justify-end mt-1">
+<button class="flex-1 py-2 px-4 rounded-lg border border-primary text-primary text-sm font-bold hover:bg-primary/5 transition-colors">
+                            Beli Lagi
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 4: Cancelled (Dibatalkan) -->
+<div class="flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden opacity-75">
+<!-- Header -->
+<div class="flex items-center justify-between p-4 pb-2 border-b border-gray-50 dark:border-white/5">
+<div class="flex items-center gap-2">
+<div class="bg-gray-100 dark:bg-surface-dark-highlight p-1 rounded-full">
+<span class="material-symbols-outlined text-sm">storefront</span>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">Anker Indonesia</span>
+</div>
+<span class="text-xs font-semibold text-text-secondary-light dark:text-text-secondary-dark">Dibatalkan</span>
+</div>
+<!-- Product Body -->
+<div class="p-4 flex gap-4">
+<div class="relative w-20 h-20 shrink-0">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg border border-gray-100 dark:border-white/5 grayscale" data-alt="White USB-C charging cable coiled up" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCjEr2Ql5e6F86SEknSGFflig6mODuFqtPBL9ygNgWE4qSmLqojNfjVk7wmvPNypIIyPColro6aQ7zM4tGMTMVYu_NjGfr0ye4Y3a7LriIRmHE1GMu1XqNvgTC56hdDCqimgqlGC-vNdFAYP_rAHF_cJk4SG_qxDr7q29-dZkMZFQketlVFqeF6fLyTiZ6zgams9GkShA5CdKXl--7HGRnD7LF_-iOqF6VbvbzeN60BJsj6W-9E8xnfnrVaHX-B1IuR-Q7kdJuWJSfN");'></div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-tight line-clamp-2 mb-1">Anker PowerLine III Flow USB-C</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-medium mb-2">Variasi: White, 1.8m • 1x</p>
+<div class="mt-auto">
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Pengembalian Dana:</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base font-bold line-through">Rp 120.000</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Simulator (Optional visual cue) -->
+<div class="fixed bottom-0 left-0 right-0 h-1 bg-transparent"></div>
+</body></html>

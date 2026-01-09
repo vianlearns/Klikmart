@@ -11,6 +11,8 @@ interface ProductCardProps {
     rating: number;
     reviews: string;
     location?: string;
+    badge?: string;
+    discount?: number;
 }
 
 // Fungsi untuk mengubah nama produk menjadi slug URL
@@ -29,14 +31,25 @@ export function ProductCard({
     price,
     originalPrice,
     rating,
-    reviews
+    reviews,
+    location,
+    badge,
+    discount
 }: ProductCardProps) {
     const productSlug = createProductSlug(name);
     const [isWishlisted, setIsWishlisted] = useState(false);
-    
+
     return (
         <Link to={`/product/${productSlug}`} className="group bg-white dark:bg-[#2c241d] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden flex flex-col hover:shadow-md transition-shadow duration-200">
             <div className="relative aspect-[4/5] bg-gray-100 overflow-hidden">
+                {badge && (
+                    <div className={`absolute top-2 left-2 z-10 text-white text-[10px] font-bold px-1.5 py-0.5 rounded shadow-sm ${badge === 'Mall' ? 'bg-primary' :
+                            badge === 'Star+' ? 'bg-[#d0011b]' :
+                                'bg-[#d0011b]'
+                        }`}>
+                        {badge}
+                    </div>
+                )}
                 <div
                     className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
                     style={{ backgroundImage: `url('${image}')` }}
@@ -46,7 +59,7 @@ export function ProductCard({
                         e.preventDefault();
                         setIsWishlisted(!isWishlisted);
                     }}
-                    className="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-gray-500 hover:text-red-500 transition-colors"
+                    className="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-gray-500 hover:text-red-500 transition-colors z-10"
                 >
                     <Icon
                         name="favorite"
@@ -65,12 +78,21 @@ export function ProductCard({
                     <span className="text-xs text-gray-500">{rating} ({reviews})</span>
                 </div>
                 <div className="mt-auto flex items-end justify-between">
-                    <div>
-                        {originalPrice && (
+                    <div className="flex flex-col">
+                        {discount && originalPrice ? (
+                            <div className="flex items-center gap-1">
+                                <span className="bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 text-[10px] font-bold px-1 rounded">
+                                    {discount}%
+                                </span>
+                                <span className="text-xs text-gray-400 line-through">
+                                    Rp {originalPrice.toLocaleString('id-ID')}
+                                </span>
+                            </div>
+                        ) : originalPrice ? (
                             <p className="text-xs text-gray-400 line-through">
                                 Rp {originalPrice.toLocaleString('id-ID')}
                             </p>
-                        )}
+                        ) : null}
                         <p className="text-lg font-bold text-primary">
                             Rp {price.toLocaleString('id-ID')}
                         </p>
@@ -79,6 +101,11 @@ export function ProductCard({
                         <Icon name="add_shopping_cart" size={18} />
                     </button>
                 </div>
+                {location && (
+                    <div className="mt-1 flex items-center gap-1 text-gray-500">
+                        <p className="text-[10px]">{location}</p>
+                    </div>
+                )}
             </div>
         </Link>
     );

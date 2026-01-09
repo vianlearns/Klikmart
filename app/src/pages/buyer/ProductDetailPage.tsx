@@ -25,11 +25,11 @@ function slugToTitle(slug: string): string {
 export function ProductDetailPage() {
     const { title } = useParams<{ title: string }>();
     const navigate = useNavigate();
-    
+
     // Cari produk berdasarkan title (slug)
     const productTitle = title ? slugToTitle(title) : '';
     const product = recommendedProducts.find(p => p.name.toLowerCase() === productTitle.toLowerCase());
-    
+
     // Jika produk tidak ditemukan, gunakan data default
     const currentProduct = product || {
         id: 'default',
@@ -153,9 +153,9 @@ export function ProductDetailPage() {
                                 <Icon name="favorite" size={20} />
                                 Wishlist
                             </Link>
-                            <Link to="/orders" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
-                                <Icon name="receipt_long" size={20} />
-                                Transaksi
+                            <Link to="/notifications" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
+                                <Icon name="notifications" size={20} />
+                                Notifikasi
                             </Link>
                             <Link to="/profile" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
                                 <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
@@ -206,7 +206,7 @@ export function ProductDetailPage() {
                                 {Math.min(productImages.length, activeImageIndex + 1)}/{productImages.length}
                             </div>
                         </div>
-                        
+
                         {/* Thumbnail Images (Desktop Only) */}
                         <div className="hidden md:grid grid-cols-5 gap-2 mt-4">
                             {productImages.map((img, idx) => (
@@ -242,7 +242,7 @@ export function ProductDetailPage() {
 
                     {/* Right Column: Info & Actions */}
                     <div className="md:col-span-7 lg:col-span-7 flex flex-col gap-2 md:gap-4">
-                        
+
                         {/* Product Info Card */}
                         <div className="bg-white dark:bg-[#221810] px-4 pt-4 pb-3 md:rounded-2xl md:p-6 md:border md:border-gray-100 md:dark:border-gray-800 md:shadow-sm">
                             <div className="hidden md:flex items-center justify-between mb-3">
@@ -260,7 +260,7 @@ export function ProductDetailPage() {
                             <h2 className="text-[#181411] dark:text-gray-100 text-lg md:text-2xl font-bold leading-snug mb-3 line-clamp-2">
                                 {currentProduct.name}
                             </h2>
-                            
+
                             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm mb-4">
                                 <div className="flex items-center gap-2 text-[#181411] dark:text-white">
                                     <div className="flex items-center gap-0.5">
@@ -369,7 +369,7 @@ export function ProductDetailPage() {
                         {/* Spacer Mobile Only */}
                         <div className="h-2 w-full bg-gray-100 dark:bg-[#1a120b] md:hidden" />
 
-                        
+
                         <div className="flex flex-col gap-2 md:hidden">
                             {/* Shipping Info */}
                             <div className="bg-white dark:bg-[#221810] px-4 py-3 flex items-center justify-between active:bg-gray-50 dark:active:bg-white/5 cursor-pointer md:rounded-xl md:border md:border-gray-100 md:cursor-default">
@@ -406,25 +406,25 @@ export function ProductDetailPage() {
                             <div className="flex-1 min-w-0">
                                 <div className="flex items-center gap-1">
                                     <h3 className="font-bold text-[#181411] dark:text-white truncate">Sneakers Official Store</h3>
-                                            <Icon name="verified" className="text-primary" size={14} filled />
+                                    <Icon name="verified" className="text-primary" size={14} filled />
                                 </div>
                                 <p className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1">
                                     <span className="text-green-600 dark:text-green-500 font-medium">Online</span>
                                     <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-700" />
                                     Jakarta Pusat
                                 </p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <button type="button" onClick={handleChatToStore} className="hidden md:inline-flex border border-primary text-primary px-3 py-2 rounded-lg text-xs font-bold hover:bg-primary/5 transition-colors">
-                                        Chat
-                                    </button>
-                                    <button type="button" onClick={handleVisitStore} className="border border-primary text-primary px-3 py-2 rounded-lg text-xs font-bold hover:bg-primary/5 transition-colors">
-                                        Kunjungi
-                                    </button>
-                                </div>
                             </div>
                         </div>
+                        <div className="flex items-center gap-2">
+                            <button type="button" onClick={handleChatToStore} className="hidden md:inline-flex border border-primary text-primary px-3 py-2 rounded-lg text-xs font-bold hover:bg-primary/5 transition-colors">
+                                Chat
+                            </button>
+                            <button type="button" onClick={handleVisitStore} className="border border-primary text-primary px-3 py-2 rounded-lg text-xs font-bold hover:bg-primary/5 transition-colors">
+                                Kunjungi
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
                 <div className="h-2 w-full bg-gray-100 dark:bg-[#1a120b] md:hidden" />
 
@@ -452,18 +452,18 @@ export function ProductDetailPage() {
                 <div className="h-2 w-full bg-gray-100 dark:bg-[#1a120b] md:hidden" />
 
                 <div className="bg-white dark:bg-[#221810] px-4 py-4 md:rounded-xl md:border md:border-gray-100 md:dark:border-gray-800 md:mb-6 md:px-6">
-                        <div className="flex items-center justify-between mb-4">
-                            <div className="flex flex-col">
-                                <h3 className="text-base font-bold text-[#181411] dark:text-white">Penilaian Produk</h3>
-                                <div className="flex items-center gap-1 mt-1">
-                                    <Icon name="star" className="text-primary text-[16px]" filled />
-                                    <span className="text-sm font-bold text-[#181411] dark:text-white">{ratingValue.toFixed(1)}</span>
-                                    <span className="text-xs text-gray-400">/5.0</span>
-                                    <span className="text-xs text-gray-400 ml-1">({currentProduct.reviews} ulasan)</span>
-                                </div>
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="flex flex-col">
+                            <h3 className="text-base font-bold text-[#181411] dark:text-white">Penilaian Produk</h3>
+                            <div className="flex items-center gap-1 mt-1">
+                                <Icon name="star" className="text-primary text-[16px]" filled />
+                                <span className="text-sm font-bold text-[#181411] dark:text-white">{ratingValue.toFixed(1)}</span>
+                                <span className="text-xs text-gray-400">/5.0</span>
+                                <span className="text-xs text-gray-400 ml-1">({currentProduct.reviews} ulasan)</span>
                             </div>
-                            <button type="button" onClick={handleViewAllReviews} className="text-primary text-sm font-medium">Lihat Semua</button>
                         </div>
+                        <button type="button" onClick={handleViewAllReviews} className="text-primary text-sm font-medium">Lihat Semua</button>
+                    </div>
                     <div className="border-b border-gray-100 dark:border-gray-800 pb-4 mb-4">
                         <div className="flex items-start gap-2 mb-2">
                             <div className="size-8 rounded-full bg-gray-200 bg-cover bg-center" style={{ backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJjXiA3g-cw0-A6LDuKrriH-Y69RuGHX5JGXBynLrWKtY-dGosiodfxl0znk4a64ltnYCapnChyHZmbPnk3YQXsMCWSSMRE4A-wHCNYcjODUvM1pqR1h--nn1qni6sR7fWmaleNeIDq5nmf0RF7fef09fe1S_Rl_XFjI4oJ66caft9ZCao2iYwThhco1BV12ln0bUIizZwAb6Lkh-zgT3csQq9y8A__bI5gjBb30PwyONqa6r5a9a79nw-mvx9ko2Zk2ftLViRlLBe')` }} />
