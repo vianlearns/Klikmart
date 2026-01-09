@@ -1,14 +1,14 @@
 export const categories = [
-    { id: '1', name: 'Fashion', icon: 'apparel', color: 'primary' },
-    { id: '2', name: 'Gadget', icon: 'devices', color: 'blue-500' },
-    { id: '3', name: 'Kecantikan', icon: 'face', color: 'pink-500' },
-    { id: '4', name: 'Rumah Tangga', icon: 'chair', color: 'green-500' },
-    { id: '5', name: 'Olahraga', icon: 'sports_soccer', color: 'purple-500' },
-    { id: '6', name: 'Mainan', icon: 'toys', color: 'yellow-500' },
-    { id: '7', name: 'Makanan', icon: 'lunch_dining', color: 'red-500' },
-    { id: '8', name: 'Travel', icon: 'flight', color: 'indigo-500' },
-    { id: '9', name: 'Promo', icon: 'local_offer', color: 'orange-500' },
-    { id: '10', name: 'Lainnya', icon: 'grid_view', color: 'gray-500' },
+    { id: '1', title: 'fashion', name: 'Fashion', icon: 'apparel', color: 'primary' },
+    { id: '2', title: 'gadget', name: 'Gadget', icon: 'devices', color: 'blue-500' },
+    { id: '3', title: 'kecantikan', name: 'Kecantikan', icon: 'face', color: 'pink-500' },
+    { id: '4', title: 'rumah-tangga', name: 'Rumah Tangga', icon: 'chair', color: 'green-500' },
+    { id: '5', title: 'olahraga', name: 'Olahraga', icon: 'sports_soccer', color: 'purple-500' },
+    { id: '6', title: 'mainan', name: 'Mainan', icon: 'toys', color: 'yellow-500' },
+    { id: '7', title: 'makanan', name: 'Makanan', icon: 'lunch_dining', color: 'red-500' },
+    { id: '8', title: 'travel', name: 'Travel', icon: 'flight', color: 'indigo-500' },
+    { id: '9', title: 'promo', name: 'Promo', icon: 'local_offer', color: 'orange-500' },
+    { id: '10', title: 'lainnya', name: 'Lainnya', icon: 'grid_view', color: 'gray-500' },
 ];
 
 export const flashSaleProducts = [
@@ -84,6 +84,14 @@ export const recommendedProducts = [
 export const heroBanners = [
     {
         id: 'b1',
+        image: 'https://iili.io/fkK4uxp.md.png',
+        title: 'Promo Akhir Tahun',
+        subtitle: 'Semua Kategori',
+        label: 'Best Deal',
+        buttonText: 'Lihat Promo',
+    },
+    {
+        id: 'b2',
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCwWkFfpyM7Jx9rAFqP92V2qQ2uMeOqwaDLih-Xk9oiMI4OGgT_xBahun4sgi-rYbPul-ZEZYUNGKLfNEer5_JIdWwy_VC9oBqumQVGMrN8PxK2I5BT3kshGH9gKlBUpwdcWy62bBYFldw94URWKERReKkNC-jTVZi0rChoHWRkZKvjPHuZqgzE3pLQHoUeH0o82KqjDp0OhoCbpY_FWOXJ-FoZ2AUy44etIG6OnUv7zeqpzg5QQfomFIZy-HGrM4rAS-3zGDYnnDqE',
         title: 'Diskon 50%',
         subtitle: 'Produk Fashion',
@@ -91,11 +99,11 @@ export const heroBanners = [
         buttonText: 'Belanja Sekarang',
     },
     {
-        id: 'b2',
+        id: 'b3',
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDbpH1yLK6-iYpO_q2L7Qmm9PVPfYVHgkS3gFN0HMvSoNCYISLjYvmQDzXcHDBYDiqg5YiUwbxqFdbpJtXEV1wEaGm3DloF31rluHpF6Z3EAShlkuLyG7mFC9-DfrzN3dzD62UER8YVzzZYHkgSHD-iDvR5TVjCLsxaTmnXbuPyPnbi96AwOBb1JwSKgQH0f1h-Nwy-uRv-t40Ae7_1pLjJ5d_EBt_n2--dlo26mDMmz4rxe7Du-DIAv8W9mSXePCQg4SEI2r4OY5q4',
         title: 'Gadget Terbaru',
         subtitle: 'Teknologi Canggih',
         label: 'Baru Datang',
         buttonText: 'Jelajahi',
-    },
+    }
 ];

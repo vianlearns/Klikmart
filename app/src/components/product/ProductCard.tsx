@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { Icon } from '../common/Icon';
 
 interface ProductCardProps {
@@ -31,6 +32,7 @@ export function ProductCard({
     reviews
 }: ProductCardProps) {
     const productSlug = createProductSlug(name);
+    const [isWishlisted, setIsWishlisted] = useState(false);
     
     return (
         <Link to={`/product/${productSlug}`} className="group bg-white dark:bg-[#2c241d] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden flex flex-col hover:shadow-md transition-shadow duration-200">
@@ -39,8 +41,19 @@ export function ProductCard({
                     className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
                     style={{ backgroundImage: `url('${image}')` }}
                 />
-                <button className="absolute top-2 right-2 p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-gray-500 hover:text-red-500 transition-colors">
-                    <Icon name="favorite" size={18} />
+                <button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        setIsWishlisted(!isWishlisted);
+                    }}
+                    className="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-gray-500 hover:text-red-500 transition-colors"
+                >
+                    <Icon
+                        name="favorite"
+                        size={18}
+                        filled={isWishlisted}
+                        className={isWishlisted ? 'text-red-500' : ''}
+                    />
                 </button>
             </div>
             <div className="p-3 flex flex-col flex-1">

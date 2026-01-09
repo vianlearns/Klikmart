@@ -8,11 +8,11 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-    { path: '/', icon: 'home', label: 'Home' },
-    { path: '/wishlist', icon: 'favorite', label: 'Wishlist' },
-    { path: '/orders', icon: 'receipt_long', label: 'Orders' },
-    { path: '/wallet', icon: 'account_balance_wallet', label: 'Wallet' },
-    { path: '/profile', icon: 'person', label: 'Profile' },
+    { path: '/', icon: 'home', label: 'Beranda' },
+    { path: '/feed', icon: 'feed', label: 'Feed' },
+    { path: '/mall', icon: 'storefront', label: 'Mall' },
+    { path: '/notifications', icon: 'notifications', label: 'Notifikasi' },
+    { path: '/profile', icon: 'person', label: 'Profil' },
 ];
 
 export function BottomNavBuyer() {
