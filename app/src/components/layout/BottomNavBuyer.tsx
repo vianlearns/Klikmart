@@ -11,7 +11,7 @@ const navItems: NavItem[] = [
     { path: '/', icon: 'home', label: 'Beranda' },
     { path: '/feed', icon: 'feed', label: 'Feed' },
     { path: '/mall', icon: 'storefront', label: 'Mall' },
-    { path: '/notifications', icon: 'notifications', label: 'Notifikasi' },
+    { path: '/notification', icon: 'notifications', label: 'Notifikasi' },
     { path: '/profile', icon: 'person', label: 'Profil' },
 ];
 
