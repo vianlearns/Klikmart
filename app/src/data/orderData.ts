@@ -299,13 +299,12 @@ export const orders: Order[] = [
 
 // User Profile Data
 export const userProfile = {
-    name: 'Rizky Pratama',
+    name: 'Vivian Prabaswara',
     avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA5atNOjAdxSfK-nr_TMIsvJCB6aFOr5plhe0Gg_u2IFrN3baKgl7WPM-J4kq_eLD7s8rINFj1ZXdFxBOJXsHd3F9wUkxMjl_HFWSzdztiH6uj2Db0wTr5PBeRIG2m-QdJmWIWdw179-bQ_4h91ikDOY6kG8ycrQC80tFaYIqbDuTeCf4k9J7lbfK07HyurKS-Kw7bhJF210oj2eXUJsBoTTeZ6gOfn_8f8r2jvok4LGouIwQ8v6oznuFlpWj-etWll_4y3fUrcLp9m',
     membershipLevel: 'Platinum Member',
     followers: 12,
     following: 10,
     wallet: {
-        balance: 1500000,
         coins: 2400,
         vouchers: 5,
     },

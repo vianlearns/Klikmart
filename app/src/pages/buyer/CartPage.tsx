@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
-import logoHorizontal from '../../assets/klikmart-horizontal.svg';
+import { Header } from '../../components/layout/Header';
 
 const cartStores = [
     {
@@ -64,41 +64,11 @@ export function CartPage() {
     return (
         <MobileContainer className="bg-background-light dark:bg-background-dark">
             {/* Desktop Header */}
-            <header className="hidden md:block sticky top-0 z-50 bg-white dark:bg-[#1a120b] shadow-sm">
-                <div className="px-4 py-4 w-full md:max-w-7xl md:mx-auto md:px-6">
-                    <div className="flex items-center gap-8">
-                        <Link to="/" className="flex items-center">
-                            <img src={logoHorizontal} alt="Klikmart" className="h-14 w-auto" />
-                        </Link>
-                        <div className="flex-1 relative max-w-2xl">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <Icon name="search" className="text-primary" size={20} />
-                            </div>
-                            <input
-                                className="block w-full pl-10 pr-3 py-2.5 border-none rounded-xl bg-background-light dark:bg-[#2c241d] text-sm placeholder-gray-400 dark:text-white focus:ring-1 focus:ring-primary"
-                                placeholder="Cari produk di keranjang..."
-                                type="text"
-                            />
-                        </div>
-                        <div className="flex items-center gap-6">
-                            <Link to="/wishlist" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
-                                <Icon name="favorite" size={20} />
-                                Wishlist
-                            </Link>
-                            <Link to="/notification" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
-                                <Icon name="notifications" size={20} />
-                                Notifikasi
-                            </Link>
-                            <Link to="/profile" className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors font-medium text-sm">
-                                <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                                    <Icon name="person" size={20} />
-                                </div>
-                                <span>Akun Saya</span>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <Header
+                searchPlaceholder="Cari produk di keranjang..."
+                className="hidden md:block"
+                showMobileElements={false}
+            />
 
             {/* Mobile Header */}
             <header className="md:hidden sticky top-0 z-30 flex items-center bg-white dark:bg-gray-800 p-4 shadow-sm">

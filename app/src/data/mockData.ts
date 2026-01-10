@@ -84,7 +84,7 @@ export const recommendedProducts = [
 export const heroBanners = [
     {
         id: 'b1',
-        image: 'https://iili.io/fkK4uxp.md.png',
+        image: 'https://i.ibb.co.com/jv7pCQp0/01ae73e803554fab822e099fe22bffaa-tplv-wopfjsm1ax-aigc-resize-720-720.webp',
         title: 'Promo Akhir Tahun',
         subtitle: 'Semua Kategori',
         label: 'Best Deal',
@@ -92,7 +92,7 @@ export const heroBanners = [
     },
     {
         id: 'b2',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCwWkFfpyM7Jx9rAFqP92V2qQ2uMeOqwaDLih-Xk9oiMI4OGgT_xBahun4sgi-rYbPul-ZEZYUNGKLfNEer5_JIdWwy_VC9oBqumQVGMrN8PxK2I5BT3kshGH9gKlBUpwdcWy62bBYFldw94URWKERReKkNC-jTVZi0rChoHWRkZKvjPHuZqgzE3pLQHoUeH0o82KqjDp0OhoCbpY_FWOXJ-FoZ2AUy44etIG6OnUv7zeqpzg5QQfomFIZy-HGrM4rAS-3zGDYnnDqE',
+        image: 'https://i.ibb.co.com/q394kgkn/6ccf11328cd34205823beade9767a5a3-tplv-wopfjsm1ax-aigc-resize-720-720.webp',
         title: 'Diskon 50%',
         subtitle: 'Produk Fashion',
         label: 'Super Sale',
@@ -100,7 +100,7 @@ export const heroBanners = [
     },
     {
         id: 'b3',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDbpH1yLK6-iYpO_q2L7Qmm9PVPfYVHgkS3gFN0HMvSoNCYISLjYvmQDzXcHDBYDiqg5YiUwbxqFdbpJtXEV1wEaGm3DloF31rluHpF6Z3EAShlkuLyG7mFC9-DfrzN3dzD62UER8YVzzZYHkgSHD-iDvR5TVjCLsxaTmnXbuPyPnbi96AwOBb1JwSKgQH0f1h-Nwy-uRv-t40Ae7_1pLjJ5d_EBt_n2--dlo26mDMmz4rxe7Du-DIAv8W9mSXePCQg4SEI2r4OY5q4',
+        image: 'https://i.ibb.co.com/q3h0Y6yL/df2d4936e5c94048a561976273bf3b13-tplv-wopfjsm1ax-aigc-resize-720-720.webp',
         title: 'Gadget Terbaru',
         subtitle: 'Teknologi Canggih',
         label: 'Baru Datang',
