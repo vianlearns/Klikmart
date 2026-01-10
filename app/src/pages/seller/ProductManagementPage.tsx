@@ -133,7 +133,7 @@ export function ProductManagementPage() {
                             <Icon name="tune" size={24} />
                         </button>
                         <button
-                            onClick={() => navigate('/chat')}
+                            onClick={() => navigate('/seller/chat')}
                             className="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-text-main dark:text-white"
                         >
                             <Icon name="chat_bubble" size={24} />

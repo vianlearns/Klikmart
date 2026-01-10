@@ -22,12 +22,13 @@ import { SellerCenterPage } from './pages/buyer/SellerCenterPage';
 
 // Seller Pages
 import { ProductManagementPage } from './pages/seller/ProductManagementPage';
-import { IncomingOrdersPage } from './pages/seller/IncomingOrdersPage';
-import { ShippingManagementPage } from './pages/seller/ShippingManagementPage';
+import { OrderManagementPage } from './pages/seller/OrderManagementPage';
 import { FinancePage } from './pages/seller/FinancePage';
 import { AdsManagementPage } from './pages/seller/AdsManagementPage';
 import { SalesStatisticsPage } from './pages/seller/SalesStatisticsPage';
 import { LiveStreamingPage } from './pages/seller/LiveStreamingPage';
+import { SellerChatListPage } from './pages/seller/SellerChatListPage';
+import { SellerChatRoomPage } from './pages/seller/SellerChatRoomPage';
 
 import './index.css';
 
@@ -62,12 +63,14 @@ function App() {
 
         {/* Seller Center Routes */}
         <Route path="/seller/products" element={<ProductManagementPage />} />
-        <Route path="/seller/orders" element={<IncomingOrdersPage />} />
-        <Route path="/seller/shipping" element={<ShippingManagementPage />} />
+        <Route path="/seller/orders" element={<OrderManagementPage />} />
+        <Route path="/seller/shipping" element={<OrderManagementPage />} />
         <Route path="/seller/finance" element={<FinancePage />} />
         <Route path="/seller/ads" element={<AdsManagementPage />} />
         <Route path="/seller/statistics" element={<SalesStatisticsPage />} />
         <Route path="/seller/live" element={<LiveStreamingPage />} />
+        <Route path="/seller/chat" element={<SellerChatListPage />} />
+        <Route path="/seller/chat/:title" element={<SellerChatRoomPage />} />
       </Routes>
     </Router>
   );

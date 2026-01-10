@@ -12,7 +12,7 @@ interface ChatMessage {
     isPrimary?: boolean;
 }
 
-const mockMessages: ChatMessage[] = [
+const initialMessages: ChatMessage[] = [
     {
         id: '1',
         username: 'Agus S.',
@@ -39,10 +39,33 @@ const mockMessages: ChatMessage[] = [
     }
 ];
 
+const pinnedProducts = [
+    {
+        id: '1',
+        name: 'Floral Summer Dress',
+        price: 150000,
+        originalPrice: 300000,
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCCJMt-KX2XCczsYvJgFKVyq1yQc1USC4yclBpwEop9jvkbekZM-XnQUGkWIPurRxMKWMY3zSaPcVN7UYi0JRRdVlIwMIkqGIyuxRxFObsomEKMaF3bPxuwb69KjcgeK2r51D_m-J_wwx8sKHzVS0auHQLG5LQsIMpNcGS2_TdYhM1udJKs55rIMWr7l6LYCmh_Ln1OjClAI6KZGYqF5QS6hM5cllNq4MVT7dGVA12NVasAJHUE9HJLFRyFKsiE7z2uShTtttLyIawQ'
+    },
+    {
+        id: '2',
+        name: 'Classic White T-Shirt',
+        price: 89000,
+        originalPrice: 150000,
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcCAHUspE3Fvd1yg84CUSZWozjqq8flb5oq9mgEkbv6V_g2TYshJq2re8lfjzsjIpR24S1W8ZTmykMxxGY_DMowaqBXKLV74eqooZ7dylgj8GUk33Wxe7mXCILDuvqquxPP4lidklC7Nwp6is_Jrm_WMuC6pEnyUi3lP0EAz5O6CijYN7eJrHsoWFUwwXcU2G8RlyKLt-BHPRk470a-fP8wsJctmwg70waldLxUxf-P4gqP7Qd9_PjUoFvDC25ufTZrjazep-Q5zc9'
+    }
+];
+
 export function LiveStreamingPage() {
     const navigate = useNavigate();
     const [chatMessage, setChatMessage] = useState('');
-    const [likeCount] = useState(24500);
+    const [messages, setMessages] = useState(initialMessages);
+    const [likeCount, setLikeCount] = useState(24500);
+    const [isFollowing, setIsFollowing] = useState(false);
+    const [showVoucher, setShowVoucher] = useState(true);
+    const [pinnedProductIndex, setPinnedProductIndex] = useState(0);
+    const [cartCount, setCartCount] = useState(12);
+    const [showProductList, setShowProductList] = useState(false);
 
     const formatCount = (count: number) => {
         if (count >= 1000) {
@@ -50,6 +73,58 @@ export function LiveStreamingPage() {
         }
         return count.toString();
     };
+
+    const formatPrice = (price: number) => {
+        return new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(price);
+    };
+
+    const handleSendMessage = () => {
+        if (chatMessage.trim()) {
+            const newMessage: ChatMessage = {
+                id: Date.now().toString(),
+                username: 'You',
+                message: chatMessage,
+                isPrimary: true
+            };
+            setMessages(prev => [...prev, newMessage]);
+            setChatMessage('');
+        }
+    };
+
+    const handleLike = () => {
+        setLikeCount(prev => prev + 1);
+    };
+
+    const handleFollow = () => {
+        setIsFollowing(!isFollowing);
+    };
+
+    const handleBuyNow = () => {
+        setCartCount(prev => prev + 1);
+        // Navigate to cart or show confirmation
+        navigate('/cart');
+    };
+
+    const handleShare = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Live Streaming - Fashion Store Official',
+                text: 'Check out this live stream!',
+                url: window.location.href
+            });
+        }
+    };
+
+    const handleSwitchProduct = () => {
+        setPinnedProductIndex(prev => (prev + 1) % pinnedProducts.length);
+    };
+
+    const currentProduct = pinnedProducts[pinnedProductIndex];
 
     return (
         <MobileContainer className="bg-background-dark font-display antialiased overflow-hidden">
@@ -70,7 +145,7 @@ export function LiveStreamingPage() {
                 <div className="h-12 w-full shrink-0 z-10 pointer-events-none" />
 
                 {/* Top Header Overlay */}
-                <header className="relative z-10 flex items-center justify-between px-4 pb-2">
+                <header className="relative z-10 flex items-center justify-between px-4 pb-2 max-w-6xl mx-auto w-full">
                     {/* Left: Seller Profile */}
                     <div className="flex items-center gap-2 bg-black/30 backdrop-blur-md rounded-full p-1 pr-4 border border-white/10">
                         <div
@@ -83,8 +158,14 @@ export function LiveStreamingPage() {
                             <h2 className="text-xs font-bold leading-tight">Fashion Store Official</h2>
                             <span className="text-[10px] text-white/80">Premium Local Brand</span>
                         </div>
-                        <button className="bg-primary hover:bg-primary/90 text-white text-xs font-bold px-3 py-1.5 rounded-full ml-1 transition-colors">
-                            Follow
+                        <button
+                            onClick={handleFollow}
+                            className={`text-xs font-bold px-3 py-1.5 rounded-full ml-1 transition-colors ${isFollowing
+                                    ? 'bg-white/20 text-white'
+                                    : 'bg-primary hover:bg-primary/90 text-white'
+                                }`}
+                        >
+                            {isFollowing ? 'Following' : 'Follow'}
                         </button>
                     </div>
 
@@ -116,21 +197,30 @@ export function LiveStreamingPage() {
                     <div className="absolute right-4 bottom-4 flex flex-col gap-4 pointer-events-auto items-center">
                         {/* Share Button */}
                         <div className="flex flex-col items-center gap-1">
-                            <button className="size-10 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-md border border-white/10 active:scale-95 transition">
+                            <button
+                                onClick={handleShare}
+                                className="size-10 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-md border border-white/10 active:scale-95 transition"
+                            >
                                 <Icon name="share" size={24} className="text-white" />
                             </button>
                             <span className="text-[10px] font-bold drop-shadow-md">Share</span>
                         </div>
                         {/* Filters/Magic Button */}
                         <div className="flex flex-col items-center gap-1">
-                            <button className="size-10 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-md border border-white/10 active:scale-95 transition">
-                                <Icon name="face" size={24} className="text-white" />
+                            <button
+                                onClick={() => setShowProductList(!showProductList)}
+                                className="size-10 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-md border border-white/10 active:scale-95 transition"
+                            >
+                                <Icon name="shopping_bag" size={24} className="text-white" />
                             </button>
-                            <span className="text-[10px] font-bold drop-shadow-md">Effect</span>
+                            <span className="text-[10px] font-bold drop-shadow-md">Products</span>
                         </div>
                         {/* Like Button */}
                         <div className="flex flex-col items-center gap-1">
-                            <button className="size-12 flex items-center justify-center rounded-full bg-primary/20 backdrop-blur-sm border border-primary/50 text-primary active:scale-90 transition animate-pulse">
+                            <button
+                                onClick={handleLike}
+                                className="size-12 flex items-center justify-center rounded-full bg-primary/20 backdrop-blur-sm border border-primary/50 text-primary active:scale-90 transition animate-pulse"
+                            >
                                 <Icon name="favorite" size={28} filled />
                             </button>
                             <span className="text-[10px] font-bold drop-shadow-md">{formatCount(likeCount)}</span>
@@ -138,26 +228,31 @@ export function LiveStreamingPage() {
                     </div>
 
                     {/* Voucher Floating Toast */}
-                    <div className="absolute top-4 left-4 pointer-events-auto">
-                        <div className="flex items-center gap-3 bg-gradient-to-r from-orange-600 to-primary p-2 pr-4 rounded-lg shadow-lg border border-white/20 animate-bounce cursor-pointer">
-                            <div className="bg-white/20 rounded p-1">
-                                <Icon name="confirmation_number" size={18} className="text-white" />
-                            </div>
-                            <div>
-                                <p className="text-[10px] font-medium text-white/90 uppercase tracking-wider">Flash Voucher</p>
-                                <p className="text-xs font-bold text-white">50% OFF Ends in 04:59</p>
-                            </div>
+                    {showVoucher && (
+                        <div className="absolute top-4 left-4 pointer-events-auto">
+                            <button
+                                onClick={() => setShowVoucher(false)}
+                                className="flex items-center gap-3 bg-gradient-to-r from-orange-600 to-primary p-2 pr-4 rounded-lg shadow-lg border border-white/20 animate-bounce cursor-pointer hover:scale-105 transition-transform"
+                            >
+                                <div className="bg-white/20 rounded p-1">
+                                    <Icon name="confirmation_number" size={18} className="text-white" />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-medium text-white/90 uppercase tracking-wider">Flash Voucher</p>
+                                    <p className="text-xs font-bold text-white">50% OFF Ends in 04:59</p>
+                                </div>
+                            </button>
                         </div>
-                    </div>
+                    )}
                 </div>
 
                 {/* Bottom Area Overlay */}
-                <div className="relative z-20 flex flex-col justify-end px-4 pb-8 gap-4">
+                <div className="relative z-20 flex flex-col justify-end px-4 pb-8 gap-4 max-w-6xl mx-auto w-full">
                     {/* Chat Area & Pinned Product Row */}
                     <div className="flex items-end justify-between gap-2">
                         {/* Live Chat Stream */}
-                        <div className="w-2/3 h-48 flex flex-col justify-end gap-2 overflow-hidden" style={{ maskImage: 'linear-gradient(to bottom, transparent, black 10%)' }}>
-                            {mockMessages.map((msg) => (
+                        <div className="w-2/3 lg:w-1/2 h-48 flex flex-col justify-end gap-2 overflow-hidden" style={{ maskImage: 'linear-gradient(to bottom, transparent, black 10%)' }}>
+                            {messages.slice(-5).map((msg) => (
                                 <div key={msg.id} className="flex items-start gap-2 animate-[fadeIn_0.5s_ease-out]">
                                     {msg.avatar && (
                                         <div
@@ -188,26 +283,33 @@ export function LiveStreamingPage() {
 
                     {/* Pinned Product Card */}
                     <div className="relative w-full">
-                        <div className="absolute bottom-0 left-0 bg-white dark:bg-[#221810] p-2 rounded-xl flex items-center gap-3 w-[70%] shadow-2xl border border-white/10">
-                            <div
-                                className="h-12 w-12 rounded-lg bg-cover bg-center shrink-0 bg-gray-200"
+                        <div className="absolute bottom-0 left-0 bg-white dark:bg-[#221810] p-2 rounded-xl flex items-center gap-3 w-full max-w-[300px] lg:max-w-[400px] shadow-2xl border border-white/10">
+                            <button
+                                onClick={handleSwitchProduct}
+                                className="h-12 w-12 rounded-lg bg-cover bg-center shrink-0 bg-gray-200 hover:opacity-80 transition-opacity"
                                 style={{
-                                    backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCJMt-KX2XCczsYvJgFKVyq1yQc1USC4yclBpwEop9jvkbekZM-XnQUGkWIPurRxMKWMY3zSaPcVN7UYi0JRRdVlIwMIkqGIyuxRxFObsomEKMaF3bPxuwb69KjcgeK2r51D_m-J_wwx8sKHzVS0auHQLG5LQsIMpNcGS2_TdYhM1udJKs55rIMWr7l6LYCmh_Ln1OjClAI6KZGYqF5QS6hM5cllNq4MVT7dGVA12NVasAJHUE9HJLFRyFKsiE7z2uShTtttLyIawQ')`
+                                    backgroundImage: `url('${currentProduct.image}')`
                                 }}
                             />
                             <div className="flex-1 min-w-0">
                                 <div className="flex items-baseline gap-2">
-                                    <p className="text-primary font-bold text-sm">Rp 150.000</p>
-                                    <span className="text-[10px] text-gray-400 line-through">Rp 300rb</span>
+                                    <p className="text-primary font-bold text-sm">{formatPrice(currentProduct.price)}</p>
+                                    <span className="text-[10px] text-gray-400 line-through">{formatPrice(currentProduct.originalPrice)}</span>
                                 </div>
-                                <p className="text-xs text-black dark:text-gray-300 truncate font-medium">Floral Summer Dress</p>
+                                <p className="text-xs text-black dark:text-gray-300 truncate font-medium">{currentProduct.name}</p>
                             </div>
-                            <button className="bg-primary hover:bg-primary/90 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg shadow-primary/30 shrink-0">
+                            <button
+                                onClick={handleBuyNow}
+                                className="bg-primary hover:bg-primary/90 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg shadow-primary/30 shrink-0 active:scale-95 transition-all"
+                            >
                                 Buy Now
                             </button>
                             {/* Close Product Pin */}
-                            <button className="absolute -top-2 -right-2 bg-gray-600 rounded-full p-0.5 text-white shadow-sm">
-                                <Icon name="close" size={12} />
+                            <button
+                                onClick={handleSwitchProduct}
+                                className="absolute -top-2 -right-2 bg-gray-600 rounded-full p-0.5 text-white shadow-sm hover:bg-gray-500"
+                            >
+                                <Icon name="swap_horiz" size={12} />
                             </button>
                         </div>
                     </div>
@@ -215,11 +317,16 @@ export function LiveStreamingPage() {
                     {/* Bottom Action Bar */}
                     <div className="flex items-center gap-3 pt-2">
                         {/* Shopping Bag */}
-                        <button className="relative shrink-0 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md size-11 border border-white/10 text-white hover:bg-black/50 transition">
+                        <button
+                            onClick={() => navigate('/cart')}
+                            className="relative shrink-0 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md size-11 border border-white/10 text-white hover:bg-black/50 transition"
+                        >
                             <Icon name="shopping_bag" size={24} />
-                            <div className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-sm">
-                                12
-                            </div>
+                            {cartCount > 0 && (
+                                <div className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-sm">
+                                    {cartCount}
+                                </div>
+                            )}
                         </button>
 
                         {/* Input Field */}
@@ -230,15 +337,24 @@ export function LiveStreamingPage() {
                                     type="text"
                                     value={chatMessage}
                                     onChange={(e) => setChatMessage(e.target.value)}
+                                    onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                                     className="w-full bg-transparent border-none p-0 text-sm placeholder-white/50 focus:ring-0 text-white"
                                     placeholder="Ask about this product..."
                                 />
-                                <button className="ml-2 text-primary font-bold text-sm">Send</button>
+                                <button
+                                    onClick={handleSendMessage}
+                                    className="ml-2 text-primary font-bold text-sm hover:text-primary/80"
+                                >
+                                    Send
+                                </button>
                             </div>
                         </div>
 
                         {/* More/Menu */}
-                        <button className="shrink-0 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md size-11 border border-white/10 text-white hover:bg-black/50 transition">
+                        <button
+                            onClick={() => navigate('/seller-center')}
+                            className="shrink-0 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md size-11 border border-white/10 text-white hover:bg-black/50 transition"
+                        >
                             <Icon name="more_horiz" size={24} />
                         </button>
                     </div>
@@ -246,6 +362,41 @@ export function LiveStreamingPage() {
                     {/* Home Indicator Spacer */}
                     <div className="h-2 w-full" />
                 </div>
+
+                {/* Product List Overlay */}
+                {showProductList && (
+                    <div className="absolute inset-0 z-30 bg-black/70 backdrop-blur-sm flex items-end">
+                        <div className="bg-surface-light dark:bg-surface-dark w-full max-h-[60%] rounded-t-2xl p-4 overflow-y-auto">
+                            <div className="flex items-center justify-between mb-4">
+                                <h3 className="text-lg font-bold text-text-main dark:text-white">Produk Live</h3>
+                                <button onClick={() => setShowProductList(false)} className="text-gray-400 hover:text-white">
+                                    <Icon name="close" size={24} />
+                                </button>
+                            </div>
+                            <div className="grid grid-cols-2 gap-3">
+                                {pinnedProducts.map((product, idx) => (
+                                    <button
+                                        key={product.id}
+                                        onClick={() => {
+                                            setPinnedProductIndex(idx);
+                                            setShowProductList(false);
+                                        }}
+                                        className="flex flex-col rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 overflow-hidden text-left hover:border-primary transition-colors"
+                                    >
+                                        <div
+                                            className="w-full h-24 bg-cover bg-center"
+                                            style={{ backgroundImage: `url('${product.image}')` }}
+                                        />
+                                        <div className="p-2">
+                                            <p className="text-xs font-medium text-text-main dark:text-white truncate">{product.name}</p>
+                                            <p className="text-sm font-bold text-primary mt-1">{formatPrice(product.price)}</p>
+                                        </div>
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
 
             {/* Animation Keyframes - added via CSS */}
