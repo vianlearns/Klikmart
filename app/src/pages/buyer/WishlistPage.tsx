@@ -10,11 +10,11 @@ export function WishlistPage() {
     const navigate = useNavigate();
     const [wishlistItems, setWishlistItems] = useState(recommendedProducts);
 
-    const handleRemoveItem = (id: string) => {
-        if (window.confirm("Hapus dari wishlist?")) {
-            setWishlistItems(prev => prev.filter(item => item.id !== id));
-        }
-    };
+    // const handleRemoveItem = (id: string) => {
+    //     if (window.confirm("Hapus dari wishlist?")) {
+    //         setWishlistItems(prev => prev.filter(item => item.id !== id));
+    //     }
+    // };
 
     return (
         <MobileContainer className="bg-background-light dark:bg-background-dark min-h-screen">

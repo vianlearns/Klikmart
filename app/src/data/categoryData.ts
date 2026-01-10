@@ -1,0 +1,216 @@
+// Category-specific data for Klikmart
+
+export interface CategoryProduct {
+    id: string;
+    name: string;
+    image: string;
+    price: number;
+    originalPrice?: number;
+    rating: number;
+    reviews: string;
+    location?: string;
+    badge?: string;
+    discount?: number;
+}
+
+export interface CategoryConfig {
+    name: string;
+    title: string;
+    icon: string;
+    gradient: string;
+    bannerImage: string;
+    bannerTitle: string;
+    bannerSubtitle: string;
+    subcategories: string[];
+}
+
+export const categoryConfig: Record<string, CategoryConfig> = {
+    'fashion': {
+        name: 'Fashion',
+        title: 'Fashion',
+        icon: 'apparel',
+        gradient: 'from-orange-600 to-pink-500',
+        bannerImage: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800',
+        bannerTitle: 'Fashion Terkini',
+        bannerSubtitle: 'Diskon hingga 70%',
+        subcategories: ['Semua', 'Pria', 'Wanita', 'Anak', 'Aksesoris', 'Sepatu'],
+    },
+    'gadget': {
+        name: 'Gadget',
+        title: 'Gadget',
+        icon: 'devices',
+        gradient: 'from-blue-600 to-cyan-500',
+        bannerImage: 'https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=800',
+        bannerTitle: 'Gadget Terbaru',
+        bannerSubtitle: 'Teknologi Canggih',
+        subcategories: ['Semua', 'Smartphone', 'Laptop', 'Tablet', 'Audio', 'Aksesoris'],
+    },
+    'kecantikan': {
+        name: 'Kecantikan',
+        title: 'Kecantikan',
+        icon: 'face',
+        gradient: 'from-pink-500 to-rose-400',
+        bannerImage: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800',
+        bannerTitle: 'Beauty Sale',
+        bannerSubtitle: 'Produk Kecantikan Terbaik',
+        subcategories: ['Semua', 'Skincare', 'Makeup', 'Haircare', 'Parfum', 'Bodycare'],
+    },
+    'rumah-tangga': {
+        name: 'Rumah Tangga',
+        title: 'Rumah Tangga',
+        icon: 'chair',
+        gradient: 'from-green-600 to-emerald-500',
+        bannerImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800',
+        bannerTitle: 'Home & Living',
+        bannerSubtitle: 'Lengkapi Rumahmu',
+        subcategories: ['Semua', 'Furniture', 'Dekorasi', 'Dapur', 'Kamar Mandi', 'Alat Rumah'],
+    },
+    'olahraga': {
+        name: 'Olahraga',
+        title: 'Olahraga',
+        icon: 'sports_soccer',
+        gradient: 'from-purple-600 to-violet-500',
+        bannerImage: 'https://images.unsplash.com/photo-1461896836934- voices-of-march-8-of-14?w=800',
+        bannerTitle: 'Sport Zone',
+        bannerSubtitle: 'Aktif dan Sehat',
+        subcategories: ['Semua', 'Fitness', 'Outdoor', 'Sepeda', 'Alat Olahraga', 'Pakaian'],
+    },
+    'mainan': {
+        name: 'Mainan',
+        title: 'Mainan',
+        icon: 'toys',
+        gradient: 'from-yellow-500 to-amber-400',
+        bannerImage: 'https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=800',
+        bannerTitle: 'Toy Paradise',
+        bannerSubtitle: 'Mainan Anak Berkualitas',
+        subcategories: ['Semua', 'Edukatif', 'Action Figure', 'Boneka', 'Puzzle', 'Outdoor'],
+    },
+    'makanan': {
+        name: 'Makanan',
+        title: 'Makanan',
+        icon: 'lunch_dining',
+        gradient: 'from-red-500 to-orange-400',
+        bannerImage: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800',
+        bannerTitle: 'Food Festival',
+        bannerSubtitle: 'Kuliner Nusantara',
+        subcategories: ['Semua', 'Snack', 'Minuman', 'Makanan Instan', 'Frozen Food', 'Kue'],
+    },
+    'travel': {
+        name: 'Travel',
+        title: 'Travel',
+        icon: 'flight',
+        gradient: 'from-indigo-600 to-blue-500',
+        bannerImage: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800',
+        bannerTitle: 'Travel Deals',
+        bannerSubtitle: 'Jelajahi Dunia',
+        subcategories: ['Semua', 'Tiket Pesawat', 'Hotel', 'Paket Tour', 'Travel Gear', 'Voucher'],
+    },
+    'promo': {
+        name: 'Promo',
+        title: 'Promo Spesial',
+        icon: 'local_offer',
+        gradient: 'from-orange-500 to-red-500',
+        bannerImage: 'https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=800',
+        bannerTitle: 'Mega Sale',
+        bannerSubtitle: 'Diskon Gila-Gilaan',
+        subcategories: ['Semua', 'Flash Sale', 'Cashback', 'Gratis Ongkir', 'Brand Day', 'Voucher'],
+    },
+    'lainnya': {
+        name: 'Lainnya',
+        title: 'Produk Lainnya',
+        icon: 'grid_view',
+        gradient: 'from-gray-600 to-slate-500',
+        bannerImage: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800',
+        bannerTitle: 'Eksplorasi',
+        bannerSubtitle: 'Temukan Lebih Banyak',
+        subcategories: ['Semua', 'Buku', 'Musik', 'Film', 'Hobi', 'Otomotif'],
+    },
+};
+
+// Category-specific products with proper images
+export const categoryProducts: Record<string, CategoryProduct[]> = {
+    'fashion': [
+        { id: 'f1', name: 'Jaket Bomber Pria Premium', image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400', price: 289000, originalPrice: 450000, rating: 4.8, reviews: '2.1k', discount: 36, badge: 'Mall' },
+        { id: 'f2', name: 'Dress Casual Wanita Floral', image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400', price: 175000, originalPrice: 250000, rating: 4.7, reviews: '1.5k', discount: 30 },
+        { id: 'f3', name: 'Celana Jeans Slim Fit', image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400', price: 199000, rating: 4.6, reviews: '3.2k', location: 'Jakarta' },
+        { id: 'f4', name: 'Kemeja Batik Modern', image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400', price: 165000, originalPrice: 220000, rating: 4.9, reviews: '890', discount: 25 },
+        { id: 'f5', name: 'Sepatu Sneakers Putih', image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400', price: 425000, originalPrice: 599000, rating: 4.8, reviews: '4.5k', discount: 29, badge: 'Star+' },
+        { id: 'f6', name: 'Tas Ransel Kulit Wanita', image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400', price: 315000, rating: 4.5, reviews: '1.8k' },
+    ],
+    'gadget': [
+        { id: 'g1', name: 'Smartwatch Fitness Tracker', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400', price: 899000, originalPrice: 1200000, rating: 4.9, reviews: '3.2k', discount: 25, badge: 'Mall' },
+        { id: 'g2', name: 'Earbuds TWS Wireless ANC', image: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400', price: 450000, originalPrice: 650000, rating: 4.7, reviews: '5.1k', discount: 31 },
+        { id: 'g3', name: 'Powerbank 20000mAh Fast', image: 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400', price: 275000, rating: 4.6, reviews: '2.8k', location: 'Bandung' },
+        { id: 'g4', name: 'Keyboard Mechanical RGB', image: 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=400', price: 685000, originalPrice: 850000, rating: 4.8, reviews: '1.9k', discount: 19, badge: 'Star+' },
+        { id: 'g5', name: 'Mouse Gaming Wireless', image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400', price: 345000, rating: 4.5, reviews: '4.2k' },
+        { id: 'g6', name: 'Webcam HD 1080p Streaming', image: 'https://images.unsplash.com/photo-1587826080692-f439cd0b70da?w=400', price: 525000, originalPrice: 700000, rating: 4.7, reviews: '980', discount: 25 },
+    ],
+    'kecantikan': [
+        { id: 'k1', name: 'Serum Vitamin C Brightening', image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400', price: 185000, originalPrice: 250000, rating: 4.9, reviews: '6.5k', discount: 26, badge: 'Mall' },
+        { id: 'k2', name: 'Sunscreen SPF 50 PA++++', image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400', price: 125000, rating: 4.8, reviews: '8.2k', location: 'Jakarta' },
+        { id: 'k3', name: 'Lipstick Matte Set 6pcs', image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400', price: 145000, originalPrice: 200000, rating: 4.7, reviews: '3.1k', discount: 28 },
+        { id: 'k4', name: 'Moisturizer Hydrating 24H', image: 'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=400', price: 165000, rating: 4.6, reviews: '2.4k' },
+        { id: 'k5', name: 'Sheet Mask Pack 10pcs', image: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=400', price: 89000, originalPrice: 120000, rating: 4.8, reviews: '4.7k', discount: 26, badge: 'Star+' },
+        { id: 'k6', name: 'Parfum Wanita Floral 50ml', image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400', price: 385000, originalPrice: 500000, rating: 4.9, reviews: '1.2k', discount: 23 },
+    ],
+    'rumah-tangga': [
+        { id: 'r1', name: 'Lampu Hias LED Modern', image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400', price: 245000, originalPrice: 350000, rating: 4.7, reviews: '1.8k', discount: 30, badge: 'Mall' },
+        { id: 'r2', name: 'Rak Dinding Minimalis Set', image: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=400', price: 175000, rating: 4.5, reviews: '2.3k', location: 'Surabaya' },
+        { id: 'r3', name: 'Kitchen Set Peralatan Masak', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400', price: 425000, originalPrice: 550000, rating: 4.8, reviews: '980', discount: 23 },
+        { id: 'r4', name: 'Karpet Bulu Lembut 150x200', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400', price: 289000, rating: 4.6, reviews: '1.5k' },
+        { id: 'r5', name: 'Tanaman Hias Artificial Set', image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400', price: 125000, originalPrice: 180000, rating: 4.4, reviews: '3.2k', discount: 31, badge: 'Star+' },
+        { id: 'r6', name: 'Bantal Sofa Dekoratif 4pcs', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e6?w=400', price: 165000, rating: 4.7, reviews: '890' },
+    ],
+    'olahraga': [
+        { id: 'o1', name: 'Matras Yoga Premium 6mm', image: 'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400', price: 185000, originalPrice: 250000, rating: 4.8, reviews: '2.5k', discount: 26, badge: 'Mall' },
+        { id: 'o2', name: 'Dumbbell Set 10kg Adjustable', image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400', price: 425000, rating: 4.7, reviews: '1.2k', location: 'Jakarta' },
+        { id: 'o3', name: 'Sepatu Lari Running Pro', image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400', price: 685000, originalPrice: 900000, rating: 4.9, reviews: '3.8k', discount: 24, badge: 'Star+' },
+        { id: 'o4', name: 'Jersey Olahraga Dri-Fit', image: 'https://images.unsplash.com/photo-1580087256394-dc596e1c8f4f?w=400', price: 145000, rating: 4.5, reviews: '4.1k' },
+        { id: 'o5', name: 'Resistance Band Set 5pcs', image: 'https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400', price: 89000, originalPrice: 130000, rating: 4.6, reviews: '2.7k', discount: 32 },
+        { id: 'o6', name: 'Botol Minum Sport 1L', image: 'https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400', price: 75000, rating: 4.4, reviews: '5.6k' },
+    ],
+    'mainan': [
+        { id: 'm1', name: 'Lego Building Block 500pcs', image: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400', price: 285000, originalPrice: 400000, rating: 4.9, reviews: '1.8k', discount: 29, badge: 'Mall' },
+        { id: 'm2', name: 'Boneka Teddy Bear Giant', image: 'https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=400', price: 245000, rating: 4.7, reviews: '2.3k', location: 'Bandung' },
+        { id: 'm3', name: 'Mobil Remote Control RC', image: 'https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=400', price: 325000, originalPrice: 450000, rating: 4.6, reviews: '980', discount: 28 },
+        { id: 'm4', name: 'Puzzle 1000pcs Landscape', image: 'https://images.unsplash.com/photo-1494059980473-813e73ee784b?w=400', price: 125000, rating: 4.8, reviews: '1.5k', badge: 'Star+' },
+        { id: 'm5', name: 'Action Figure Superhero', image: 'https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=400', price: 185000, originalPrice: 250000, rating: 4.5, reviews: '3.2k', discount: 26 },
+        { id: 'm6', name: 'Board Game Family Edition', image: 'https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=400', price: 215000, rating: 4.7, reviews: '890' },
+    ],
+    'makanan': [
+        { id: 'mk1', name: 'Snack Box Premium Mix', image: 'https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400', price: 125000, originalPrice: 180000, rating: 4.8, reviews: '4.5k', discount: 31, badge: 'Mall' },
+        { id: 'mk2', name: 'Kopi Arabica Gayo 500g', image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400', price: 165000, rating: 4.9, reviews: '3.2k', location: 'Aceh' },
+        { id: 'mk3', name: 'Cokelat Artisan Gift Box', image: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400', price: 245000, originalPrice: 320000, rating: 4.7, reviews: '1.8k', discount: 23, badge: 'Star+' },
+        { id: 'mk4', name: 'Keripik Singkong Aneka Rasa', image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400', price: 45000, rating: 4.5, reviews: '8.9k' },
+        { id: 'mk5', name: 'Madu Hutan Murni 500ml', image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400', price: 185000, originalPrice: 250000, rating: 4.8, reviews: '2.1k', discount: 26 },
+        { id: 'mk6', name: 'Sambal Nusantara Set 5pcs', image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400', price: 89000, rating: 4.6, reviews: '5.4k' },
+    ],
+    'travel': [
+        { id: 't1', name: 'Koper Cabin 20inch TSA', image: 'https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=400', price: 685000, originalPrice: 900000, rating: 4.8, reviews: '2.1k', discount: 24, badge: 'Mall' },
+        { id: 't2', name: 'Tas Ransel Travel 40L', image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400', price: 425000, rating: 4.7, reviews: '1.5k', location: 'Jakarta' },
+        { id: 't3', name: 'Neck Pillow Memory Foam', image: 'https://images.unsplash.com/photo-1520923179278-ee53bb74c0be?w=400', price: 125000, originalPrice: 180000, rating: 4.6, reviews: '3.8k', discount: 31 },
+        { id: 't4', name: 'Travel Adapter Universal', image: 'https://images.unsplash.com/photo-1621265010506-fbb8e61cf250?w=400', price: 89000, rating: 4.5, reviews: '4.2k', badge: 'Star+' },
+        { id: 't5', name: 'Packing Cube Set 6pcs', image: 'https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=400', price: 145000, originalPrice: 200000, rating: 4.8, reviews: '980', discount: 28 },
+        { id: 't6', name: 'Passport Holder Leather', image: 'https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=400', price: 165000, rating: 4.7, reviews: '2.3k' },
+    ],
+    'promo': [
+        { id: 'p1', name: 'Bundle Gadget Hemat 3in1', image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400', price: 599000, originalPrice: 1200000, rating: 4.9, reviews: '5.2k', discount: 50, badge: 'Mall' },
+        { id: 'p2', name: 'Paket Skincare Lengkap', image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400', price: 285000, originalPrice: 500000, rating: 4.8, reviews: '3.8k', discount: 43 },
+        { id: 'p3', name: 'Fashion Bundle Pria Set', image: 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=400', price: 399000, originalPrice: 750000, rating: 4.7, reviews: '2.1k', discount: 47, badge: 'Star+' },
+        { id: 'p4', name: 'Home Decor Starter Pack', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400', price: 445000, originalPrice: 800000, rating: 4.6, reviews: '1.5k', discount: 44 },
+        { id: 'p5', name: 'Sport Equipment Combo', image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400', price: 525000, originalPrice: 950000, rating: 4.8, reviews: '890', discount: 45 },
+        { id: 'p6', name: 'Snack Super Box 20pcs', image: 'https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=400', price: 175000, originalPrice: 300000, rating: 4.5, reviews: '6.7k', discount: 42 },
+    ],
+    'lainnya': [
+        { id: 'l1', name: 'Buku Best Seller Novel', image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400', price: 89000, originalPrice: 125000, rating: 4.8, reviews: '3.2k', discount: 29, badge: 'Mall' },
+        { id: 'l2', name: 'Vinyl Record Classic Hits', image: 'https://images.unsplash.com/photo-1539375665275-f9de415ef9ac?w=400', price: 285000, rating: 4.9, reviews: '890', location: 'Jakarta' },
+        { id: 'l3', name: 'Poster Aesthetic Set 5pcs', image: 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=400', price: 125000, originalPrice: 180000, rating: 4.6, reviews: '2.1k', discount: 31 },
+        { id: 'l4', name: 'Sticker Pack 100pcs', image: 'https://images.unsplash.com/photo-1572375992501-4b0892d50c69?w=400', price: 45000, rating: 4.5, reviews: '5.8k', badge: 'Star+' },
+        { id: 'l5', name: 'Aksesoris Mobil Interior Set', image: 'https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=400', price: 225000, originalPrice: 300000, rating: 4.7, reviews: '1.5k', discount: 25 },
+        { id: 'l6', name: 'Alat Lukis Profesional Set', image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400', price: 345000, rating: 4.8, reviews: '680' },
+    ],
+};
+
+export function getCategoryProducts(category: string): CategoryProduct[] {
+    return categoryProducts[category] || categoryProducts['lainnya'];
+}

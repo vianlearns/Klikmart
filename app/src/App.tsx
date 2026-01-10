@@ -19,6 +19,7 @@ import { RecentlyViewedPage } from './pages/buyer/RecentlyViewedPage';
 import { AddressPage } from './pages/buyer/AddressPage';
 import { SettingsPage } from './pages/buyer/SettingsPage';
 import { SellerCenterPage } from './pages/buyer/SellerCenterPage';
+import { CategoryPage } from './pages/buyer/CategoryPage';
 
 // Seller Pages
 import { ProductManagementPage } from './pages/seller/ProductManagementPage';
@@ -41,6 +42,7 @@ function App() {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/category/:slug" element={<CategoryPage />} />
         <Route path="/profile" element={<ProfilePage />} />
 
         {/* Order Routes */}
