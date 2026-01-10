@@ -19,6 +19,16 @@ import { RecentlyViewedPage } from './pages/buyer/RecentlyViewedPage';
 import { AddressPage } from './pages/buyer/AddressPage';
 import { SettingsPage } from './pages/buyer/SettingsPage';
 import { SellerCenterPage } from './pages/buyer/SellerCenterPage';
+
+// Seller Pages
+import { ProductManagementPage } from './pages/seller/ProductManagementPage';
+import { IncomingOrdersPage } from './pages/seller/IncomingOrdersPage';
+import { ShippingManagementPage } from './pages/seller/ShippingManagementPage';
+import { FinancePage } from './pages/seller/FinancePage';
+import { AdsManagementPage } from './pages/seller/AdsManagementPage';
+import { SalesStatisticsPage } from './pages/seller/SalesStatisticsPage';
+import { LiveStreamingPage } from './pages/seller/LiveStreamingPage';
+
 import './index.css';
 
 function App() {
@@ -49,10 +59,18 @@ function App() {
         <Route path="/addresses" element={<AddressPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/seller-center" element={<SellerCenterPage />} />
+
+        {/* Seller Center Routes */}
+        <Route path="/seller/products" element={<ProductManagementPage />} />
+        <Route path="/seller/orders" element={<IncomingOrdersPage />} />
+        <Route path="/seller/shipping" element={<ShippingManagementPage />} />
+        <Route path="/seller/finance" element={<FinancePage />} />
+        <Route path="/seller/ads" element={<AdsManagementPage />} />
+        <Route path="/seller/statistics" element={<SalesStatisticsPage />} />
+        <Route path="/seller/live" element={<LiveStreamingPage />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
