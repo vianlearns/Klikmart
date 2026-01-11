@@ -115,7 +115,7 @@ export function ProductDetailPage() {
     };
 
     const handleVisitStore = () => {
-        navigate(`/?toko=${encodeURIComponent('Sneakers Official Store')}`);
+        navigate('/store/sneakers-official-store');
     };
 
     return (

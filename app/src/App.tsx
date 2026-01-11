@@ -20,6 +20,7 @@ import { AddressPage } from './pages/buyer/AddressPage';
 import { SettingsPage } from './pages/buyer/SettingsPage';
 import { SellerCenterPage } from './pages/buyer/SellerCenterPage';
 import { CategoryPage } from './pages/buyer/CategoryPage';
+import { StoreProfilePage } from './pages/buyer/StoreProfilePage';
 
 // Seller Pages
 import { ProductManagementPage } from './pages/seller/ProductManagementPage';
@@ -62,6 +63,7 @@ function App() {
         <Route path="/addresses" element={<AddressPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/seller-center" element={<SellerCenterPage />} />
+        <Route path="/store/:storeName" element={<StoreProfilePage />} />
 
         {/* Seller Center Routes */}
         <Route path="/seller/products" element={<ProductManagementPage />} />
