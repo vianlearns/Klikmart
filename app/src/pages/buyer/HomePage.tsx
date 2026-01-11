@@ -4,7 +4,9 @@ import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
 import { BottomNavBuyer } from '../../components/layout/BottomNavBuyer';
 import { ProductCard } from '../../components/product/ProductCard';
-import { categories, flashSaleProducts, recommendedProducts, heroBanners } from '../../data/mockData';
+import { categories } from '../../data/dataCategories';
+import { flashSaleProducts, recommendedProducts } from '../../data/dataProducts';
+import { heroBanners } from '../../data/dataBanners';
 import { Header } from '../../components/layout/Header';
 export function HomePage() {
     const [timeLeft, setTimeLeft] = useState({ hours: 2, minutes: 14, seconds: 50 });
@@ -210,8 +212,8 @@ export function HomePage() {
                                 image={product.image}
                                 price={product.price}
                                 originalPrice={product.originalPrice}
-                                rating={product.rating}
-                                reviews={product.reviews}
+                                rating={product.rating ?? 0}
+                                reviews={product.reviews ?? '0'}
                             />
                         ))}
                     </div>

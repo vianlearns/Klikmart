@@ -2,7 +2,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
 import { BottomNavBuyer } from '../../components/layout/BottomNavBuyer';
-import { userProfile } from '../../data/orderData';
+import { userProfile } from '../../data/dataUser';
 
 export function ProfilePage() {
     const navigate = useNavigate();

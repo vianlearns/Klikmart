@@ -4,8 +4,8 @@ import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
 import { OrderTabs } from '../../components/order/OrderTabs';
 import { OrderCard } from '../../components/order/OrderCard';
-import { orders } from '../../data/orderData';
-import type { OrderStatus } from '../../data/orderData';
+import { orders } from '../../data/dataOrders';
+import type { OrderStatus } from '../../data/types';
 
 type TabId = 'all' | 'unpaid' | 'processing' | 'shipped' | 'completed' | 'cancelled';
 
@@ -94,9 +94,6 @@ export function OrdersPage() {
                         </button>
                         <h1 className="text-lg font-bold text-gray-900 dark:text-white">Pesanan Saya</h1>
                         <div className="flex items-center gap-2">
-                            <button className="text-gray-900 dark:text-white p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                                <Icon name="search" />
-                            </button>
                             <Link to="/chat" className="text-gray-900 dark:text-white p-2 -mr-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
                                 <Icon name="chat" />
                             </Link>
@@ -104,7 +101,7 @@ export function OrdersPage() {
                     </div>
 
                     {/* Search Bar */}
-                    <div className="px-4 pb-3">
+                    <div className="px-4 pb-3 mt-5">
                         <div className="flex w-full items-center rounded-lg bg-white dark:bg-[#2c241d]/50 border border-gray-200 dark:border-white/10 overflow-hidden h-10">
                             <div className="flex items-center justify-center pl-3 text-gray-500 dark:text-gray-400">
                                 <Icon name="search" size={20} />

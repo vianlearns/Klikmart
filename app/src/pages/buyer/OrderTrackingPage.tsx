@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
-import { trackingTimeline, orders } from '../../data/orderData';
+import { trackingTimeline, orders } from '../../data/dataOrders';
 
 export function OrderTrackingPage() {
     const navigate = useNavigate();

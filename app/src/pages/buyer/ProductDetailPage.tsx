@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
 import { ProductCard } from '../../components/product/ProductCard';
-import { recommendedProducts } from '../../data/mockData';
+import { recommendedProducts } from '../../data/dataProducts';
 import { Header } from '../../components/layout/Header';
 
 const productImages = [

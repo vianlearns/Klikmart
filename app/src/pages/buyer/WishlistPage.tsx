@@ -2,13 +2,13 @@ import { useNavigate } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
 import { ProductCard } from '../../components/product/ProductCard';
-import { recommendedProducts } from '../../data/mockData';
+import { recommendedProducts } from '../../data/dataProducts';
 import { Header } from '../../components/layout/Header';
 import { useState } from 'react';
 
 export function WishlistPage() {
     const navigate = useNavigate();
-    const [wishlistItems, setWishlistItems] = useState(recommendedProducts);
+    const [wishlistItems] = useState(recommendedProducts);
 
     // const handleRemoveItem = (id: string) => {
     //     if (window.confirm("Hapus dari wishlist?")) {
@@ -46,7 +46,12 @@ export function WishlistPage() {
                 <div className="p-4 md:p-0">
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                         {wishlistItems.map((product) => (
-                            <ProductCard key={product.id} {...product} />
+                            <ProductCard
+                                key={product.id}
+                                {...product}
+                                rating={product.rating ?? 0}
+                                reviews={product.reviews ?? '0'}
+                            />
                         ))}
                     </div>
 

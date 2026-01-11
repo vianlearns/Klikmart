@@ -1,7 +1,7 @@
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
-import { initialMessages } from '../../data/buyerData';
+import { initialMessages } from '../../data/dataChat';
 import { useState, useRef, useEffect } from 'react';
 
 export function ChatRoomPage() {
@@ -34,10 +34,10 @@ export function ChatRoomPage() {
 
         const newMessage = {
             id: `m${Date.now()}`,
-            sender: 'user',
+            sender: 'user' as const,
             text: inputValue,
             time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-            type: 'text',
+            type: 'text' as const,
             isProductContext: false
         };
 
@@ -48,10 +48,10 @@ export function ChatRoomPage() {
     const handleQuickReply = (text: string) => {
         const newMessage = {
             id: `m${Date.now()}`,
-            sender: 'user',
+            sender: 'user' as const,
             text: text,
             time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-            type: 'text',
+            type: 'text' as const,
             isProductContext: false
         };
         setMessages([...messages, newMessage]);
@@ -166,8 +166,8 @@ export function ChatRoomPage() {
                                 )}
 
                                 <div className={`px-4 py-3 rounded-2xl shadow-sm border ${msg.sender === 'user'
-                                        ? 'bg-primary text-white rounded-tr-sm border-transparent'
-                                        : 'bg-white dark:bg-[#2a1e16] text-[#181411] dark:text-gray-100 rounded-tl-sm border-gray-100 dark:border-gray-800'
+                                    ? 'bg-primary text-white rounded-tr-sm border-transparent'
+                                    : 'bg-white dark:bg-[#2a1e16] text-[#181411] dark:text-gray-100 rounded-tl-sm border-gray-100 dark:border-gray-800'
                                     }`}>
                                     <p className="text-sm font-normal leading-relaxed">{msg.text}</p>
                                 </div>

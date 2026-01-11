@@ -5,7 +5,7 @@ import { MobileContainer } from '../../components/layout/MobileContainer';
 import { ProductCard } from '../../components/product/ProductCard';
 import { Header } from '../../components/layout/Header';
 import { BottomNavBuyer } from '../../components/layout/BottomNavBuyer';
-import { categoryConfig, getCategoryProducts } from '../../data/categoryData';
+import { categoryConfig, getCategoryProducts } from '../../data/dataCategories';
 
 export function CategoryPage() {
     const { slug } = useParams<{ slug: string }>();
@@ -76,8 +76,8 @@ export function CategoryPage() {
                                 key={filter}
                                 onClick={() => setActiveFilter(filter)}
                                 className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${activeFilter === filter
-                                        ? 'bg-primary text-white shadow-lg shadow-primary/20'
-                                        : 'bg-white dark:bg-[#2c241d] text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:border-primary'
+                                    ? 'bg-primary text-white shadow-lg shadow-primary/20'
+                                    : 'bg-white dark:bg-[#2c241d] text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:border-primary'
                                     }`}
                             >
                                 {filter}

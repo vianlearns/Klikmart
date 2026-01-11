@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
-import { orders } from '../../data/orderData';
+import { orders } from '../../data/dataOrders';
 
 export function RateOrderPage() {
     const navigate = useNavigate();

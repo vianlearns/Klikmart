@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
-import { helpTopics, helpCategories, helpQuickActions } from '../../data/buyerData';
+import { helpTopics, helpCategories, helpQuickActions } from '../../data/dataHelp';
 import { Header } from '../../components/layout/Header';
 
 export function HelpCenterPage() {

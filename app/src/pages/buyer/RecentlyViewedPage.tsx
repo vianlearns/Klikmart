@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
 import { ProductCard } from '../../components/product/ProductCard';
-import { flashSaleProducts } from '../../data/mockData';
+import { flashSaleProducts } from '../../data/dataProducts';
 import { Header } from '../../components/layout/Header';
 import { useState } from 'react';
 

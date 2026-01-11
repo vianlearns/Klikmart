@@ -1,29 +1,22 @@
-// Category-specific data for Klikmart
+// Category data for Klikmart
 
-export interface CategoryProduct {
-    id: string;
-    name: string;
-    image: string;
-    price: number;
-    originalPrice?: number;
-    rating: number;
-    reviews: string;
-    location?: string;
-    badge?: string;
-    discount?: number;
-}
+import type { Category, CategoryConfig, CategoryProduct } from './types';
 
-export interface CategoryConfig {
-    name: string;
-    title: string;
-    icon: string;
-    gradient: string;
-    bannerImage: string;
-    bannerTitle: string;
-    bannerSubtitle: string;
-    subcategories: string[];
-}
+// Main category list (for homepage navigation)
+export const categories: Category[] = [
+    { id: '1', title: 'fashion', name: 'Fashion', icon: 'apparel', color: 'primary' },
+    { id: '2', title: 'gadget', name: 'Gadget', icon: 'devices', color: 'blue-500' },
+    { id: '3', title: 'kecantikan', name: 'Kecantikan', icon: 'face', color: 'pink-500' },
+    { id: '4', title: 'rumah-tangga', name: 'Rumah Tangga', icon: 'chair', color: 'green-500' },
+    { id: '5', title: 'olahraga', name: 'Olahraga', icon: 'sports_soccer', color: 'purple-500' },
+    { id: '6', title: 'mainan', name: 'Mainan', icon: 'toys', color: 'yellow-500' },
+    { id: '7', title: 'makanan', name: 'Makanan', icon: 'lunch_dining', color: 'red-500' },
+    { id: '8', title: 'travel', name: 'Travel', icon: 'flight', color: 'indigo-500' },
+    { id: '9', title: 'promo', name: 'Promo', icon: 'local_offer', color: 'orange-500' },
+    { id: '10', title: 'lainnya', name: 'Lainnya', icon: 'grid_view', color: 'gray-500' },
+];
 
+// Category page configurations
 export const categoryConfig: Record<string, CategoryConfig> = {
     'fashion': {
         name: 'Fashion',
@@ -211,6 +204,7 @@ export const categoryProducts: Record<string, CategoryProduct[]> = {
     ],
 };
 
+// Helper function to get category products
 export function getCategoryProducts(category: string): CategoryProduct[] {
     return categoryProducts[category] || categoryProducts['lainnya'];
 }

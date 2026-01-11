@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
 import { Header } from '../../components/layout/Header';
-import { chatList } from '../../data/buyerData';
+import { chatList } from '../../data/dataChat';
 import { useState } from 'react';
 
 export function ChatListPage() {

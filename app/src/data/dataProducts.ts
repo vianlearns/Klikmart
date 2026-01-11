@@ -1,17 +1,9 @@
-export const categories = [
-    { id: '1', title: 'fashion', name: 'Fashion', icon: 'apparel', color: 'primary' },
-    { id: '2', title: 'gadget', name: 'Gadget', icon: 'devices', color: 'blue-500' },
-    { id: '3', title: 'kecantikan', name: 'Kecantikan', icon: 'face', color: 'pink-500' },
-    { id: '4', title: 'rumah-tangga', name: 'Rumah Tangga', icon: 'chair', color: 'green-500' },
-    { id: '5', title: 'olahraga', name: 'Olahraga', icon: 'sports_soccer', color: 'purple-500' },
-    { id: '6', title: 'mainan', name: 'Mainan', icon: 'toys', color: 'yellow-500' },
-    { id: '7', title: 'makanan', name: 'Makanan', icon: 'lunch_dining', color: 'red-500' },
-    { id: '8', title: 'travel', name: 'Travel', icon: 'flight', color: 'indigo-500' },
-    { id: '9', title: 'promo', name: 'Promo', icon: 'local_offer', color: 'orange-500' },
-    { id: '10', title: 'lainnya', name: 'Lainnya', icon: 'grid_view', color: 'gray-500' },
-];
+// Product data for Klikmart
 
-export const flashSaleProducts = [
+import type { Product, FlashSaleProduct } from './types';
+
+// Flash Sale Products (for homepage)
+export const flashSaleProducts: FlashSaleProduct[] = [
     {
         id: 'fs1',
         name: 'Sepatu Sneakers Pria Lokal - Hitam Putih',
@@ -41,7 +33,8 @@ export const flashSaleProducts = [
     },
 ];
 
-export const recommendedProducts = [
+// Recommended Products (for homepage and various pages)
+export const recommendedProducts: Product[] = [
     {
         id: 'p1',
         name: 'Jaket Jeans Pria Lokal - Premium Quality',
@@ -81,29 +74,11 @@ export const recommendedProducts = [
     },
 ];
 
-export const heroBanners = [
-    {
-        id: 'b1',
-        image: 'https://i.ibb.co.com/jv7pCQp0/01ae73e803554fab822e099fe22bffaa-tplv-wopfjsm1ax-aigc-resize-720-720.webp',
-        title: 'Promo Akhir Tahun',
-        subtitle: 'Semua Kategori',
-        label: 'Best Deal',
-        buttonText: 'Lihat Promo',
-    },
-    {
-        id: 'b2',
-        image: 'https://i.ibb.co.com/q394kgkn/6ccf11328cd34205823beade9767a5a3-tplv-wopfjsm1ax-aigc-resize-720-720.webp',
-        title: 'Diskon 50%',
-        subtitle: 'Produk Fashion',
-        label: 'Super Sale',
-        buttonText: 'Belanja Sekarang',
-    },
-    {
-        id: 'b3',
-        image: 'https://i.ibb.co.com/q3h0Y6yL/df2d4936e5c94048a561976273bf3b13-tplv-wopfjsm1ax-aigc-resize-720-720.webp',
-        title: 'Gadget Terbaru',
-        subtitle: 'Teknologi Canggih',
-        label: 'Baru Datang',
-        buttonText: 'Jelajahi',
-    }
+// Product Detail Page Data
+export const productDetailImages = [
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuDuqPRJo2vZX275Ep93i2nMU6XEMgz3nJCSgwuAcsKr56v6bHkLFWdX9a6Tdl8SoVsaGAQRpWTc6AE83OoLLSv7KF203c0_6NRD3blN5BP1NcJJ4HnX8Z2Gx6lAQaaoqdtWynS7qQhnlILsUSH2ASF9u-bMrvEwXT40nrHgzhtKv-DZwIwlal2BeD3cCy3hPtfL7FX5w0PVsgrgE01pNpV4jTH4_buoc1brMD2tTjVLH8RBbXlin6BOopszhjWi8f-MfwbgIG5Jd7A-',
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuA8N3jHHjYKg-AGE6Sm-ah1T1gTwLcBbRPFqH1c2YBi3fY9CKaimw1vZx9sLr3JTnTFjU24l23URSOgapeJFpJKbB8AhJo43iALLCwiFNP25qqEVgwqdrbv06Zzr2Tmaty8mmTUUAgMCumHOzUSTFKsMoRQ3knORhDGmKN6XBndjKdOsJP4tTECTcaZxn0W0X8ovdVzH6ZrcQQlH4jtqTshAf2AwZj-085kFfWKXyNsZ5gZhJ_6G6Db41KpUX2tloJlKoCSF16xPLpC',
 ];
+
+export const productVariantColors = ['Putih', 'Hitam', 'Navy'];
+export const productVariantSizes = ['39', '40', '41', '42', '43', '44'];

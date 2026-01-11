@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Icon } from '../common/Icon';
-import type { Order } from '../../data/orderData';
+import type { Order } from '../../data/types';
 
 interface OrderCardProps {
     order: Order;

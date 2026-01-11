@@ -80,8 +80,8 @@ export function Header({
                                 <Icon name="shopping_cart" className="text-gray-700 dark:text-gray-200" />
                                 <span className="absolute top-1 right-1 h-2.5 w-2.5 rounded-full bg-red-500 border-2 border-white dark:border-[#1a120b]" />
                             </Link>
-                            <Link to="/notification" className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                                <Icon name="notifications" className="text-gray-700 dark:text-gray-200" />
+                            <Link to="/chat" className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                                <Icon name="chat" className="text-gray-700 dark:text-gray-200" />
                             </Link>
                         </div>
                     )}

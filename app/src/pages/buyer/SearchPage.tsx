@@ -4,7 +4,7 @@ import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
 import { BottomNavBuyer } from '../../components/layout/BottomNavBuyer';
 import { ProductCard } from '../../components/product/ProductCard';
-import { searchProducts } from '../../data/orderData';
+import { searchProducts } from '../../data/dataSearch';
 
 type SortOption = 'terkait' | 'terbaru' | 'terlaris' | 'harga';
 
@@ -74,8 +74,8 @@ export function SearchPage() {
                                 key={option.id}
                                 onClick={() => setActiveSort(option.id)}
                                 className={`whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${activeSort === option.id
-                                        ? 'bg-primary/10 text-primary ring-1 ring-primary/20 font-semibold'
-                                        : 'bg-transparent text-text-secondary hover:bg-gray-100 dark:hover:bg-[#2c241b]'
+                                    ? 'bg-primary/10 text-primary ring-1 ring-primary/20 font-semibold'
+                                    : 'bg-transparent text-text-secondary hover:bg-gray-100 dark:hover:bg-[#2c241b]'
                                     }`}
                             >
                                 {option.label}
@@ -120,8 +120,8 @@ export function SearchPage() {
                                 image={product.image}
                                 price={product.price}
                                 originalPrice={product.originalPrice}
-                                rating={product.rating}
-                                reviews={product.reviews}
+                                rating={product.rating ?? 0}
+                                reviews={product.reviews ?? '0'}
                                 location={product.location}
                                 badge={product.badge}
                                 discount={product.discount}

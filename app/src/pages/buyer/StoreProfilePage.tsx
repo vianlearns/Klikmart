@@ -4,7 +4,7 @@ import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
 import { ProductCard } from '../../components/product/ProductCard';
 import { BottomNavBuyer } from '../../components/layout/BottomNavBuyer';
-import { recommendedProducts } from '../../data/mockData';
+import { recommendedProducts } from '../../data/dataProducts';
 
 export function StoreProfilePage() {
     const [activeTab, setActiveTab] = useState('produk');

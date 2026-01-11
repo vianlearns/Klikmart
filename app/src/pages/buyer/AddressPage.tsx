@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
 import { Header } from '../../components/layout/Header';
-import { userAddresses } from '../../data/buyerData';
+import { userAddresses } from '../../data/dataUser';
 import { useState } from 'react';
 
 export function AddressPage() {

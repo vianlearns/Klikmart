@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
-import { orders } from '../../data/orderData';
+import { orders } from '../../data/dataOrders';
 
 export function ReturnsPage() {
     const navigate = useNavigate();
@@ -77,8 +77,8 @@ export function ReturnsPage() {
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`flex min-w-[80px] flex-col items-center justify-center border-b-[3px] pb-3 pt-2 px-2 flex-1 transition-colors ${activeTab === tab.id
-                                            ? 'border-b-primary text-primary font-bold'
-                                            : 'border-b-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white'
+                                        ? 'border-b-primary text-primary font-bold'
+                                        : 'border-b-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white'
                                         }`}
                                 >
                                     <span className="text-sm leading-normal tracking-wide whitespace-nowrap">{tab.label}</span>

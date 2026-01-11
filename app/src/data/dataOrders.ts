@@ -1,37 +1,8 @@
-// Order Status Types
-export type OrderStatus = 'unpaid' | 'processing' | 'shipped' | 'completed' | 'cancelled' | 'return';
+// Order data for Klikmart buyers
 
-export interface OrderProduct {
-    id: string;
-    name: string;
-    image: string;
-    variant: string;
-    quantity: number;
-    price: number;
-    originalPrice?: number;
-}
+import type { Order, TrackingEvent } from './types';
 
-export interface Order {
-    id: string;
-    storeName: string;
-    storeVerified?: boolean;
-    status: OrderStatus;
-    statusLabel: string;
-    products: OrderProduct[];
-    totalPrice: number;
-    shippingCost: number;
-    createdAt: string;
-    paymentDeadline?: string;
-    trackingNumber?: string;
-    courier?: string;
-    estimatedArrival?: string;
-    latestUpdate?: string;
-    needsRating?: boolean;
-    returnDeadline?: string;
-    refundAmount?: number;
-}
-
-// Mock Orders Data
+// Buyer Orders Data
 export const orders: Order[] = [
     // Unpaid Orders
     {
@@ -297,98 +268,8 @@ export const orders: Order[] = [
     },
 ];
 
-// User Profile Data
-export const userProfile = {
-    name: 'Vivian Prabaswara',
-    avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA5atNOjAdxSfK-nr_TMIsvJCB6aFOr5plhe0Gg_u2IFrN3baKgl7WPM-J4kq_eLD7s8rINFj1ZXdFxBOJXsHd3F9wUkxMjl_HFWSzdztiH6uj2Db0wTr5PBeRIG2m-QdJmWIWdw179-bQ_4h91ikDOY6kG8ycrQC80tFaYIqbDuTeCf4k9J7lbfK07HyurKS-Kw7bhJF210oj2eXUJsBoTTeZ6gOfn_8f8r2jvok4LGouIwQ8v6oznuFlpWj-etWll_4y3fUrcLp9m',
-    membershipLevel: 'Platinum Member',
-    followers: 12,
-    following: 10,
-    wallet: {
-        coins: 2400,
-        vouchers: 5,
-    },
-    orderCounts: {
-        unpaid: 1,
-        processing: 2,
-        shipped: 2,
-        needsRating: 3,
-        returns: 2,
-    },
-};
-
-// Search Products Data
-export const searchProducts = [
-    {
-        id: 'sp1',
-        name: 'Kemeja Flannel Pria Kotak-kotak Premium',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAV5cc9x7KQVWfdhxcbZg7zbi1iDRWfTjgAqpiEEizTSsVX1b35K8QVt1inkpuVXDuI6cIRtQzEjLLW82TNAysMsbKbCxURy1qWsOw-uvrQT9tE6-6V1-Lz4j0XhgY45OhNJR09md4gu7UNCH12JzEDh_JoIh8afi5t0eQdjl9xheAlTCG3KD0AZMR9W-ZRrKksbqLi1YhVwE-G80FJNd1W2d25dV0VuwJT6y8TNlwz-3Ex4efKY3zBTFfuWXJcREor0R9SqGp-aYvA',
-        price: 85000,
-        originalPrice: 170000,
-        discount: 50,
-        rating: 4.8,
-        reviews: '10RB',
-        location: 'Jakarta Barat',
-        badge: 'Mall',
-    },
-    {
-        id: 'sp2',
-        name: 'Kaos Polos Cotton Combed 30s Hitam Jetblack',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCGsSBKy5mg8ZSaS44yKOlKPKhPVXq7hzNTioi8_fq5I3nQxSyyqGjImPMLT4fZvR-giGtetk9g93MWwGAgbGSCtQ5fi55nvladu1TGyXvTdlZxib3i1WbdmKDCMftB2uYNqs19zZ2kZwdXfSmBetDFl5s6pdYVSuyk4b8JqTMk4q6lx0BqkHMHPuj0H7x0zUxrZV4EzgKa6XqSqIS5NCiU6N9Li6pzATg_wRIrwtT8X6I5dFOSau7-wVgkgeRoC_y66ZcvzJg6DgUW',
-        price: 35000,
-        originalPrice: 39000,
-        discount: 10,
-        rating: 4.9,
-        reviews: '50RB',
-        location: 'Bandung',
-        badge: 'Star+',
-    },
-    {
-        id: 'sp3',
-        name: 'Jaket Denim Pria Style Korea Oversize Washed Blue',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA-pAEFs4ZzM8CGmenH8RALY2k9ZyjdwCBIJ1zAeRqtthO45wmhL63mOppQyAM3F24A8GesExljFWrsaxPrzsEoq1QTI5OXcxO1mBDaTiSHBN5QWT2gMTCLBOWledA9mH3lOjF3RD0sBWIDS1rkL0_DhpqQyklgSxPKqMRK5B6uTAARNePCCvWQKSeE9jusbxCfOeZQV_9zYjCiiMxYml_W_6YYf0L4YoyRwG1i0EbigyrmPTH5bCczT1NqqKMfHQHArCVjhFv_WUVL',
-        price: 125000,
-        rating: 4.7,
-        reviews: '2,5RB',
-        location: 'Surabaya',
-    },
-    {
-        id: 'sp4',
-        name: 'Celana Chino Panjang Slimfit Krem Original Brand',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiONEP-rgmI9Ho1nWDfA-U9AZyFvpj9wUh09ljTCrtoDowdL_u4w-r0qmAGfNHg6wdaNSR27x6Q2c6xB8BacqV-BZongy0v_jar6Kyhrn7O7tV3dHQ_CkjI9o5JkZirT_vVJypMKNN6HGRH4tQRykYwLaOqSAra-cBZ1vKFpX1Srr9AOkyFjHc5VaxqAKvGHNsHB9GhIZKX3F_g5CP6pnjviX0jMn_V5zzI3Be4I0JwVL0InC0j92ri3Xh3DySRUrZXb4v7TXN5hyz',
-        price: 99000,
-        originalPrice: 132000,
-        discount: 25,
-        rating: 4.6,
-        reviews: '8RB',
-        location: 'Jakarta Selatan',
-        badge: 'Mall',
-    },
-    {
-        id: 'sp5',
-        name: 'Batik Pria Lengan Pendek Modern Motif Parang',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCHmxeDsfpHzPj7f90S0qWVknYxi20AYbhGNspOE_qwbd5-E85E5jfBidSKVLnmumq8ObAvcESSQdmT_UcaF7Sg7xOSYFQCz5rybjc7NsAIGXoXQvlZ5rnGtnBfKcMiXA3-eu8GUR3W55xHtgvziwfBQKX_N5LFZ9OMDRs37uMnprVOCHoGVk8hiKIeHujr4m-KbJNYjMxcAuA50xf1IflJpRg4K2_UugcOL7fCMWJ58p4XpFRTCIXHp-XUqpm6jIAvIBTbmgsA56vh',
-        price: 65000,
-        originalPrice: 165000,
-        discount: 60,
-        rating: 4.8,
-        reviews: '12RB',
-        location: 'Pekalongan',
-    },
-    {
-        id: 'sp6',
-        name: 'Hoodie Polos Jumper Fleece Abu-abu Misty Tebal',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBrvNGznGex-j9cxHw5ecQE8xdGADF4UVbZdxQn9IPVhxUYjZ8cuaGNb2yBWlSX0ExgCc3Nr0C94Nhwq6tFEV0XD3xIBYgsW7M639qFcdi_NjlF2qSyBZZ1HAVwZjbihD6rjPyYkhVFhkUTS46u4JUoAjNePFsSk2nHqQyYiB9kXOK_i3aabnYEyx7KgDq-4rLj5pkF7gtDNrB9Q7kixzf_kc7m1T_XwFFwfEIYfKG_SDO82HdXunXkXOnlm_CUcukOBZ0ZymyAIMxo',
-        price: 75000,
-        rating: 4.5,
-        reviews: '5RB',
-        location: 'Bandung',
-        badge: 'Star',
-    },
-];
-
 // Tracking Timeline Data
-export const trackingTimeline = [
+export const trackingTimeline: TrackingEvent[] = [
     {
         id: 't1',
         icon: 'local_shipping',

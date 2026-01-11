@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Icon } from '../../components/common/Icon';
 import { MobileContainer } from '../../components/layout/MobileContainer';
 import { Header } from '../../components/layout/Header';
-import { notificationsData } from '../../data/buyerData';
+import { notificationsData } from '../../data/dataNotifications';
 
 type TabType = 'pesanan' | 'promo' | 'wallet' | 'sistem';
 
@@ -32,8 +32,8 @@ export function NotificationPage() {
         <button
             onClick={() => setActiveTab(value)}
             className={`flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-all whitespace-nowrap ${activeTab === value
-                    ? 'bg-primary text-white shadow-md shadow-primary/25'
-                    : 'bg-gray-100 hover:bg-gray-200 dark:bg-[#393028] dark:hover:bg-[#4a3e36] text-gray-600 dark:text-[#baaa9c]'
+                ? 'bg-primary text-white shadow-md shadow-primary/25'
+                : 'bg-gray-100 hover:bg-gray-200 dark:bg-[#393028] dark:hover:bg-[#4a3e36] text-gray-600 dark:text-[#baaa9c]'
                 }`}
         >
             {label}
@@ -93,8 +93,8 @@ export function NotificationPage() {
                             key={tab}
                             onClick={() => setActiveTab(tab as TabType)}
                             className={`pb-3 px-2 text-sm font-bold capitalize transition-colors relative ${activeTab === tab
-                                    ? 'text-primary'
-                                    : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
+                                ? 'text-primary'
+                                : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
                                 }`}
                         >
                             {tab === 'wallet' ? 'Info Wallet' : tab}
